@@ -1,12 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { Heart, User, Calendar, Scale, Ruler, Stethoscope, Camera, Edit3, Save, X, Plus, Trash2 } from 'lucide-react';
+import { Heart, User, Calendar, Scale, Stethoscope, Camera, Edit3, Save, X } from 'lucide-react';
 import './PetProfile.css';
 
-const PetProfile = ({ onClose, userData, userName }) => {
-  const [pets, setPets] = useState([]);
-  const [selectedPet, setSelectedPet] = useState(null);
+const PetProfile = ({ onClose, userData, userName, isPage = false }) => {
+  const [pet, setPet] = useState(null);
   const [isEditing, setIsEditing] = useState(false);
-  const [showAddForm, setShowAddForm] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
     species: '',
@@ -29,18 +27,18 @@ const PetProfile = ({ onClose, userData, userName }) => {
     profileImage: null
   });
 
-  // Load pets from localStorage on component mount and create pet from userData
+  // Load pet from localStorage on component mount and create pet from userData
   useEffect(() => {
-    const savedPets = localStorage.getItem('petProfiles');
-    let existingPets = [];
+    const savedPet = localStorage.getItem('currentPetProfile');
+    let currentPet = null;
     
-    if (savedPets) {
-      existingPets = JSON.parse(savedPets);
+    if (savedPet) {
+      currentPet = JSON.parse(savedPet);
     }
     
     // If we have userData from registration form, create a pet profile
-    if (userData && userData.petName && !existingPets.some(pet => pet.name === userData.petName)) {
-      const newPet = {
+    if (userData && userData.petName && !currentPet) {
+      currentPet = {
         id: Date.now(),
         name: userData.petName || '',
         species: userData.petType || '',
@@ -64,19 +62,17 @@ const PetProfile = ({ onClose, userData, userName }) => {
         lastUpdated: new Date().toISOString(),
         createdFromRegistration: true
       };
-      
-      const updatedPets = [...existingPets, newPet];
-      setPets(updatedPets);
-      setSelectedPet(newPet);
-    } else {
-      setPets(existingPets);
     }
-  }, [userData?.petName]); // Only depend on petName to avoid infinite loop
+    
+    setPet(currentPet);
+  }, [userData?.petName]);
 
-  // Save pets to localStorage whenever pets state changes
+  // Save pet to localStorage whenever pet state changes
   useEffect(() => {
-    localStorage.setItem('petProfiles', JSON.stringify(pets));
-  }, [pets]);
+    if (pet) {
+      localStorage.setItem('currentPetProfile', JSON.stringify(pet));
+    }
+  }, [pet]);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -108,47 +104,22 @@ const PetProfile = ({ onClose, userData, userName }) => {
 
     const petData = {
       ...formData,
-      id: selectedPet ? selectedPet.id : Date.now(),
+      id: pet ? pet.id : Date.now(),
       lastUpdated: new Date().toISOString()
     };
 
-    if (selectedPet && isEditing) {
-      // Update existing pet
-      setPets(prev => prev.map(pet => 
-        pet.id === selectedPet.id ? petData : pet
-      ));
-      setSelectedPet(petData);
+    setPet(petData);
+    setIsEditing(false);
+    resetForm();
+  };
+
+  const handleEditPet = () => {
+    if (pet) {
+      setFormData(pet);
     } else {
-      // Add new pet
-      setPets(prev => [...prev, petData]);
-      setSelectedPet(petData);
+      resetForm();
     }
-
-    setIsEditing(false);
-    setShowAddForm(false);
-    resetForm();
-  };
-
-  const handleEditPet = (pet) => {
-    setSelectedPet(pet);
-    setFormData(pet);
     setIsEditing(true);
-  };
-
-  const handleDeletePet = (petId) => {
-    if (window.confirm('Are you sure you want to delete this pet profile?')) {
-      setPets(prev => prev.filter(pet => pet.id !== petId));
-      if (selectedPet && selectedPet.id === petId) {
-        setSelectedPet(null);
-      }
-    }
-  };
-
-  const handleAddNewPet = () => {
-    resetForm();
-    setSelectedPet(null);
-    setIsEditing(false);
-    setShowAddForm(true);
   };
 
   const resetForm = () => {
@@ -191,99 +162,44 @@ const PetProfile = ({ onClose, userData, userName }) => {
   };
 
   return (
-    <div className="pet-profile-overlay">
+    <div className={isPage ? "pet-profile-page-container" : "pet-profile-overlay"}>
       <div className="pet-profile-container">
         <div className="pet-profile-header">
           <div>
-            <h2>Pet Profile Management</h2>
+            <h2>Pet Profile</h2>
             {userData && userData.petName && (
               <p style={{ margin: '5px 0 0 0', fontSize: '0.9rem', opacity: 0.9 }}>
                 Information from registration form has been automatically created
               </p>
             )}
           </div>
-          <button className="close-btn" onClick={onClose}>
-            <X size={24} />
-          </button>
+          {!isPage && (
+            <button className="close-btn" onClick={onClose}>
+              <X size={24} />
+            </button>
+          )}
         </div>
 
         <div className="pet-profile-content">
-          {/* Pet List Sidebar */}
-          <div className="pet-list-sidebar">
-            <div className="sidebar-header">
-              <h3>Pet List</h3>
-              <button className="add-pet-btn" onClick={handleAddNewPet}>
-                <Plus size={20} />
-                Add Pet
-              </button>
-            </div>
-            
-            <div className="pet-list">
-              {pets.length === 0 ? (
-                <div className="no-pets">
-                  <Heart size={48} />
-                  <p>No pets yet</p>
-                  <p>Add your first pet!</p>
-                </div>
-              ) : (
-                pets.map(pet => (
-                  <div 
-                    key={pet.id} 
-                    className={`pet-item ${selectedPet?.id === pet.id ? 'selected' : ''}`}
-                    onClick={() => setSelectedPet(pet)}
-                  >
-                    <div className="pet-avatar">
-                      {pet.profileImage ? (
-                        <img src={pet.profileImage} alt={pet.name} />
-                      ) : (
-                        <Heart size={24} />
-                      )}
-                    </div>
-                    <div className="pet-info">
-                      <h4>{pet.name}</h4>
-                      <p>{pet.species} • {pet.breed}</p>
-                    </div>
-                    <div className="pet-actions">
-                      <button 
-                        className="edit-btn"
-                        onClick={(e) => {
-                          e.stopPropagation();
-                          handleEditPet(pet);
-                        }}
-                      >
-                        <Edit3 size={16} />
-                      </button>
-                      <button 
-                        className="delete-btn"
-                        onClick={(e) => {
-                          e.stopPropagation();
-                          handleDeletePet(pet.id);
-                        }}
-                      >
-                        <Trash2 size={16} />
-                      </button>
-                    </div>
-                  </div>
-                ))
-              )}
-            </div>
-          </div>
-
           {/* Pet Details */}
           <div className="pet-details">
-            {!selectedPet && !showAddForm ? (
-              <div className="no-selection">
+            {!pet && !isEditing ? (
+              <div className="no-pet">
                 <Heart size={64} />
-                <h3>Select a pet to view details</h3>
-                <p>Or add a new pet</p>
+                <h3>No pet profile found</h3>
+                <p>Please create a pet profile first</p>
+                <button className="create-pet-btn" onClick={() => setIsEditing(true)}>
+                  <Edit3 size={20} />
+                  Create Pet Profile
+                </button>
               </div>
             ) : (
               <div className="pet-detail-content">
-                {isEditing || showAddForm ? (
-                  // Edit/Add Form
+                {isEditing ? (
+                  // Edit Form
                   <div className="pet-form">
                     <div className="form-header">
-                      <h3>{showAddForm ? 'Add New Pet' : 'Edit Information'}</h3>
+                      <h3>{pet ? 'Edit Pet Information' : 'Create Pet Profile'}</h3>
                     </div>
 
                     <div className="form-sections">
@@ -511,7 +427,6 @@ const PetProfile = ({ onClose, userData, userName }) => {
                     <div className="form-actions">
                       <button className="cancel-btn" onClick={() => {
                         setIsEditing(false);
-                        setShowAddForm(false);
                         resetForm();
                       }}>
                         Cancel
@@ -522,26 +437,26 @@ const PetProfile = ({ onClose, userData, userName }) => {
                       </button>
                     </div>
                   </div>
-                ) : (
+                ) : pet ? (
                   // View Mode
                   <div className="pet-view">
                     <div className="pet-header">
                       <div className="pet-avatar-large">
-                        {selectedPet.profileImage ? (
-                          <img src={selectedPet.profileImage} alt={selectedPet.name} />
+                        {pet.profileImage ? (
+                          <img src={pet.profileImage} alt={pet.name} />
                         ) : (
                           <Heart size={48} />
                         )}
                       </div>
                       <div className="pet-basic-info">
-                        <h2>{selectedPet.name}</h2>
-                        <p>{selectedPet.species} • {selectedPet.breed}</p>
-                        <p>{selectedPet.gender === 'male' ? 'Male' : 'Female'} • {selectedPet.color}</p>
-                        {selectedPet.birthDate && (
-                          <p>Age: {calculateAge(selectedPet.birthDate)}</p>
+                        <h2>{pet.name}</h2>
+                        <p>{pet.species} • {pet.breed}</p>
+                        <p>{pet.gender === 'male' ? 'Male' : 'Female'} • {pet.color}</p>
+                        {pet.birthDate && (
+                          <p>Age: {calculateAge(pet.birthDate)}</p>
                         )}
                       </div>
-                      <button className="edit-btn" onClick={() => handleEditPet(selectedPet)}>
+                      <button className="edit-btn" onClick={handleEditPet}>
                         <Edit3 size={20} />
                         Edit
                       </button>
@@ -551,88 +466,88 @@ const PetProfile = ({ onClose, userData, userName }) => {
                       <div className="detail-section">
                         <h4>Basic Information</h4>
                         <div className="detail-list">
-                          {selectedPet.weight && (
+                          {pet.weight && (
                             <div className="detail-item">
                               <Scale size={16} />
-                              <span>Cân nặng: {selectedPet.weight} kg</span>
+                              <span>Weight: {pet.weight} kg</span>
                             </div>
                           )}
-                          {selectedPet.microchipId && (
+                          {pet.microchipId && (
                             <div className="detail-item">
                               <Stethoscope size={16} />
-                              <span>Microchip: {selectedPet.microchipId}</span>
+                              <span>Microchip: {pet.microchipId}</span>
                             </div>
                           )}
-                          {selectedPet.birthDate && (
+                          {pet.birthDate && (
                             <div className="detail-item">
                               <Calendar size={16} />
-                              <span>Ngày sinh: {new Date(selectedPet.birthDate).toLocaleDateString('vi-VN')}</span>
+                              <span>Birth Date: {new Date(pet.birthDate).toLocaleDateString('en-US')}</span>
                             </div>
                           )}
                         </div>
                       </div>
 
-                      {selectedPet.vetName && (
+                      {pet.vetName && (
                         <div className="detail-section">
-                          <h4>Thông tin bác sĩ</h4>
+                          <h4>Veterinarian Information</h4>
                           <div className="detail-list">
                             <div className="detail-item">
                               <User size={16} />
-                              <span>Bác sĩ: {selectedPet.vetName}</span>
+                              <span>Veterinarian: {pet.vetName}</span>
                             </div>
-                            {selectedPet.vetPhone && (
+                            {pet.vetPhone && (
                               <div className="detail-item">
-                                <span>Điện thoại: {selectedPet.vetPhone}</span>
+                                <span>Phone: {pet.vetPhone}</span>
                               </div>
                             )}
                           </div>
                         </div>
                       )}
 
-                      {selectedPet.allergies && (
+                      {pet.allergies && (
                         <div className="detail-section">
-                          <h4>Dị ứng</h4>
-                          <p>{selectedPet.allergies}</p>
+                          <h4>Allergies</h4>
+                          <p>{pet.allergies}</p>
                         </div>
                       )}
 
-                      {selectedPet.medications && (
+                      {pet.medications && (
                         <div className="detail-section">
-                          <h4>Thuốc đang dùng</h4>
-                          <p>{selectedPet.medications}</p>
+                          <h4>Current Medications</h4>
+                          <p>{pet.medications}</p>
                         </div>
                       )}
 
-                      {selectedPet.specialNeeds && (
+                      {pet.specialNeeds && (
                         <div className="detail-section">
-                          <h4>Nhu cầu đặc biệt</h4>
-                          <p>{selectedPet.specialNeeds}</p>
+                          <h4>Special Needs</h4>
+                          <p>{pet.specialNeeds}</p>
                         </div>
                       )}
 
-                      {selectedPet.personality && (
+                      {pet.personality && (
                         <div className="detail-section">
-                          <h4>Tính cách</h4>
-                          <p>{selectedPet.personality}</p>
+                          <h4>Personality</h4>
+                          <p>{pet.personality}</p>
                         </div>
                       )}
 
-                      {selectedPet.favoriteFood && (
+                      {pet.favoriteFood && (
                         <div className="detail-section">
-                          <h4>Thức ăn yêu thích</h4>
-                          <p>{selectedPet.favoriteFood}</p>
+                          <h4>Favorite Food</h4>
+                          <p>{pet.favoriteFood}</p>
                         </div>
                       )}
 
-                      {selectedPet.favoriteActivities && (
+                      {pet.favoriteActivities && (
                         <div className="detail-section">
-                          <h4>Hoạt động yêu thích</h4>
-                          <p>{selectedPet.favoriteActivities}</p>
+                          <h4>Favorite Activities</h4>
+                          <p>{pet.favoriteActivities}</p>
                         </div>
                       )}
                     </div>
                   </div>
-                )}
+                ) : null}
               </div>
             )}
           </div>

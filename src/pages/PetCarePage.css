@@ -2,12 +2,16 @@
   min-height: 100vh;
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   font-family: "Roboto", sans-serif;
+  /* Performance optimizations */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transform: translateZ(0);
+  backface-visibility: hidden;
 }
 
 /* Header */
 .pet-care-header {
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.15);
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
   padding: 20px 0;
 }
@@ -188,15 +192,17 @@
   margin-bottom: 25px;
   display: block;
   animation: float 3s ease-in-out infinite;
+  will-change: transform;
   filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
 }
 
 .section-header h2 {
-  font-size: 3.2rem;
-  font-weight: 700;
-  margin: 0 0 20px 0;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-  position: relative;
+  font-size: 4.5rem !important;
+  font-weight: 700 !important;
+  margin: 0 0 20px 0 !important;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3) !important;
+  position: relative !important;
+  text-align: center !important;
 }
 
 .section-header h2::after {
@@ -250,11 +256,11 @@
   border-radius: 25px;
   padding: 35px;
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
-  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  backdrop-filter: blur(10px);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   border: 1px solid rgba(255, 255, 255, 0.2);
   position: relative;
   overflow: hidden;
+  will-change: transform;
 }
 
 .profile-card::before {
@@ -278,7 +284,7 @@
 }
 
 .profile-card:hover {
-  transform: translateY(-8px) scale(1.02);
+  transform: translate3d(0, -8px, 0) scale(1.02);
   box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
 }
 
@@ -334,11 +340,11 @@
   border-radius: 25px;
   padding: 35px;
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
-  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  backdrop-filter: blur(10px);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   border: 1px solid rgba(255, 255, 255, 0.2);
   position: relative;
   overflow: hidden;
+  will-change: transform;
 }
 
 .chart-card::before {
@@ -362,7 +368,7 @@
 }
 
 .chart-card:hover {
-  transform: translateY(-8px) scale(1.02);
+  transform: translate3d(0, -8px, 0) scale(1.02);
   box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
 }
 
@@ -429,11 +435,11 @@
   border-radius: 25px;
   overflow: hidden;
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
-  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  backdrop-filter: blur(10px);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   border: 1px solid rgba(255, 255, 255, 0.2);
   cursor: pointer;
   position: relative;
+  will-change: transform;
 }
 
 .video-card::before {
@@ -458,7 +464,7 @@
 }
 
 .video-card:hover {
-  transform: translateY(-8px) scale(1.02);
+  transform: translate3d(0, -8px, 0) scale(1.02);
   box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
 }
 
@@ -588,11 +594,11 @@
   border-radius: 25px;
   padding: 35px;
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
-  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  backdrop-filter: blur(10px);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   border: 1px solid rgba(255, 255, 255, 0.2);
   position: relative;
   overflow: hidden;
+  will-change: transform;
 }
 
 .health-tip-card::before {
@@ -616,7 +622,7 @@
 }
 
 .health-tip-card:hover {
-  transform: translateY(-8px) scale(1.02);
+  transform: translate3d(0, -8px, 0) scale(1.02);
   box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
 }
 
@@ -631,7 +637,6 @@
   font-size: 2.5rem;
   background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
   -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
   background-clip: text;
   flex-shrink: 0;
 }
@@ -663,11 +668,11 @@
   border-radius: 25px;
   padding: 35px;
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
-  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  backdrop-filter: blur(10px);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   border: 1px solid rgba(255, 255, 255, 0.2);
   position: relative;
   overflow: hidden;
+  will-change: transform;
 }
 
 .training-tip-card::before {
@@ -691,7 +696,7 @@
 }
 
 .training-tip-card:hover {
-  transform: translateY(-8px) scale(1.02);
+  transform: translate3d(0, -8px, 0) scale(1.02);
   box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
 }
 
@@ -708,6 +713,13 @@
 
 .training-header h4 {
   color: #333;
+  font-size: 1.2rem;
+  margin: 0 0 5px 0;
+  font-weight: 600;
+}
+
+.training-header h3 {
+  color: #000 !important;
   font-size: 1.2rem;
   margin: 0 0 5px 0;
   font-weight: 600;
@@ -769,6 +781,7 @@
 .audio-btn.playing {
   background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
   animation: pulse 1s infinite;
+  will-change: transform;
 }
 
 .text-btn {
@@ -845,7 +858,7 @@
   }
 
   .section-header h2 {
-    font-size: 2.5rem;
+    font-size: 3.5rem !important;
   }
 
   .section-header p {
@@ -925,7 +938,7 @@
   }
 
   .section-header h2 {
-    font-size: 2rem;
+    font-size: 3rem !important;
   }
 
   .section-header p {

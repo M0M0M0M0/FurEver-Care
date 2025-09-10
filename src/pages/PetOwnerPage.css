@@ -49,10 +49,10 @@
 
 /* Section Styles */
 section {
-  margin-bottom: 60px;
+  margin-bottom: 0;
   padding: 40px 0;
   background: white;
-  border-radius: 15px;
+  border-radius: 0;
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
 }
 
@@ -63,7 +63,6 @@ section h2 {
   margin-bottom: 40px;
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
@@ -391,7 +390,9 @@ section h2 {
   font-size: 1.2rem;
   font-weight: 600;
 }
-
+.training-header h3 {
+  color: #333;
+}
 /* Responsive Design */
 @media (max-width: 768px) {
   .about-content,

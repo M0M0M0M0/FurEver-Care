@@ -62,6 +62,23 @@ const PetCarePage = ({ userData: propUserData, userName: propUserName }) => {
     }
   }, [propUserData, propUserName]);
 
+  // Handle hash navigation to scroll to specific sections
+  useEffect(() => {
+    const hash = location.hash;
+    if (hash) {
+      // Small delay to ensure page is fully loaded
+      setTimeout(() => {
+        const element = document.querySelector(hash);
+        if (element) {
+          element.scrollIntoView({ 
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      }, 100);
+    }
+  }, [location.hash]);
+
   // Update time every second
   useEffect(() => {
     const timer = setInterval(() => {
@@ -108,22 +125,22 @@ const PetCarePage = ({ userData: propUserData, userName: propUserName }) => {
       id: 1,
       title: 'Basic Grooming',
       description: 'Proper grooming guide for dogs and cats',
-      thumbnail: 'https://img.youtube.com/vi/dQw4w9WgXcQ/maxresdefault.jpg',
-      videoId: 'dQw4w9WgXcQ'
+      thumbnail: 'https://img.youtube.com/vi/YpzjiS5M8V0/maxresdefault.jpg',
+      videoId: 'YpzjiS5M8V0'
     },
     {
       id: 2,
       title: 'Safe Bathing',
       description: 'How to bathe your pet safely and effectively',
-      thumbnail: 'https://img.youtube.com/vi/dQw4w9WgXcQ/maxresdefault.jpg',
-      videoId: 'dQw4w9WgXcQ'
+      thumbnail: 'https://img.youtube.com/vi/C7UyYQp4OJ8/maxresdefault.jpg',
+      videoId: 'C7UyYQp4OJ8'
     },
     {
       id: 3,
       title: 'Nail Trimming',
       description: 'Guide to trimming your pet\'s nails',
-      thumbnail: 'https://img.youtube.com/vi/dQw4w9WgXcQ/maxresdefault.jpg',
-      videoId: 'dQw4w9WgXcQ'
+      thumbnail: 'https://img.youtube.com/vi/ThIfSjfjr_8/maxresdefault.jpg',
+      videoId: 'ThIfSjfjr_8'
     }
   ];
 
@@ -234,9 +251,8 @@ const PetCarePage = ({ userData: propUserData, userName: propUserName }) => {
         <section className="care-section-full">
           <div className="container">
             <div className="section-header">
-              <div className="section-icon">📋</div>
-              <h2>Pet Profile</h2>
-              <p>Detailed information about your pet</p>
+
+              <h2>📋Pet Profile</h2>
             </div>
             <div className="section-content">
               <div className="profile-grid">
@@ -293,12 +309,10 @@ const PetCarePage = ({ userData: propUserData, userName: propUserName }) => {
         </section>
 
         {/* Feeding Guide Section */}
-        <section className="care-section-full feeding-section">
+        <section id="feeding-guide" className="care-section-full feeding-section">
           <div className="container">
             <div className="section-header">
-              <div className="section-icon">🍽️</div>
-              <h2>Feeding Guide</h2>
-              <p>Recommended meal frequency chart by age and species</p>
+              <h2>🍽️Feeding Guide</h2>
             </div>
             <div className="section-content">
               <div className="feeding-charts-grid">
@@ -347,12 +361,11 @@ const PetCarePage = ({ userData: propUserData, userName: propUserName }) => {
         </section>
 
         {/* Grooming Videos Section */}
-        <section className="care-section-full grooming-section">
+        <section id="grooming-videos" className="care-section-full grooming-section">
           <div className="container">
             <div className="section-header">
-              <div className="section-icon">🛁</div>
-              <h2>Grooming Videos</h2>
-              <p>Pet care and grooming guides</p>
+              <h2>🛁Grooming Videos</h2>
+              
             </div>
             <div className="section-content">
               <div className="videos-grid">
@@ -402,12 +415,10 @@ const PetCarePage = ({ userData: propUserData, userName: propUserName }) => {
         </section>
 
         {/* Health Tips Section */}
-        <section className="care-section-full health-section">
+        <section id="health-tips" className="care-section-full health-section">
           <div className="container">
             <div className="section-header">
-              <div className="section-icon">💊</div>
-              <h2>Health Tips</h2>
-              <p>Comprehensive health care for your pet</p>
+              <h2>💊Health Tips</h2>
             </div>
             <div className="section-content">
               <div className="health-tips-grid">
@@ -437,12 +448,11 @@ const PetCarePage = ({ userData: propUserData, userName: propUserName }) => {
         </section>
 
         {/* Training Tips Section */}
-        <section className="care-section-full training-section">
+        <section id="training-tips" className="care-section-full training-section">
           <div className="container">
             <div className="section-header">
-              <div className="section-icon">🎾</div>
-              <h2>Training Tips</h2>
-              <p>Training guides and skill development for your pet</p>
+              <h2>🎾Training Tips</h2>
+              
             </div>
             <div className="section-content">
               <div className="training-tips-grid">
