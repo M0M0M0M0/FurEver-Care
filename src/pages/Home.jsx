@@ -10,6 +10,9 @@ const Home = ({ userData, userName }) => {
   const [showPetProfile, setShowPetProfile] = useState(false);
   const [activeTab, setActiveTab] = useState('featured');
 
+  // Debug logging
+  console.log('Home component rendered with:', { userData, userName });
+
   // Update time every second
   useEffect(() => {
     const timer = setInterval(() => {
@@ -205,9 +208,10 @@ const Home = ({ userData, userName }) => {
     }
   };
 
-  return (
-    <div className="home-page">
-      <PetOwnerHeader userName={userName} userData={userData} />
+  try {
+    return (
+      <div className="home-page">
+        <PetOwnerHeader userName={userName} userData={userData} />
       
       {/* Hero Banner Section */}
       <section className="hero-banner">
@@ -505,6 +509,18 @@ const Home = ({ userData, userName }) => {
       )}
     </div>
   );
+  } catch (error) {
+    console.error('Error in Home component:', error);
+    return (
+      <div className="home-page">
+        <div style={{ padding: '20px', textAlign: 'center' }}>
+          <h1>Error Loading Page</h1>
+          <p>Something went wrong. Please refresh the page.</p>
+          <p>Error: {error.message}</p>
+        </div>
+      </div>
+    );
+  }
 };
 
 export default Home;
