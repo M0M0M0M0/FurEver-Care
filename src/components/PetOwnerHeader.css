@@ -465,9 +465,9 @@ html {
 .pet-name {
   display: flex;
   align-items: center;
-  gap: 6px;
-  padding: 6px 10px;
-  border-radius: 6px;
+  gap: 4px;
+  padding: 4px 8px;
+  border-radius: 4px;
   transition: all 0.3s ease;
   cursor: pointer;
 }
@@ -489,13 +489,13 @@ html {
 
 .user-name i,
 .pet-name i {
-  font-size: 0.9rem;
+  font-size: 0.8rem;
 }
 
 .user-name span,
 .pet-name span {
   font-weight: 500;
-  font-size: 0.8rem;
+  font-size: 0.7rem;
 }
 .search-cart-container {
   transform: translateY(10%) !important;
