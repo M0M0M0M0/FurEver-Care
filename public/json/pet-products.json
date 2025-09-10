@@ -1,0 +1,74 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Premium Dog Food",
+      "category": "dog-food",
+      "description": "High-quality nutrition for adult dogs with natural ingredients",
+      "price": "$29.99"
+    },
+    {
+      "id": 2,
+      "name": "Cat Litter Box",
+      "category": "cat-accessories",
+      "description": "Odor control and easy cleaning for your feline friend",
+      "price": "$19.99"
+    },
+    {
+      "id": 3,
+      "name": "Dog Toys Set",
+      "category": "toys",
+      "description": "Interactive toys for mental stimulation and exercise",
+      "price": "$24.99"
+    },
+    {
+      "id": 4,
+      "name": "Pet Grooming Kit",
+      "category": "grooming",
+      "description": "Complete grooming essentials for all pet types",
+      "price": "$34.99"
+    },
+    {
+      "id": 5,
+      "name": "Orthopedic Pet Bed",
+      "category": "bedding",
+      "description": "Comfortable orthopedic pet bed for better sleep",
+      "price": "$49.99"
+    },
+    {
+      "id": 6,
+      "name": "Health Supplements",
+      "category": "supplements",
+      "description": "Vitamins and minerals for optimal pet health",
+      "price": "$15.99"
+    },
+    {
+      "id": 7,
+      "name": "Cat Food Premium",
+      "category": "cat-food",
+      "description": "Nutritious cat food with real meat and vegetables",
+      "price": "$27.99"
+    },
+    {
+      "id": 8,
+      "name": "Dog Leash Set",
+      "category": "accessories",
+      "description": "Durable and comfortable leash for daily walks",
+      "price": "$12.99"
+    },
+    {
+      "id": 9,
+      "name": "Pet Carrier",
+      "category": "accessories",
+      "description": "Safe and comfortable pet carrier for travel",
+      "price": "$39.99"
+    },
+    {
+      "id": 10,
+      "name": "Dental Care Kit",
+      "category": "health",
+      "description": "Complete dental care kit for healthy teeth",
+      "price": "$18.99"
+    }
+  ]
+}
