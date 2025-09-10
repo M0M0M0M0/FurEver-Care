@@ -7,6 +7,8 @@ import ShelterVolunteerForm from './components/ShelterVolunteerForm'
 import Header from './components/Header'
 import Footer from './components/Footer'
 import PetOwnerPage from './pages/PetOwnerPage'
+import PetOwnerPageFrizty from './pages/PetOwnerPageFrizty'
+import PetCarePage from './pages/PetCarePage'
 import Home from './pages/Home'
 import Products from './pages/Products'
 import Services from './pages/Services'
@@ -83,7 +85,11 @@ function App() {
       <Router>
         <div className="App">
           {userType === 'pet-owner' ? (
-            <PetOwnerPage userData={userData || {}} userName={userName || ''} />
+            <Routes>
+              <Route path="/" element={<PetOwnerPageFrizty userData={userData || {}} userName={userName || ''} />} />
+              <Route path="/pet-care" element={<PetCarePage userData={userData} userName={userName} />} />
+              <Route path="/pet-profile" element={<PetOwnerPage userData={userData || {}} userName={userName || ''} />} />
+            </Routes>
           ) : (
             <>
               <Header />

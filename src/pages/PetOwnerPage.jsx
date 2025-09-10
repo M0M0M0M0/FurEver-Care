@@ -103,7 +103,7 @@ const PetOwnerPage = ({ userData, userName }) => {
 
   return (
     <div className="pet-owner-page">
-      <PetOwnerHeader />
+      <PetOwnerHeader userName={userName} userData={userData} />
       
       {/* Scrolling Ticker */}
       <div className="scrolling-ticker">

@@ -5,18 +5,18 @@ import './UserForm.css'
 const ShelterVolunteerForm = ({ userName, onComplete }) => {
   const [formData, setFormData] = useState({
     name: userName,
-    email: '',
-    phone: '',
-    address: '',
-    organizationName: '',
-    organizationType: '',
-    role: '',
-    experience: '',
-    availability: [],
-    skills: [],
-    motivation: '',
-    emergencyContact: '',
-    emergencyPhone: '',
+    email: 'volunteer@shelter.org',
+    phone: '0369852147',
+    address: '321 Đường GHI, Quận 10, TP.HCM',
+    organizationName: 'Trung tâm cứu hộ động vật ABC',
+    organizationType: 'Tổ chức phi lợi nhuận',
+    role: 'Tình nguyện viên chăm sóc',
+    experience: '2 năm',
+    availability: ['Thứ 7', 'Chủ nhật'],
+    skills: ['Chăm sóc động vật', 'Huấn luyện cơ bản'],
+    motivation: 'Tôi yêu thích động vật và muốn giúp đỡ những chú thú cưng không có nhà.',
+    emergencyContact: 'Nguyễn Văn A',
+    emergencyPhone: '0123456789',
     profileImage: null
   })
 
@@ -384,4 +384,4 @@ const ShelterVolunteerForm = ({ userName, onComplete }) => {
   )
 }
 
-export default ShelterVolunteerForm
+export default ShelterVolunteerForm;

@@ -5,18 +5,18 @@ import './UserForm.css'
 const VeterinarianForm = ({ userName, onComplete }) => {
   const [formData, setFormData] = useState({
     name: userName,
-    email: '',
-    phone: '',
-    address: '',
-    licenseNumber: '',
-    specialization: '',
-    experience: '',
-    clinicName: '',
-    clinicAddress: '',
-    workingHours: '',
-    services: [],
-    education: '',
-    certifications: '',
+    email: 'dr.smith@vetclinic.com',
+    phone: '0987654321',
+    address: '456 Đường XYZ, Quận 3, TP.HCM',
+    licenseNumber: 'VET-2023-001',
+    specialization: 'Phẫu thuật thú y',
+    experience: '5 năm',
+    clinicName: 'Phòng khám thú y ABC',
+    clinicAddress: '789 Đường DEF, Quận 7, TP.HCM',
+    workingHours: '8:00 - 17:00 (Thứ 2 - Thứ 6)',
+    services: ['Khám tổng quát', 'Phẫu thuật', 'Tiêm chủng'],
+    education: 'Thạc sĩ Thú y - Đại học Nông Lâm TP.HCM',
+    certifications: 'Chứng chỉ phẫu thuật nâng cao, Chứng chỉ siêu âm',
     profileImage: null
   })
 

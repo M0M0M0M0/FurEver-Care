@@ -5,15 +5,15 @@ import './UserForm.css'
 const PetOwnerForm = ({ userName, onComplete }) => {
   const [formData, setFormData] = useState({
     name: userName,
-    email: '',
-    phone: '',
-    address: '',
-    petName: '',
-    petType: '',
-    petBreed: '',
-    petAge: '',
-    petGender: '',
-    petDescription: '',
+    email: 'abc@gmail.com',
+    phone: '0123456789',
+    address: '123 Đường ABC, Quận 1, TP.HCM',
+    petName: 'Buddy',
+    petType: 'Chó',
+    petBreed: 'Golden Retriever',
+    petAge: '2 tuổi',
+    petGender: 'Đực',
+    petDescription: 'Một chú chó rất thân thiện và năng động, thích chơi đùa và đi dạo.',
     profileImage: null
   })
 

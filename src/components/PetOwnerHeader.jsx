@@ -7,7 +7,7 @@ import AuthWrapper from './AuthWrapper'
 import { useCart } from '../contexts/CartContext'
 import './PetOwnerHeader.css'
 
-export default function PetOwnerHeader() {
+export default function PetOwnerHeader({ userName, userData }) {
   const navigate = useNavigate();
   const { getCartItemCount } = useCart();
   const [searchTerm, setSearchTerm] = useState('');
@@ -141,15 +141,6 @@ export default function PetOwnerHeader() {
                   <li><RippleAnchor className="dropdown-item header-dropdown-item" href="#" onClick={(e) => { e.preventDefault(); navigate('/emergency-guide'); }}>Emergency Guide</RippleAnchor></li>
                 </ul>
               </li>
-              <li className="nav-item dropdown">
-                <RippleLink className="nav-link dropdown-toggle header-nav-link" to="/about" id="aboutDropdown">ABOUT US</RippleLink>
-                <ul className="dropdown-menu header-dropdown-menu">
-                  <li><RippleAnchor className="dropdown-item header-dropdown-item" href="#" onClick={(e) => { e.preventDefault(); navigate('/about#our-story'); }}>Our Story</RippleAnchor></li>
-                  <li><RippleAnchor className="dropdown-item header-dropdown-item" href="#" onClick={(e) => { e.preventDefault(); navigate('/about#team'); }}>About the Team</RippleAnchor></li>
-                  <li><RippleAnchor className="dropdown-item header-dropdown-item" href="#" onClick={(e) => { e.preventDefault(); navigate('/about#mission'); }}>Our Mission</RippleAnchor></li>
-                  <li><RippleAnchor className="dropdown-item header-dropdown-item" href="#" onClick={(e) => { e.preventDefault(); navigate('/about#careers'); }}>Careers</RippleAnchor></li>
-                </ul>
-              </li>
               <li className="nav-item"><RippleLink className="nav-link header-nav-link" to="/feedback">FEEDBACK</RippleLink></li>
               <li className="nav-item"><RippleLink className="nav-link header-nav-link" to="/contact">CONTACT</RippleLink></li>
             </ul>
@@ -241,8 +232,18 @@ export default function PetOwnerHeader() {
                 </span>
               </RippleLink>
             </div>
-            <div className="auth-links">
-              <AuthWrapper />
+            <div className="user-info">
+              <div className="user-name">
+                <i className="fas fa-user"></i>
+                <span>{userName || 'Người dùng'}</span>
+              </div>
+              <div className="pet-name" onClick={() => {
+                const petData = { petName: userData?.petName || 'Thú cưng' };
+                navigate(`/pet-care?petName=${encodeURIComponent(petData.petName)}`);
+              }}>
+                <i className="fas fa-paw"></i>
+                <span>{userData?.petName || 'Thú cưng'}</span>
+              </div>
             </div>
           </div>
         </div>

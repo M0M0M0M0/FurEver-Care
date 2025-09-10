@@ -158,8 +158,7 @@
 header {
   background: rgb(24, 26, 27) !important;
   box-shadow: 0 2px 15px rgba(0, 0, 0, 0.3) !important;
-  position: sticky !important;
-  top: 0 !important;
+  position: relative !important;
   z-index: 1000 !important;
   transition: all 0.3s ease !important;
   border-bottom: none !important;
@@ -179,16 +178,9 @@ header.scrolled {
   border-bottom: none !important;
   overflow: visible !important;
   width: 100% !important;
-  position: fixed !important;
-  top: 0 !important;
-  left: 0 !important;
+  position: relative !important;
   z-index: 1000 !important;
   background-color: rgb(24, 26, 27) !important;
-}
-
-/* Add padding to body to account for fixed header */
-body {
-  padding-top: 80px !important;
 }
 .navbar .header-nav-link {
   padding: 0.8rem 1rem !important;
@@ -458,25 +450,52 @@ html {
   background: linear-gradient(#ebebeb, #fafafa) !important;
   height: 20px !important;
 }
-/* Login and Register Links  */
-.auth-links {
-  font-size: 0.75rem !important;
+/* User Info */
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  font-size: 0.7rem !important;
   margin-top: 3px !important;
   white-space: nowrap !important;
   transform: translateY(-30%) !important;
 }
 
-.auth-links a {
-  color: #ffffff !important;
-  text-decoration: underline !important;
-  margin: 0 0.2rem !important;
-  font-weight: 500 !important;
-  transition: color 0.15s ease !important;
+.user-name,
+.pet-name {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  cursor: pointer;
 }
 
-.auth-links a:hover {
-  color: #f0f0f0 !important;
-  text-decoration: underline !important;
+.user-name {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+.pet-name {
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  color: white;
+}
+
+.pet-name:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(240, 147, 251, 0.4);
+}
+
+.user-name i,
+.pet-name i {
+  font-size: 0.9rem;
+}
+
+.user-name span,
+.pet-name span {
+  font-weight: 500;
+  font-size: 0.8rem;
 }
 .search-cart-container {
   transform: translateY(10%) !important;
