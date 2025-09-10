@@ -14,9 +14,9 @@ const Footer = () => {
               <span className="logo-text">FurEver Care</span>
             </div>
             <p className="footer-description">
-              Nơi tình yêu thương dành cho thú cưng được lan tỏa. 
-              Chúng tôi cam kết mang đến những dịch vụ chăm sóc tốt nhất 
-              cho những người bạn bốn chân của bạn.
+              Where love for pets spreads. 
+              We are committed to providing the best care services 
+              for your four-legged friends.
             </p>
             <div className="social-links">
               <a href="#" className="social-link" aria-label="Facebook">
@@ -33,31 +33,31 @@ const Footer = () => {
 
           {/* Quick Links */}
           <div className="footer-section">
-            <h3 className="footer-title">Liên kết nhanh</h3>
+            <h3 className="footer-title">Quick Links</h3>
             <ul className="footer-links">
-              <li><a href="/">Trang chủ</a></li>
-              <li><a href="/products">Sản phẩm</a></li>
-              <li><a href="/services">Dịch vụ</a></li>
-              <li><a href="/about">Về chúng tôi</a></li>
-              <li><a href="/contact">Liên hệ</a></li>
+              <li><a href="/">Home</a></li>
+              <li><a href="/products">Products</a></li>
+              <li><a href="/services">Services</a></li>
+              <li><a href="/about">About Us</a></li>
+              <li><a href="/contact">Contact</a></li>
             </ul>
           </div>
 
           {/* Services */}
           <div className="footer-section">
-            <h3 className="footer-title">Dịch vụ</h3>
+            <h3 className="footer-title">Services</h3>
             <ul className="footer-links">
-              <li><a href="#">Khám chữa bệnh thú y</a></li>
-              <li><a href="#">Chăm sóc tại nhà</a></li>
-              <li><a href="#">Huấn luyện thú cưng</a></li>
-              <li><a href="#">Tư vấn chăm sóc</a></li>
-              <li><a href="#">Cứu hộ động vật</a></li>
+              <li><a href="#">Veterinary Care</a></li>
+              <li><a href="#">Home Care</a></li>
+              <li><a href="#">Pet Training</a></li>
+              <li><a href="#">Care Consultation</a></li>
+              <li><a href="#">Animal Rescue</a></li>
             </ul>
           </div>
 
           {/* Contact Info */}
           <div className="footer-section">
-            <h3 className="footer-title">Liên hệ</h3>
+            <h3 className="footer-title">Contact</h3>
             <div className="contact-info">
               <div className="contact-item">
                 <Mail size={16} />
@@ -69,7 +69,7 @@ const Footer = () => {
               </div>
               <div className="contact-item">
                 <MapPin size={16} />
-                <span>123 Đường ABC, Quận XYZ, TP.HCM</span>
+                <span>123 ABC Street, XYZ District, HCMC</span>
               </div>
             </div>
           </div>
@@ -78,11 +78,11 @@ const Footer = () => {
         {/* Footer Bottom */}
         <div className="footer-bottom">
           <div className="footer-bottom-content">
-            <p>&copy; 2024 FurEver Care. Tất cả quyền được bảo lưu.</p>
+            <p>&copy; 2024 FurEver Care. All rights reserved.</p>
             <div className="footer-bottom-links">
-              <a href="#">Chính sách bảo mật</a>
-              <a href="#">Điều khoản sử dụng</a>
-              <a href="#">Chính sách cookie</a>
+              <a href="#">Privacy Policy</a>
+              <a href="#">Terms of Service</a>
+              <a href="#">Cookie Policy</a>
             </div>
           </div>
         </div>

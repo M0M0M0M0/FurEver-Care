@@ -7,15 +7,15 @@ const ShelterVolunteerForm = ({ userName, onComplete }) => {
     name: userName,
     email: 'volunteer@shelter.org',
     phone: '0369852147',
-    address: '321 Đường GHI, Quận 10, TP.HCM',
-    organizationName: 'Trung tâm cứu hộ động vật ABC',
-    organizationType: 'Tổ chức phi lợi nhuận',
-    role: 'Tình nguyện viên chăm sóc',
-    experience: '2 năm',
-    availability: ['Thứ 7', 'Chủ nhật'],
-    skills: ['Chăm sóc động vật', 'Huấn luyện cơ bản'],
-    motivation: 'Tôi yêu thích động vật và muốn giúp đỡ những chú thú cưng không có nhà.',
-    emergencyContact: 'Nguyễn Văn A',
+    address: '321 GHI Street, District 10, HCMC',
+    organizationName: 'ABC Animal Rescue Center',
+    organizationType: 'Non-profit Organization',
+    role: 'Care Volunteer',
+    experience: '2 years',
+    availability: ['Saturday', 'Sunday'],
+    skills: ['Animal Care', 'Basic Training'],
+    motivation: 'I love animals and want to help homeless pets.',
+    emergencyContact: 'Nguyen Van A',
     emergencyPhone: '0123456789',
     profileImage: null
   })
@@ -23,34 +23,34 @@ const ShelterVolunteerForm = ({ userName, onComplete }) => {
   const [errors, setErrors] = useState({})
 
   const availabilityOptions = [
-    'Thứ 2',
-    'Thứ 3', 
-    'Thứ 4',
-    'Thứ 5',
-    'Thứ 6',
-    'Thứ 7',
-    'Chủ nhật',
-    'Buổi sáng (6:00-12:00)',
-    'Buổi chiều (12:00-18:00)',
-    'Buổi tối (18:00-22:00)',
-    'Cuối tuần',
-    'Linh hoạt'
+    'Monday',
+    'Tuesday', 
+    'Wednesday',
+    'Thursday',
+    'Friday',
+    'Saturday',
+    'Sunday',
+    'Morning (6:00-12:00)',
+    'Afternoon (12:00-18:00)',
+    'Evening (18:00-22:00)',
+    'Weekends',
+    'Flexible'
   ]
 
   const skillOptions = [
-    'Chăm sóc động vật',
-    'Huấn luyện cơ bản',
-    'Sơ cứu thú y',
-    'Tổ chức sự kiện',
-    'Quản lý mạng xã hội',
-    'Chụp ảnh/video',
-    'Dịch thuật',
-    'Tư vấn pháp lý',
-    'Gây quỹ',
-    'Vận chuyển động vật',
-    'Dọn dẹp chuồng trại',
-    'Tìm nhà cho thú cưng',
-    'Khác'
+    'Animal Care',
+    'Basic Training',
+    'Veterinary First Aid',
+    'Event Organization',
+    'Social Media Management',
+    'Photography/Video',
+    'Translation',
+    'Legal Consultation',
+    'Fundraising',
+    'Animal Transportation',
+    'Shelter Cleaning',
+    'Pet Adoption',
+    'Other'
   ]
 
   const handleChange = (e) => {
@@ -90,11 +90,11 @@ const ShelterVolunteerForm = ({ userName, onComplete }) => {
   const validateForm = () => {
     const newErrors = {}
     
-    if (!formData.email) newErrors.email = 'Email là bắt buộc'
-    if (!formData.phone) newErrors.phone = 'Số điện thoại là bắt buộc'
-    if (!formData.organizationName) newErrors.organizationName = 'Tên tổ chức là bắt buộc'
-    if (!formData.role) newErrors.role = 'Vai trò là bắt buộc'
-    if (!formData.motivation) newErrors.motivation = 'Lý do tham gia là bắt buộc'
+    if (!formData.email) newErrors.email = 'Email is required'
+    if (!formData.phone) newErrors.phone = 'Phone number is required'
+    if (!formData.organizationName) newErrors.organizationName = 'Organization name is required'
+    if (!formData.role) newErrors.role = 'Role is required'
+    if (!formData.motivation) newErrors.motivation = 'Motivation is required'
     
     setErrors(newErrors)
     return Object.keys(newErrors).length === 0
@@ -114,18 +114,18 @@ const ShelterVolunteerForm = ({ userName, onComplete }) => {
           <Home size={40} />
         </div>
         <h1>Animal Shelter / Rescue Volunteer Registration</h1>
-        <p>Chào mừng {userName}! Cảm ơn bạn đã quan tâm đến việc cứu hộ và chăm sóc động vật.</p>
+        <p>Welcome {userName}! Thank you for your interest in animal rescue and care.</p>
       </div>
 
       <form onSubmit={handleSubmit} className="user-form">
         {/* Personal Information */}
         <div className="form-section">
-          <h2>Thông tin cá nhân</h2>
+          <h2>Personal Information</h2>
           <div className="form-grid">
             <div className="form-group">
               <label htmlFor="name">
                 <User size={16} />
-                Họ và tên *
+                Full Name *
               </label>
               <input
                 type="text"
@@ -156,7 +156,7 @@ const ShelterVolunteerForm = ({ userName, onComplete }) => {
             <div className="form-group">
               <label htmlFor="phone">
                 <Phone size={16} />
-                Số điện thoại *
+                Phone Number *
               </label>
               <input
                 type="tel"
@@ -172,7 +172,7 @@ const ShelterVolunteerForm = ({ userName, onComplete }) => {
             <div className="form-group full-width">
               <label htmlFor="address">
                 <MapPin size={16} />
-                Địa chỉ
+                Address
               </label>
               <input
                 type="text"
@@ -180,7 +180,7 @@ const ShelterVolunteerForm = ({ userName, onComplete }) => {
                 name="address"
                 value={formData.address}
                 onChange={handleChange}
-                placeholder="Nhập địa chỉ của bạn"
+                placeholder="Enter your address"
               />
             </div>
           </div>
@@ -188,10 +188,10 @@ const ShelterVolunteerForm = ({ userName, onComplete }) => {
 
         {/* Organization Information */}
         <div className="form-section">
-          <h2>Thông tin tổ chức</h2>
+          <h2>Organization Information</h2>
           <div className="form-grid">
             <div className="form-group">
-              <label htmlFor="organizationName">Tên tổ chức *</label>
+              <label htmlFor="organizationName">Organization Name *</label>
               <input
                 type="text"
                 id="organizationName"
@@ -204,25 +204,25 @@ const ShelterVolunteerForm = ({ userName, onComplete }) => {
             </div>
 
             <div className="form-group">
-              <label htmlFor="organizationType">Loại tổ chức</label>
+              <label htmlFor="organizationType">Organization Type</label>
               <select
                 id="organizationType"
                 name="organizationType"
                 value={formData.organizationType}
                 onChange={handleChange}
               >
-                <option value="">Chọn loại tổ chức</option>
-                <option value="shelter">Trại cứu hộ</option>
-                <option value="rescue">Nhóm cứu hộ</option>
-                <option value="foster">Nhà tạm trú</option>
-                <option value="adoption">Trung tâm nhận nuôi</option>
-                <option value="clinic">Phòng khám thú y</option>
-                <option value="other">Khác</option>
+                <option value="">Select organization type</option>
+                <option value="shelter">Animal Shelter</option>
+                <option value="rescue">Rescue Group</option>
+                <option value="foster">Foster Home</option>
+                <option value="adoption">Adoption Center</option>
+                <option value="clinic">Veterinary Clinic</option>
+                <option value="other">Other</option>
               </select>
             </div>
 
             <div className="form-group">
-              <label htmlFor="role">Vai trò trong tổ chức *</label>
+              <label htmlFor="role">Role in Organization *</label>
               <select
                 id="role"
                 name="role"
@@ -230,21 +230,21 @@ const ShelterVolunteerForm = ({ userName, onComplete }) => {
                 onChange={handleChange}
                 required
               >
-                <option value="">Chọn vai trò</option>
-                <option value="volunteer">Tình nguyện viên</option>
-                <option value="coordinator">Điều phối viên</option>
-                <option value="foster-parent">Cha mẹ nuôi tạm</option>
-                <option value="fundraiser">Người gây quỹ</option>
-                <option value="social-media">Quản lý mạng xã hội</option>
-                <option value="transport">Vận chuyển</option>
-                <option value="admin">Quản trị viên</option>
-                <option value="other">Khác</option>
+                <option value="">Select role</option>
+                <option value="volunteer">Volunteer</option>
+                <option value="coordinator">Coordinator</option>
+                <option value="foster-parent">Foster Parent</option>
+                <option value="fundraiser">Fundraiser</option>
+                <option value="social-media">Social Media Manager</option>
+                <option value="transport">Transportation</option>
+                <option value="admin">Administrator</option>
+                <option value="other">Other</option>
               </select>
               {errors.role && <span className="error">{errors.role}</span>}
             </div>
 
             <div className="form-group">
-              <label htmlFor="experience">Kinh nghiệm (tháng)</label>
+              <label htmlFor="experience">Experience (months)</label>
               <input
                 type="number"
                 id="experience"
@@ -252,7 +252,7 @@ const ShelterVolunteerForm = ({ userName, onComplete }) => {
                 value={formData.experience}
                 onChange={handleChange}
                 min="0"
-                placeholder="Số tháng kinh nghiệm"
+                placeholder="Months of experience"
               />
             </div>
           </div>
@@ -262,7 +262,7 @@ const ShelterVolunteerForm = ({ userName, onComplete }) => {
         <div className="form-section">
           <h2>
             <Calendar size={20} />
-            Thời gian có thể tham gia
+            Available Time
           </h2>
           <div className="checkbox-grid">
             {availabilityOptions.map((option) => (
@@ -283,7 +283,7 @@ const ShelterVolunteerForm = ({ userName, onComplete }) => {
         <div className="form-section">
           <h2>
             <Heart size={20} />
-            Kỹ năng và sở trường
+            Skills and Strengths
           </h2>
           <div className="checkbox-grid">
             {skillOptions.map((skill) => (
@@ -302,16 +302,16 @@ const ShelterVolunteerForm = ({ userName, onComplete }) => {
 
         {/* Motivation */}
         <div className="form-section">
-          <h2>Lý do tham gia</h2>
+          <h2>Motivation</h2>
           <div className="form-group">
-            <label htmlFor="motivation">Tại sao bạn muốn tham gia hoạt động cứu hộ động vật? *</label>
+            <label htmlFor="motivation">Why do you want to participate in animal rescue activities? *</label>
             <textarea
               id="motivation"
               name="motivation"
               value={formData.motivation}
               onChange={handleChange}
               rows="5"
-              placeholder="Chia sẻ động lực và mong muốn của bạn..."
+              placeholder="Share your motivation and aspirations..."
               required
             />
             {errors.motivation && <span className="error">{errors.motivation}</span>}
@@ -320,29 +320,29 @@ const ShelterVolunteerForm = ({ userName, onComplete }) => {
 
         {/* Emergency Contact */}
         <div className="form-section">
-          <h2>Liên hệ khẩn cấp</h2>
+          <h2>Emergency Contact</h2>
           <div className="form-grid">
             <div className="form-group">
-              <label htmlFor="emergencyContact">Tên người liên hệ khẩn cấp</label>
+              <label htmlFor="emergencyContact">Emergency Contact Name</label>
               <input
                 type="text"
                 id="emergencyContact"
                 name="emergencyContact"
                 value={formData.emergencyContact}
                 onChange={handleChange}
-                placeholder="Họ tên người thân"
+                placeholder="Family member name"
               />
             </div>
 
             <div className="form-group">
-              <label htmlFor="emergencyPhone">Số điện thoại liên hệ khẩn cấp</label>
+              <label htmlFor="emergencyPhone">Emergency Contact Phone</label>
               <input
                 type="tel"
                 id="emergencyPhone"
                 name="emergencyPhone"
                 value={formData.emergencyPhone}
                 onChange={handleChange}
-                placeholder="Số điện thoại"
+                placeholder="Phone number"
               />
             </div>
           </div>
@@ -350,7 +350,7 @@ const ShelterVolunteerForm = ({ userName, onComplete }) => {
 
         {/* Profile Image */}
         <div className="form-section">
-          <h2>Ảnh đại diện</h2>
+          <h2>Profile Image</h2>
           <div className="image-upload">
             <div className="upload-area">
               <input
@@ -362,7 +362,7 @@ const ShelterVolunteerForm = ({ userName, onComplete }) => {
               />
               <label htmlFor="profileImage" className="upload-label">
                 <Upload size={24} />
-                <span>Tải lên ảnh đại diện</span>
+                <span>Upload profile image</span>
               </label>
               {formData.profileImage && (
                 <p className="file-name">{formData.profileImage.name}</p>
@@ -373,10 +373,10 @@ const ShelterVolunteerForm = ({ userName, onComplete }) => {
 
         <div className="form-actions">
           <button type="button" className="skip-btn" onClick={() => onComplete('shelter-volunteer', { name: userName, skip: true })}>
-            Bỏ qua (Skip)
+            Skip
           </button>
           <button type="submit" className="submit-btn">
-            Hoàn thành đăng ký
+            Complete Registration
           </button>
         </div>
       </form>

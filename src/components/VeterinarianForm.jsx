@@ -7,32 +7,32 @@ const VeterinarianForm = ({ userName, onComplete }) => {
     name: userName,
     email: 'dr.smith@vetclinic.com',
     phone: '0987654321',
-    address: '456 Đường XYZ, Quận 3, TP.HCM',
+    address: '456 XYZ Street, District 3, HCMC',
     licenseNumber: 'VET-2023-001',
-    specialization: 'Phẫu thuật thú y',
-    experience: '5 năm',
-    clinicName: 'Phòng khám thú y ABC',
-    clinicAddress: '789 Đường DEF, Quận 7, TP.HCM',
-    workingHours: '8:00 - 17:00 (Thứ 2 - Thứ 6)',
-    services: ['Khám tổng quát', 'Phẫu thuật', 'Tiêm chủng'],
-    education: 'Thạc sĩ Thú y - Đại học Nông Lâm TP.HCM',
-    certifications: 'Chứng chỉ phẫu thuật nâng cao, Chứng chỉ siêu âm',
+    specialization: 'Veterinary Surgery',
+    experience: '5 years',
+    clinicName: 'ABC Veterinary Clinic',
+    clinicAddress: '789 DEF Street, District 7, HCMC',
+    workingHours: '8:00 - 17:00 (Monday - Friday)',
+    services: ['General Checkup', 'Surgery', 'Vaccination'],
+    education: 'Master of Veterinary Medicine - HCMC University of Agriculture and Forestry',
+    certifications: 'Advanced Surgery Certificate, Ultrasound Certificate',
     profileImage: null
   })
 
   const [errors, setErrors] = useState({})
 
   const serviceOptions = [
-    'Khám tổng quát',
-    'Phẫu thuật',
-    'Tiêm chủng',
-    'Xét nghiệm',
-    'Chụp X-quang',
-    'Siêu âm',
-    'Nha khoa thú y',
-    'Vật lý trị liệu',
-    'Cấp cứu 24/7',
-    'Tư vấn dinh dưỡng'
+    'General Checkup',
+    'Surgery',
+    'Vaccination',
+    'Laboratory Tests',
+    'X-ray',
+    'Ultrasound',
+    'Veterinary Dentistry',
+    'Physical Therapy',
+    '24/7 Emergency',
+    'Nutritional Consultation'
   ]
 
   const handleChange = (e) => {
@@ -72,11 +72,11 @@ const VeterinarianForm = ({ userName, onComplete }) => {
   const validateForm = () => {
     const newErrors = {}
     
-    if (!formData.email) newErrors.email = 'Email là bắt buộc'
-    if (!formData.phone) newErrors.phone = 'Số điện thoại là bắt buộc'
-    if (!formData.licenseNumber) newErrors.licenseNumber = 'Số giấy phép hành nghề là bắt buộc'
-    if (!formData.specialization) newErrors.specialization = 'Chuyên khoa là bắt buộc'
-    if (!formData.clinicName) newErrors.clinicName = 'Tên phòng khám là bắt buộc'
+    if (!formData.email) newErrors.email = 'Email is required'
+    if (!formData.phone) newErrors.phone = 'Phone number is required'
+    if (!formData.licenseNumber) newErrors.licenseNumber = 'License number is required'
+    if (!formData.specialization) newErrors.specialization = 'Specialization is required'
+    if (!formData.clinicName) newErrors.clinicName = 'Clinic name is required'
     
     setErrors(newErrors)
     return Object.keys(newErrors).length === 0
@@ -96,18 +96,18 @@ const VeterinarianForm = ({ userName, onComplete }) => {
           <Stethoscope size={40} />
         </div>
         <h1>Veterinarian Registration</h1>
-        <p>Chào mừng {userName}! Hãy hoàn thiện thông tin để tham gia mạng lưới bác sĩ thú y của chúng tôi.</p>
+        <p>Welcome {userName}! Please complete your information to join our veterinary network.</p>
       </div>
 
       <form onSubmit={handleSubmit} className="user-form">
         {/* Personal Information */}
         <div className="form-section">
-          <h2>Thông tin cá nhân</h2>
+          <h2>Personal Information</h2>
           <div className="form-grid">
             <div className="form-group">
               <label htmlFor="name">
                 <User size={16} />
-                Họ và tên *
+                Full Name *
               </label>
               <input
                 type="text"
@@ -138,7 +138,7 @@ const VeterinarianForm = ({ userName, onComplete }) => {
             <div className="form-group">
               <label htmlFor="phone">
                 <Phone size={16} />
-                Số điện thoại *
+                Phone Number *
               </label>
               <input
                 type="tel"
@@ -154,7 +154,7 @@ const VeterinarianForm = ({ userName, onComplete }) => {
             <div className="form-group full-width">
               <label htmlFor="address">
                 <MapPin size={16} />
-                Địa chỉ
+                Address
               </label>
               <input
                 type="text"
@@ -162,7 +162,7 @@ const VeterinarianForm = ({ userName, onComplete }) => {
                 name="address"
                 value={formData.address}
                 onChange={handleChange}
-                placeholder="Nhập địa chỉ của bạn"
+                placeholder="Enter your address"
               />
             </div>
           </div>
@@ -170,12 +170,12 @@ const VeterinarianForm = ({ userName, onComplete }) => {
 
         {/* Professional Information */}
         <div className="form-section">
-          <h2>Thông tin chuyên môn</h2>
+          <h2>Professional Information</h2>
           <div className="form-grid">
             <div className="form-group">
               <label htmlFor="licenseNumber">
                 <Award size={16} />
-                Số giấy phép hành nghề *
+                License Number *
               </label>
               <input
                 type="text"
@@ -189,7 +189,7 @@ const VeterinarianForm = ({ userName, onComplete }) => {
             </div>
 
             <div className="form-group">
-              <label htmlFor="specialization">Chuyên khoa *</label>
+              <label htmlFor="specialization">Specialization *</label>
               <select
                 id="specialization"
                 name="specialization"
@@ -197,23 +197,23 @@ const VeterinarianForm = ({ userName, onComplete }) => {
                 onChange={handleChange}
                 required
               >
-                <option value="">Chọn chuyên khoa</option>
-                <option value="general">Thú y tổng quát</option>
-                <option value="surgery">Phẫu thuật</option>
-                <option value="dermatology">Da liễu</option>
-                <option value="cardiology">Tim mạch</option>
-                <option value="oncology">Ung thư</option>
-                <option value="orthopedics">Chỉnh hình</option>
-                <option value="ophthalmology">Mắt</option>
-                <option value="dentistry">Nha khoa</option>
-                <option value="emergency">Cấp cứu</option>
-                <option value="other">Khác</option>
+                <option value="">Select specialization</option>
+                <option value="general">General Veterinary</option>
+                <option value="surgery">Surgery</option>
+                <option value="dermatology">Dermatology</option>
+                <option value="cardiology">Cardiology</option>
+                <option value="oncology">Oncology</option>
+                <option value="orthopedics">Orthopedics</option>
+                <option value="ophthalmology">Ophthalmology</option>
+                <option value="dentistry">Dentistry</option>
+                <option value="emergency">Emergency</option>
+                <option value="other">Other</option>
               </select>
               {errors.specialization && <span className="error">{errors.specialization}</span>}
             </div>
 
             <div className="form-group">
-              <label htmlFor="experience">Kinh nghiệm (năm)</label>
+              <label htmlFor="experience">Experience (years)</label>
               <input
                 type="number"
                 id="experience"
@@ -221,31 +221,31 @@ const VeterinarianForm = ({ userName, onComplete }) => {
                 value={formData.experience}
                 onChange={handleChange}
                 min="0"
-                placeholder="Số năm kinh nghiệm"
+                placeholder="Years of experience"
               />
             </div>
 
             <div className="form-group full-width">
-              <label htmlFor="education">Học vấn</label>
+              <label htmlFor="education">Education</label>
               <textarea
                 id="education"
                 name="education"
                 value={formData.education}
                 onChange={handleChange}
                 rows="3"
-                placeholder="Trường đại học, bằng cấp, chứng chỉ..."
+                placeholder="University, degree, certificates..."
               />
             </div>
 
             <div className="form-group full-width">
-              <label htmlFor="certifications">Chứng chỉ chuyên môn</label>
+              <label htmlFor="certifications">Professional Certifications</label>
               <textarea
                 id="certifications"
                 name="certifications"
                 value={formData.certifications}
                 onChange={handleChange}
                 rows="3"
-                placeholder="Các chứng chỉ, khóa học đã tham gia..."
+                placeholder="Certificates, courses attended..."
               />
             </div>
           </div>
@@ -253,10 +253,10 @@ const VeterinarianForm = ({ userName, onComplete }) => {
 
         {/* Clinic Information */}
         <div className="form-section">
-          <h2>Thông tin phòng khám</h2>
+          <h2>Clinic Information</h2>
           <div className="form-grid">
             <div className="form-group">
-              <label htmlFor="clinicName">Tên phòng khám *</label>
+              <label htmlFor="clinicName">Clinic Name *</label>
               <input
                 type="text"
                 id="clinicName"
@@ -269,21 +269,21 @@ const VeterinarianForm = ({ userName, onComplete }) => {
             </div>
 
             <div className="form-group full-width">
-              <label htmlFor="clinicAddress">Địa chỉ phòng khám</label>
+              <label htmlFor="clinicAddress">Clinic Address</label>
               <input
                 type="text"
                 id="clinicAddress"
                 name="clinicAddress"
                 value={formData.clinicAddress}
                 onChange={handleChange}
-                placeholder="Địa chỉ phòng khám"
+                placeholder="Clinic address"
               />
             </div>
 
             <div className="form-group full-width">
               <label htmlFor="workingHours">
                 <Calendar size={16} />
-                Giờ làm việc
+                Working Hours
               </label>
               <input
                 type="text"
@@ -291,7 +291,7 @@ const VeterinarianForm = ({ userName, onComplete }) => {
                 name="workingHours"
                 value={formData.workingHours}
                 onChange={handleChange}
-                placeholder="Ví dụ: Thứ 2-6: 8:00-17:00, Thứ 7: 8:00-12:00"
+                placeholder="e.g.: Mon-Fri: 8:00-17:00, Sat: 8:00-12:00"
               />
             </div>
           </div>
@@ -299,7 +299,7 @@ const VeterinarianForm = ({ userName, onComplete }) => {
 
         {/* Services */}
         <div className="form-section">
-          <h2>Dịch vụ cung cấp</h2>
+          <h2>Services Provided</h2>
           <div className="services-grid">
             {serviceOptions.map((service) => (
               <label key={service} className="service-checkbox">
@@ -317,7 +317,7 @@ const VeterinarianForm = ({ userName, onComplete }) => {
 
         {/* Profile Image */}
         <div className="form-section">
-          <h2>Ảnh đại diện</h2>
+          <h2>Profile Image</h2>
           <div className="image-upload">
             <div className="upload-area">
               <input
@@ -329,7 +329,7 @@ const VeterinarianForm = ({ userName, onComplete }) => {
               />
               <label htmlFor="profileImage" className="upload-label">
                 <Upload size={24} />
-                <span>Tải lên ảnh chuyên nghiệp</span>
+                <span>Upload professional image</span>
               </label>
               {formData.profileImage && (
                 <p className="file-name">{formData.profileImage.name}</p>
@@ -340,10 +340,10 @@ const VeterinarianForm = ({ userName, onComplete }) => {
 
         <div className="form-actions">
           <button type="button" className="skip-btn" onClick={() => onComplete('veterinarian', { name: userName, skip: true })}>
-            Bỏ qua (Skip)
+            Skip
           </button>
           <button type="submit" className="submit-btn">
-            Hoàn thành đăng ký
+            Complete Registration
           </button>
         </div>
       </form>

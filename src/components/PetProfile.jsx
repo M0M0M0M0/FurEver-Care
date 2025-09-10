@@ -102,7 +102,7 @@ const PetProfile = ({ onClose, userData, userName }) => {
 
   const handleSavePet = () => {
     if (!formData.name || !formData.species) {
-      alert('Vui lòng điền tên và loài thú cưng');
+      alert('Please fill in pet name and species');
       return;
     }
 
@@ -136,7 +136,7 @@ const PetProfile = ({ onClose, userData, userName }) => {
   };
 
   const handleDeletePet = (petId) => {
-    if (window.confirm('Bạn có chắc chắn muốn xóa hồ sơ thú cưng này?')) {
+    if (window.confirm('Are you sure you want to delete this pet profile?')) {
       setPets(prev => prev.filter(pet => pet.id !== petId));
       if (selectedPet && selectedPet.id === petId) {
         setSelectedPet(null);
@@ -182,11 +182,11 @@ const PetProfile = ({ onClose, userData, userName }) => {
     const ageInMonths = (today.getFullYear() - birth.getFullYear()) * 12 + (today.getMonth() - birth.getMonth());
     
     if (ageInMonths < 12) {
-      return `${ageInMonths} tháng`;
+      return `${ageInMonths} months`;
     } else {
       const years = Math.floor(ageInMonths / 12);
       const months = ageInMonths % 12;
-      return months > 0 ? `${years} tuổi ${months} tháng` : `${years} tuổi`;
+      return months > 0 ? `${years} years ${months} months` : `${years} years`;
     }
   };
 
@@ -195,10 +195,10 @@ const PetProfile = ({ onClose, userData, userName }) => {
       <div className="pet-profile-container">
         <div className="pet-profile-header">
           <div>
-            <h2>Quản lý hồ sơ thú cưng</h2>
+            <h2>Pet Profile Management</h2>
             {userData && userData.petName && (
               <p style={{ margin: '5px 0 0 0', fontSize: '0.9rem', opacity: 0.9 }}>
-                Thông tin từ form đăng ký đã được tự động tạo
+                Information from registration form has been automatically created
               </p>
             )}
           </div>
@@ -211,10 +211,10 @@ const PetProfile = ({ onClose, userData, userName }) => {
           {/* Pet List Sidebar */}
           <div className="pet-list-sidebar">
             <div className="sidebar-header">
-              <h3>Danh sách thú cưng</h3>
+              <h3>Pet List</h3>
               <button className="add-pet-btn" onClick={handleAddNewPet}>
                 <Plus size={20} />
-                Thêm thú cưng
+                Add Pet
               </button>
             </div>
             
@@ -222,8 +222,8 @@ const PetProfile = ({ onClose, userData, userName }) => {
               {pets.length === 0 ? (
                 <div className="no-pets">
                   <Heart size={48} />
-                  <p>Chưa có thú cưng nào</p>
-                  <p>Hãy thêm thú cưng đầu tiên của bạn!</p>
+                  <p>No pets yet</p>
+                  <p>Add your first pet!</p>
                 </div>
               ) : (
                 pets.map(pet => (
@@ -274,8 +274,8 @@ const PetProfile = ({ onClose, userData, userName }) => {
             {!selectedPet && !showAddForm ? (
               <div className="no-selection">
                 <Heart size={64} />
-                <h3>Chọn thú cưng để xem chi tiết</h3>
-                <p>Hoặc thêm thú cưng mới</p>
+                <h3>Select a pet to view details</h3>
+                <p>Or add a new pet</p>
               </div>
             ) : (
               <div className="pet-detail-content">
@@ -283,75 +283,75 @@ const PetProfile = ({ onClose, userData, userName }) => {
                   // Edit/Add Form
                   <div className="pet-form">
                     <div className="form-header">
-                      <h3>{showAddForm ? 'Thêm thú cưng mới' : 'Chỉnh sửa thông tin'}</h3>
+                      <h3>{showAddForm ? 'Add New Pet' : 'Edit Information'}</h3>
                     </div>
 
                     <div className="form-sections">
                       {/* Basic Information */}
                       <div className="form-section">
-                        <h4>Thông tin cơ bản</h4>
+                        <h4>Basic Information</h4>
                         <div className="form-grid">
                           <div className="form-group">
-                            <label>Tên thú cưng *</label>
+                            <label>Pet Name *</label>
                             <input
                               type="text"
                               name="name"
                               value={formData.name}
                               onChange={handleInputChange}
-                              placeholder="Nhập tên thú cưng"
+                              placeholder="Enter pet name"
                             />
                           </div>
                           <div className="form-group">
-                            <label>Loài *</label>
+                            <label>Species *</label>
                             <select
                               name="species"
                               value={formData.species}
                               onChange={handleInputChange}
                             >
-                              <option value="">Chọn loài</option>
-                              <option value="dog">Chó</option>
-                              <option value="cat">Mèo</option>
+                              <option value="">Select species</option>
+                              <option value="dog">Dog</option>
+                              <option value="cat">Cat</option>
                               <option value="bird">Chim</option>
-                              <option value="fish">Cá</option>
-                              <option value="rabbit">Thỏ</option>
+                              <option value="fish">Fish</option>
+                              <option value="rabbit">Rabbit</option>
                               <option value="hamster">Hamster</option>
-                              <option value="other">Khác</option>
+                              <option value="other">Other</option>
                             </select>
                           </div>
                           <div className="form-group">
-                            <label>Giống</label>
+                            <label>Breed</label>
                             <input
                               type="text"
                               name="breed"
                               value={formData.breed}
                               onChange={handleInputChange}
-                              placeholder="Ví dụ: Golden Retriever"
+                              placeholder="e.g.: Golden Retriever"
                             />
                           </div>
                           <div className="form-group">
-                            <label>Giới tính</label>
+                            <label>Gender</label>
                             <select
                               name="gender"
                               value={formData.gender}
                               onChange={handleInputChange}
                             >
-                              <option value="">Chọn giới tính</option>
-                              <option value="male">Đực</option>
-                              <option value="female">Cái</option>
+                              <option value="">Select gender</option>
+                              <option value="male">Male</option>
+                              <option value="female">Female</option>
                             </select>
                           </div>
                           <div className="form-group">
-                            <label>Màu sắc</label>
+                            <label>Color</label>
                             <input
                               type="text"
                               name="color"
                               value={formData.color}
                               onChange={handleInputChange}
-                              placeholder="Màu lông, mắt..."
+                              placeholder="Fur color, eye color..."
                             />
                           </div>
                           <div className="form-group">
-                            <label>Ngày sinh</label>
+                            <label>Birth Date</label>
                             <input
                               type="date"
                               name="birthDate"
@@ -364,10 +364,10 @@ const PetProfile = ({ onClose, userData, userName }) => {
 
                       {/* Physical Information */}
                       <div className="form-section">
-                        <h4>Thông tin thể chất</h4>
+                        <h4>Physical Information</h4>
                         <div className="form-grid">
                           <div className="form-group">
-                            <label>Cân nặng (kg)</label>
+                            <label>Weight (kg)</label>
                             <input
                               type="number"
                               name="weight"
@@ -384,7 +384,7 @@ const PetProfile = ({ onClose, userData, userName }) => {
                               name="microchipId"
                               value={formData.microchipId}
                               onChange={handleInputChange}
-                              placeholder="Số microchip"
+                              placeholder="Microchip number"
                             />
                           </div>
                         </div>
@@ -392,55 +392,55 @@ const PetProfile = ({ onClose, userData, userName }) => {
 
                       {/* Health Information */}
                       <div className="form-section">
-                        <h4>Thông tin sức khỏe</h4>
+                        <h4>Health Information</h4>
                         <div className="form-grid">
                           <div className="form-group">
-                            <label>Tên bác sĩ thú y</label>
+                            <label>Veterinarian Name</label>
                             <input
                               type="text"
                               name="vetName"
                               value={formData.vetName}
                               onChange={handleInputChange}
-                              placeholder="Tên bác sĩ"
+                              placeholder="Doctor name"
                             />
                           </div>
                           <div className="form-group">
-                            <label>Số điện thoại bác sĩ</label>
+                            <label>Doctor Phone Number</label>
                             <input
                               type="tel"
                               name="vetPhone"
                               value={formData.vetPhone}
                               onChange={handleInputChange}
-                              placeholder="Số điện thoại"
+                              placeholder="Phone number"
                             />
                           </div>
                           <div className="form-group full-width">
-                            <label>Dị ứng</label>
+                            <label>Allergies</label>
                             <textarea
                               name="allergies"
                               value={formData.allergies}
                               onChange={handleInputChange}
-                              placeholder="Liệt kê các dị ứng..."
+                              placeholder="List allergies..."
                               rows="3"
                             />
                           </div>
                           <div className="form-group full-width">
-                            <label>Thuốc đang dùng</label>
+                            <label>Current Medications</label>
                             <textarea
                               name="medications"
                               value={formData.medications}
                               onChange={handleInputChange}
-                              placeholder="Liệt kê các loại thuốc..."
+                              placeholder="List medications..."
                               rows="3"
                             />
                           </div>
                           <div className="form-group full-width">
-                            <label>Nhu cầu đặc biệt</label>
+                            <label>Special Needs</label>
                             <textarea
                               name="specialNeeds"
                               value={formData.specialNeeds}
                               onChange={handleInputChange}
-                              placeholder="Mô tả nhu cầu đặc biệt..."
+                              placeholder="Describe special needs..."
                               rows="3"
                             />
                           </div>
@@ -449,35 +449,35 @@ const PetProfile = ({ onClose, userData, userName }) => {
 
                       {/* Personality & Preferences */}
                       <div className="form-section">
-                        <h4>Tính cách & Sở thích</h4>
+                        <h4>Personality & Preferences</h4>
                         <div className="form-grid">
                           <div className="form-group full-width">
-                            <label>Tính cách</label>
+                            <label>Personality</label>
                             <textarea
                               name="personality"
                               value={formData.personality}
                               onChange={handleInputChange}
-                              placeholder="Mô tả tính cách..."
+                              placeholder="Describe personality..."
                               rows="3"
                             />
                           </div>
                           <div className="form-group full-width">
-                            <label>Thức ăn yêu thích</label>
+                            <label>Favorite Food</label>
                             <textarea
                               name="favoriteFood"
                               value={formData.favoriteFood}
                               onChange={handleInputChange}
-                              placeholder="Liệt kê thức ăn yêu thích..."
+                              placeholder="List favorite foods..."
                               rows="2"
                             />
                           </div>
                           <div className="form-group full-width">
-                            <label>Hoạt động yêu thích</label>
+                            <label>Favorite Activities</label>
                             <textarea
                               name="favoriteActivities"
                               value={formData.favoriteActivities}
                               onChange={handleInputChange}
-                              placeholder="Liệt kê hoạt động yêu thích..."
+                              placeholder="List favorite activities..."
                               rows="2"
                             />
                           </div>
@@ -486,7 +486,7 @@ const PetProfile = ({ onClose, userData, userName }) => {
 
                       {/* Profile Image */}
                       <div className="form-section">
-                        <h4>Ảnh đại diện</h4>
+                        <h4>Profile Image</h4>
                         <div className="image-upload">
                           <input
                             type="file"
@@ -497,7 +497,7 @@ const PetProfile = ({ onClose, userData, userName }) => {
                           />
                           <label htmlFor="profileImage" className="upload-label">
                             <Camera size={24} />
-                            <span>Tải lên ảnh thú cưng</span>
+                            <span>Upload pet image</span>
                           </label>
                           {formData.profileImage && (
                             <div className="image-preview">
@@ -514,11 +514,11 @@ const PetProfile = ({ onClose, userData, userName }) => {
                         setShowAddForm(false);
                         resetForm();
                       }}>
-                        Hủy
+                        Cancel
                       </button>
                       <button className="save-btn" onClick={handleSavePet}>
                         <Save size={20} />
-                        Lưu thông tin
+                        Save Information
                       </button>
                     </div>
                   </div>
@@ -536,20 +536,20 @@ const PetProfile = ({ onClose, userData, userName }) => {
                       <div className="pet-basic-info">
                         <h2>{selectedPet.name}</h2>
                         <p>{selectedPet.species} • {selectedPet.breed}</p>
-                        <p>{selectedPet.gender === 'male' ? 'Đực' : 'Cái'} • {selectedPet.color}</p>
+                        <p>{selectedPet.gender === 'male' ? 'Male' : 'Female'} • {selectedPet.color}</p>
                         {selectedPet.birthDate && (
-                          <p>Tuổi: {calculateAge(selectedPet.birthDate)}</p>
+                          <p>Age: {calculateAge(selectedPet.birthDate)}</p>
                         )}
                       </div>
                       <button className="edit-btn" onClick={() => handleEditPet(selectedPet)}>
                         <Edit3 size={20} />
-                        Chỉnh sửa
+                        Edit
                       </button>
                     </div>
 
                     <div className="pet-details-grid">
                       <div className="detail-section">
-                        <h4>Thông tin cơ bản</h4>
+                        <h4>Basic Information</h4>
                         <div className="detail-list">
                           {selectedPet.weight && (
                             <div className="detail-item">

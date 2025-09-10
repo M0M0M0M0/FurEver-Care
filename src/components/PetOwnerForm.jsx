@@ -7,13 +7,13 @@ const PetOwnerForm = ({ userName, onComplete }) => {
     name: userName,
     email: 'abc@gmail.com',
     phone: '0123456789',
-    address: '123 Đường ABC, Quận 1, TP.HCM',
+    address: '123 ABC Street, District 1, HCMC',
     petName: 'Buddy',
-    petType: 'Chó',
+    petType: 'Dog',
     petBreed: 'Golden Retriever',
-    petAge: '2 tuổi',
-    petGender: 'Đực',
-    petDescription: 'Một chú chó rất thân thiện và năng động, thích chơi đùa và đi dạo.',
+    petAge: '2 years old',
+    petGender: 'Male',
+    petDescription: 'A very friendly and energetic dog, loves to play and go for walks.',
     profileImage: null
   })
 
@@ -48,10 +48,10 @@ const PetOwnerForm = ({ userName, onComplete }) => {
   const validateForm = () => {
     const newErrors = {}
     
-    if (!formData.email) newErrors.email = 'Email là bắt buộc'
-    if (!formData.phone) newErrors.phone = 'Số điện thoại là bắt buộc'
-    if (!formData.petName) newErrors.petName = 'Tên thú cưng là bắt buộc'
-    if (!formData.petType) newErrors.petType = 'Loại thú cưng là bắt buộc'
+    if (!formData.email) newErrors.email = 'Email is required'
+    if (!formData.phone) newErrors.phone = 'Phone number is required'
+    if (!formData.petName) newErrors.petName = 'Pet name is required'
+    if (!formData.petType) newErrors.petType = 'Pet type is required'
     
     setErrors(newErrors)
     return Object.keys(newErrors).length === 0
@@ -71,18 +71,18 @@ const PetOwnerForm = ({ userName, onComplete }) => {
           <Heart size={40} />
         </div>
         <h1>Pet Owner Registration</h1>
-        <p>Chào mừng {userName}! Hãy hoàn thiện thông tin để bắt đầu hành trình chăm sóc thú cưng của bạn.</p>
+        <p>Welcome {userName}! Please complete your information to start your pet care journey.</p>
       </div>
 
       <form onSubmit={handleSubmit} className="user-form">
         {/* Personal Information */}
         <div className="form-section">
-          <h2>Thông tin cá nhân</h2>
+          <h2>Personal Information</h2>
           <div className="form-grid">
             <div className="form-group">
               <label htmlFor="name">
                 <User size={16} />
-                Họ và tên *
+                Full Name *
               </label>
               <input
                 type="text"
@@ -113,7 +113,7 @@ const PetOwnerForm = ({ userName, onComplete }) => {
             <div className="form-group">
               <label htmlFor="phone">
                 <Phone size={16} />
-                Số điện thoại *
+                Phone Number *
               </label>
               <input
                 type="tel"
@@ -129,7 +129,7 @@ const PetOwnerForm = ({ userName, onComplete }) => {
             <div className="form-group full-width">
               <label htmlFor="address">
                 <MapPin size={16} />
-                Địa chỉ
+                Address
               </label>
               <input
                 type="text"
@@ -137,7 +137,7 @@ const PetOwnerForm = ({ userName, onComplete }) => {
                 name="address"
                 value={formData.address}
                 onChange={handleChange}
-                placeholder="Nhập địa chỉ của bạn"
+                placeholder="Enter your address"
               />
             </div>
           </div>
@@ -145,12 +145,12 @@ const PetOwnerForm = ({ userName, onComplete }) => {
 
         {/* Pet Information */}
         <div className="form-section">
-          <h2>Thông tin thú cưng</h2>
+          <h2>Pet Information</h2>
           <div className="form-grid">
             <div className="form-group">
               <label htmlFor="petName">
                 <Heart size={16} />
-                Tên thú cưng *
+                Pet Name *
               </label>
               <input
                 type="text"
@@ -164,7 +164,7 @@ const PetOwnerForm = ({ userName, onComplete }) => {
             </div>
 
             <div className="form-group">
-              <label htmlFor="petType">Loại thú cưng *</label>
+              <label htmlFor="petType">Pet Type *</label>
               <select
                 id="petType"
                 name="petType"
@@ -172,65 +172,65 @@ const PetOwnerForm = ({ userName, onComplete }) => {
                 onChange={handleChange}
                 required
               >
-                <option value="">Chọn loại thú cưng</option>
-                <option value="dog">Chó</option>
-                <option value="cat">Mèo</option>
-                <option value="bird">Chim</option>
-                <option value="fish">Cá</option>
-                <option value="rabbit">Thỏ</option>
+                <option value="">Select pet type</option>
+                <option value="dog">Dog</option>
+                <option value="cat">Cat</option>
+                <option value="bird">Bird</option>
+                <option value="fish">Fish</option>
+                <option value="rabbit">Rabbit</option>
                 <option value="hamster">Hamster</option>
-                <option value="other">Khác</option>
+                <option value="other">Other</option>
               </select>
               {errors.petType && <span className="error">{errors.petType}</span>}
             </div>
 
             <div className="form-group">
-              <label htmlFor="petBreed">Giống</label>
+              <label htmlFor="petBreed">Breed</label>
               <input
                 type="text"
                 id="petBreed"
                 name="petBreed"
                 value={formData.petBreed}
                 onChange={handleChange}
-                placeholder="Ví dụ: Golden Retriever, Persian..."
+                placeholder="e.g.: Golden Retriever, Persian..."
               />
             </div>
 
             <div className="form-group">
-              <label htmlFor="petAge">Tuổi</label>
+              <label htmlFor="petAge">Age</label>
               <input
                 type="text"
                 id="petAge"
                 name="petAge"
                 value={formData.petAge}
                 onChange={handleChange}
-                placeholder="Ví dụ: 2 tuổi, 6 tháng..."
+                placeholder="e.g.: 2 years old, 6 months..."
               />
             </div>
 
             <div className="form-group">
-              <label htmlFor="petGender">Giới tính</label>
+              <label htmlFor="petGender">Gender</label>
               <select
                 id="petGender"
                 name="petGender"
                 value={formData.petGender}
                 onChange={handleChange}
               >
-                <option value="">Chọn giới tính</option>
-                <option value="male">Đực</option>
-                <option value="female">Cái</option>
+                <option value="">Select gender</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
               </select>
             </div>
 
             <div className="form-group full-width">
-              <label htmlFor="petDescription">Mô tả thú cưng</label>
+              <label htmlFor="petDescription">Pet Description</label>
               <textarea
                 id="petDescription"
                 name="petDescription"
                 value={formData.petDescription}
                 onChange={handleChange}
                 rows="4"
-                placeholder="Mô tả về tính cách, sở thích, tình trạng sức khỏe của thú cưng..."
+                placeholder="Describe your pet's personality, preferences, health condition..."
               />
             </div>
           </div>
@@ -238,7 +238,7 @@ const PetOwnerForm = ({ userName, onComplete }) => {
 
         {/* Profile Image */}
         <div className="form-section">
-          <h2>Ảnh đại diện</h2>
+          <h2>Profile Image</h2>
           <div className="image-upload">
             <div className="upload-area">
               <input
@@ -250,7 +250,7 @@ const PetOwnerForm = ({ userName, onComplete }) => {
               />
               <label htmlFor="profileImage" className="upload-label">
                 <Upload size={24} />
-                <span>Tải lên ảnh thú cưng</span>
+                <span>Upload pet image</span>
               </label>
               {formData.profileImage && (
                 <p className="file-name">{formData.profileImage.name}</p>
@@ -261,10 +261,10 @@ const PetOwnerForm = ({ userName, onComplete }) => {
 
         <div className="form-actions">
           <button type="button" className="skip-btn" onClick={() => onComplete('pet-owner', { name: userName, skip: true })}>
-            Bỏ qua (Skip)
+            Skip
           </button>
           <button type="submit" className="submit-btn">
-            Hoàn thành đăng ký
+            Complete Registration
           </button>
         </div>
       </form>

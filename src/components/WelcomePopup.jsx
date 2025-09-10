@@ -17,21 +17,21 @@ const WelcomePopup = ({ onUserTypeSelect }) => {
     {
       id: 'pet-owner',
       title: 'Pet Owner',
-      description: 'Chủ nuôi thú cưng',
+      description: 'Pet Owner',
       icon: <Heart size={32} />,
       color: '#FF6B6B'
     },
     {
       id: 'veterinarian',
       title: 'Veterinarian',
-      description: 'Bác sĩ thú y',
+      description: 'Veterinarian',
       icon: <Stethoscope size={32} />,
       color: '#4ECDC4'
     },
     {
       id: 'shelter-volunteer',
       title: 'Animal Shelter / Rescue Volunteer',
-      description: 'Tình nguyện viên cứu hộ',
+      description: 'Rescue Volunteer',
       icon: <Home size={32} />,
       color: '#4CAF50'
     }
@@ -56,7 +56,7 @@ const WelcomePopup = ({ onUserTypeSelect }) => {
                 id="userName"
                 value={userName}
                 onChange={(e) => setUserName(e.target.value)}
-                placeholder="Nhập tên của bạn"
+                placeholder="Enter your name"
                 required
               />
             </div>

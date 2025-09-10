@@ -7,7 +7,6 @@ import ShelterVolunteerForm from './components/ShelterVolunteerForm'
 import Header from './components/Header'
 import Footer from './components/Footer'
 import PetOwnerPage from './pages/PetOwnerPage'
-import PetOwnerPageFrizty from './pages/PetOwnerPageFrizty'
 import PetCarePage from './pages/PetCarePage'
 import Home from './pages/Home'
 import Products from './pages/Products'
@@ -35,7 +34,7 @@ function App() {
     // Here you would typically save the data to a backend
     console.log('User registration completed:', { type, data })
     // For now, we'll just show a success message
-    alert('Đăng ký thành công! Chào mừng bạn đến với FurEver Care!')
+    alert('Registration successful! Welcome to FurEver Care!')
   }
 
   const handleBackToWelcome = () => {
@@ -86,7 +85,7 @@ function App() {
         <div className="App">
           {userType === 'pet-owner' ? (
             <Routes>
-              <Route path="/" element={<PetOwnerPageFrizty userData={userData || {}} userName={userName || ''} />} />
+              <Route path="/" element={<Home userData={userData || {}} userName={userName || ''} />} />
               <Route path="/pet-care" element={<PetCarePage userData={userData} userName={userName} />} />
               <Route path="/pet-profile" element={<PetOwnerPage userData={userData || {}} userName={userName || ''} />} />
             </Routes>

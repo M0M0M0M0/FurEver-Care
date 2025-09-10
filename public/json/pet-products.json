@@ -2,73 +2,273 @@
   "products": [
     {
       "id": 1,
-      "name": "Premium Dog Food",
+      "name": "Royal Canin Adult Dog Food",
       "category": "dog-food",
-      "description": "High-quality nutrition for adult dogs with natural ingredients",
-      "price": "$29.99"
+      "price": 520000,
+      "description": "Premium nutrition for adult dogs, rich in protein and vitamins",
+      "brand": "Royal Canin",
+      "image": "https://images.unsplash.com/photo-1583337130417-3346a1be7dee?w=300&h=300&fit=crop"
     },
     {
       "id": 2,
-      "name": "Cat Litter Box",
-      "category": "cat-accessories",
-      "description": "Odor control and easy cleaning for your feline friend",
-      "price": "$19.99"
+      "name": "Hill's Science Diet Puppy Food",
+      "category": "dog-food",
+      "price": 450000,
+      "description": "Specialized food for puppies, supports comprehensive development",
+      "brand": "Hill's Science Diet",
+      "image": "https://images.unsplash.com/photo-1601758228041-f3b2795255f1?w=300&h=300&fit=crop"
     },
     {
       "id": 3,
-      "name": "Dog Toys Set",
-      "category": "toys",
-      "description": "Interactive toys for mental stimulation and exercise",
-      "price": "$24.99"
+      "name": "Pro Plan Senior Dog Food",
+      "category": "dog-food",
+      "price": 480000,
+      "description": "Food for senior dogs, easy to digest and calcium enriched",
+      "brand": "Pro Plan",
+      "image": "https://images.unsplash.com/photo-1605568427561-40dd23c2acea?w=300&h=300&fit=crop"
     },
     {
       "id": 4,
-      "name": "Pet Grooming Kit",
-      "category": "grooming",
-      "description": "Complete grooming essentials for all pet types",
-      "price": "$34.99"
+      "name": "Acana Grain-Free Dog Food",
+      "category": "dog-food",
+      "price": 650000,
+      "description": "Grain-free food, suitable for dogs with food allergies",
+      "brand": "Acana",
+      "image": "https://images.unsplash.com/photo-1551717743-49959800b1f6?w=300&h=300&fit=crop"
     },
     {
       "id": 5,
-      "name": "Orthopedic Pet Bed",
-      "category": "bedding",
-      "description": "Comfortable orthopedic pet bed for better sleep",
-      "price": "$49.99"
+      "name": "Royal Canin Weight Control",
+      "category": "dog-food",
+      "price": 420000,
+      "description": "Weight control food for overweight dogs",
+      "brand": "Royal Canin",
+      "image": "https://images.unsplash.com/photo-1574158622682-e40e69881006?w=300&h=300&fit=crop"
     },
     {
       "id": 6,
-      "name": "Health Supplements",
-      "category": "supplements",
-      "description": "Vitamins and minerals for optimal pet health",
-      "price": "$15.99"
+      "name": "Hill's Science Diet Sensitive Skin",
+      "category": "dog-food",
+      "price": 550000,
+      "description": "Food for dogs with sensitive skin, reduces itching and irritation",
+      "brand": "Hill's Science Diet",
+      "image": "https://images.unsplash.com/photo-1596854407944-bf87f6fdd49e?w=300&h=300&fit=crop"
     },
     {
       "id": 7,
-      "name": "Cat Food Premium",
-      "category": "cat-food",
-      "description": "Nutritious cat food with real meat and vegetables",
-      "price": "$27.99"
+      "name": "Pro Plan Large Breed",
+      "category": "dog-food",
+      "price": 580000,
+      "description": "Specialized food for large breed dogs, joint protection",
+      "brand": "Pro Plan",
+      "image": "https://images.unsplash.com/photo-1601758228041-f3b2795255f1?w=300&h=300&fit=crop"
     },
     {
       "id": 8,
-      "name": "Dog Leash Set",
-      "category": "accessories",
-      "description": "Durable and comfortable leash for daily walks",
-      "price": "$12.99"
+      "name": "Royal Canin Small Breed",
+      "category": "dog-food",
+      "price": 380000,
+      "description": "Small kibble for small breed dogs, easy to chew",
+      "brand": "Royal Canin",
+      "image": "https://images.unsplash.com/photo-1583337130417-3346a1be7dee?w=300&h=300&fit=crop"
     },
     {
       "id": 9,
-      "name": "Pet Carrier",
-      "category": "accessories",
-      "description": "Safe and comfortable pet carrier for travel",
-      "price": "$39.99"
+      "name": "Acana Active Dog Food",
+      "category": "dog-food",
+      "price": 520000,
+      "description": "High energy food for active dogs",
+      "brand": "Acana",
+      "image": "https://images.unsplash.com/photo-1605568427561-40dd23c2acea?w=300&h=300&fit=crop"
     },
     {
       "id": 10,
-      "name": "Dental Care Kit",
-      "category": "health",
-      "description": "Complete dental care kit for healthy teeth",
-      "price": "$18.99"
+      "name": "Hill's Science Diet Digestive Care",
+      "category": "dog-food",
+      "price": 450000,
+      "description": "Digestive support food, contains prebiotics",
+      "brand": "Hill's Science Diet",
+      "image": "https://images.unsplash.com/photo-1551717743-49959800b1f6?w=300&h=300&fit=crop"
+    },
+    {
+      "id": 11,
+      "name": "Pro Plan Joint Care",
+      "category": "dog-food",
+      "price": 620000,
+      "description": "Food with glucosamine supplement for healthy joints",
+      "brand": "Pro Plan",
+      "image": "https://images.unsplash.com/photo-1574158622682-e40e69881006?w=300&h=300&fit=crop"
+    },
+    {
+      "id": 12,
+      "name": "Royal Canin Dental Care",
+      "category": "dog-food",
+      "price": 480000,
+      "description": "Dental cleaning food, prevents tartar buildup",
+      "brand": "Royal Canin",
+      "image": "https://images.unsplash.com/photo-1596854407944-bf87f6fdd49e?w=300&h=300&fit=crop"
+    },
+    {
+      "id": 13,
+      "name": "Hill's Science Diet Urinary Care",
+      "category": "dog-food",
+      "price": 550000,
+      "description": "Food that supports urinary tract health",
+      "brand": "Hill's Science Diet",
+      "image": "https://images.unsplash.com/photo-1601758228041-f3b2795255f1?w=300&h=300&fit=crop"
+    },
+    {
+      "id": 14,
+      "name": "Pro Plan Heart Care",
+      "category": "dog-food",
+      "price": 580000,
+      "description": "Heart protection food, reduced sodium",
+      "brand": "Pro Plan",
+      "image": "https://images.unsplash.com/photo-1583337130417-3346a1be7dee?w=300&h=300&fit=crop"
+    },
+    {
+      "id": 15,
+      "name": "Acana Brain Care",
+      "category": "dog-food",
+      "price": 650000,
+      "description": "Food with DHA supplement for brain development",
+      "brand": "Acana",
+      "image": "https://images.unsplash.com/photo-1605568427561-40dd23c2acea?w=300&h=300&fit=crop"
+    },
+    {
+      "id": 16,
+      "name": "Royal Canin Indoor Cat Food",
+      "category": "cat-food",
+      "price": 380000,
+      "description": "Food for indoor cats, hairball control",
+      "brand": "Royal Canin",
+      "image": "https://images.unsplash.com/photo-1574158622682-e40e69881006?w=300&h=300&fit=crop"
+    },
+    {
+      "id": 17,
+      "name": "Hill's Science Diet Kitten Food",
+      "category": "cat-food",
+      "price": 320000,
+      "description": "Food for kittens, supports growth",
+      "brand": "Hill's Science Diet",
+      "image": "https://images.unsplash.com/photo-1596854407944-bf87f6fdd49e?w=300&h=300&fit=crop"
+    },
+    {
+      "id": 18,
+      "name": "Pro Plan Senior Cat Food",
+      "category": "cat-food",
+      "price": 420000,
+      "description": "Food for senior cats, easy to digest",
+      "brand": "Pro Plan",
+      "image": "https://images.unsplash.com/photo-1601758228041-f3b2795255f1?w=300&h=300&fit=crop"
+    },
+    {
+      "id": 19,
+      "name": "Royal Canin Hairball Control",
+      "category": "cat-food",
+      "price": 450000,
+      "description": "Hairball prevention food, easy to digest",
+      "brand": "Royal Canin",
+      "image": "https://images.unsplash.com/photo-1583337130417-3346a1be7dee?w=300&h=300&fit=crop"
+    },
+    {
+      "id": 20,
+      "name": "Hill's Science Diet Urinary Care",
+      "category": "cat-food",
+      "price": 480000,
+      "description": "Food that supports cat urinary tract health",
+      "brand": "Hill's Science Diet",
+      "image": "https://images.unsplash.com/photo-1574158622682-e40e69881006?w=300&h=300&fit=crop"
+    },
+    {
+      "id": 21,
+      "name": "Pro Plan Weight Control",
+      "category": "cat-food",
+      "price": 400000,
+      "description": "Weight control food for cats",
+      "brand": "Pro Plan",
+      "image": "https://images.unsplash.com/photo-1596854407944-bf87f6fdd49e?w=300&h=300&fit=crop"
+    },
+    {
+      "id": 22,
+      "name": "Royal Canin Sensitive Skin",
+      "category": "cat-food",
+      "price": 520000,
+      "description": "Food for cats with sensitive skin",
+      "brand": "Royal Canin",
+      "image": "https://images.unsplash.com/photo-1601758228041-f3b2795255f1?w=300&h=300&fit=crop"
+    },
+    {
+      "id": 23,
+      "name": "Hill's Science Diet Dental Care",
+      "category": "cat-food",
+      "price": 450000,
+      "description": "Dental cleaning food for cats",
+      "brand": "Hill's Science Diet",
+      "image": "https://images.unsplash.com/photo-1583337130417-3346a1be7dee?w=300&h=300&fit=crop"
+    },
+    {
+      "id": 24,
+      "name": "Pro Plan Kidney Care",
+      "category": "cat-food",
+      "price": 580000,
+      "description": "Food that supports kidney function",
+      "brand": "Pro Plan",
+      "image": "https://images.unsplash.com/photo-1574158622682-e40e69881006?w=300&h=300&fit=crop"
+    },
+    {
+      "id": 25,
+      "name": "Royal Canin Heart Care",
+      "category": "cat-food",
+      "price": 550000,
+      "description": "Heart protection food for cats",
+      "brand": "Royal Canin",
+      "image": "https://images.unsplash.com/photo-1596854407944-bf87f6fdd49e?w=300&h=300&fit=crop"
+    },
+    {
+      "id": 26,
+      "name": "Hill's Science Diet Digestive Care",
+      "category": "cat-food",
+      "price": 420000,
+      "description": "Digestive support food for cats",
+      "brand": "Hill's Science Diet",
+      "image": "https://images.unsplash.com/photo-1601758228041-f3b2795255f1?w=300&h=300&fit=crop"
+    },
+    {
+      "id": 27,
+      "name": "Pro Plan Joint Care",
+      "category": "cat-food",
+      "price": 480000,
+      "description": "Food with glucosamine supplement for cats",
+      "brand": "Pro Plan",
+      "image": "https://images.unsplash.com/photo-1583337130417-3346a1be7dee?w=300&h=300&fit=crop"
+    },
+    {
+      "id": 28,
+      "name": "Royal Canin Brain Care",
+      "category": "cat-food",
+      "price": 520000,
+      "description": "Food with DHA supplement for cat brain development",
+      "brand": "Royal Canin",
+      "image": "https://images.unsplash.com/photo-1574158622682-e40e69881006?w=300&h=300&fit=crop"
+    },
+    {
+      "id": 29,
+      "name": "Hill's Science Diet Indoor + Hairball",
+      "category": "cat-food",
+      "price": 450000,
+      "description": "Combined food for indoor cats and hairball prevention",
+      "brand": "Hill's Science Diet",
+      "image": "https://images.unsplash.com/photo-1596854407944-bf87f6fdd49e?w=300&h=300&fit=crop"
+    },
+    {
+      "id": 30,
+      "name": "Pro Plan Grain-Free",
+      "category": "cat-food",
+      "price": 650000,
+      "description": "Grain-free food for cats with allergies",
+      "brand": "Pro Plan",
+      "image": "https://images.unsplash.com/photo-1601758228041-f3b2795255f1?w=300&h=300&fit=crop"
     }
   ]
 }

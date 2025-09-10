@@ -8,7 +8,7 @@ const PetCarePage = ({ userData: propUserData, userName: propUserName }) => {
   const [searchParams] = useSearchParams();
   const [currentTime, setCurrentTime] = useState(new Date());
   const [userLocation, setUserLocation] = useState('Ho Chi Minh City, Vietnam');
-  const [petName, setPetName] = useState('Thú cưng');
+  const [petName, setPetName] = useState('Pet');
   const [petData, setPetData] = useState(null);
   const [selectedVideo, setSelectedVideo] = useState(null);
   const [playingAudio, setPlayingAudio] = useState(null);
@@ -57,7 +57,7 @@ const PetCarePage = ({ userData: propUserData, userName: propUserName }) => {
       if (savedUserData) {
         const user = JSON.parse(savedUserData);
         setUserData(user);
-        setUserName(user.name || 'Người dùng');
+        setUserName(user.name || 'User');
       }
     }
   }, [propUserData, propUserName]);
@@ -106,22 +106,22 @@ const PetCarePage = ({ userData: propUserData, userName: propUserName }) => {
   const groomingVideos = [
     {
       id: 1,
-      title: 'Chải lông cơ bản',
-      description: 'Hướng dẫn chải lông đúng cách cho chó và mèo',
+      title: 'Basic Grooming',
+      description: 'Proper grooming guide for dogs and cats',
       thumbnail: 'https://img.youtube.com/vi/dQw4w9WgXcQ/maxresdefault.jpg',
       videoId: 'dQw4w9WgXcQ'
     },
     {
       id: 2,
-      title: 'Tắm rửa an toàn',
-      description: 'Cách tắm cho thú cưng một cách an toàn và hiệu quả',
+      title: 'Safe Bathing',
+      description: 'How to bathe your pet safely and effectively',
       thumbnail: 'https://img.youtube.com/vi/dQw4w9WgXcQ/maxresdefault.jpg',
       videoId: 'dQw4w9WgXcQ'
     },
     {
       id: 3,
-      title: 'Cắt tỉa móng',
-      description: 'Hướng dẫn cắt tỉa móng cho thú cưng',
+      title: 'Nail Trimming',
+      description: 'Guide to trimming your pet\'s nails',
       thumbnail: 'https://img.youtube.com/vi/dQw4w9WgXcQ/maxresdefault.jpg',
       videoId: 'dQw4w9WgXcQ'
     }
@@ -131,22 +131,22 @@ const PetCarePage = ({ userData: propUserData, userName: propUserName }) => {
   const healthTips = [
     {
       id: 1,
-      title: 'Chăm sóc răng miệng',
-      description: 'Đánh răng cho thú cưng 2-3 lần/tuần để tránh bệnh nướu răng',
+      title: 'Dental Care',
+      description: "Brush your pet's teeth 2-3 times a week to prevent gum disease",
       audioUrl: 'https://www.soundjay.com/misc/sounds/bell-ringing-05.wav',
       icon: '🦷'
     },
     {
       id: 2,
-      title: 'Quản lý cân nặng',
-      description: 'Theo dõi cân nặng thường xuyên và điều chỉnh chế độ ăn phù hợp',
+      title: 'Weight Management',
+      description: 'Monitor weight regularly and adjust diet accordingly',
       audioUrl: 'https://www.soundjay.com/misc/sounds/bell-ringing-05.wav',
       icon: '⚖️'
     },
     {
       id: 3,
-      title: 'Các tình trạng phổ biến',
-      description: 'Nhận biết các dấu hiệu bệnh thường gặp ở thú cưng',
+      title: 'Common Conditions',
+      description: 'Recognize common signs of illness in pets',
       audioUrl: 'https://www.soundjay.com/misc/sounds/bell-ringing-05.wav',
       icon: '🏥'
     }
@@ -156,23 +156,23 @@ const PetCarePage = ({ userData: propUserData, userName: propUserName }) => {
   const trainingTips = [
     {
       id: 1,
-      title: 'Huấn luyện cơ bản',
-      description: 'Dạy thú cưng các lệnh cơ bản như ngồi, nằm, đến',
-      audioText: 'Bước 1: Chuẩn bị thức ăn thưởng. Bước 2: Ra lệnh "ngồi" và đẩy nhẹ mông thú cưng xuống. Bước 3: Thưởng ngay khi thú cưng ngồi đúng tư thế.',
+      title: 'Basic Training',
+      description: 'Teach your pet basic commands like sit, down, come',
+      audioText: 'Step 1: Prepare treats. Step 2: Give "sit" command and gently push pet\'s bottom down. Step 3: Reward immediately when pet sits correctly.',
       icon: '🎯'
     },
     {
       id: 2,
-      title: 'Huấn luyện hành vi',
-      description: 'Điều chỉnh các hành vi không mong muốn',
-      audioText: 'Khi thú cưng có hành vi xấu, hãy nói "không" một cách dứt khoát và hướng dẫn hành vi đúng. Luôn thưởng khi thú cưng làm đúng.',
+      title: 'Behavior Training',
+      description: 'Correct unwanted behaviors',
+      audioText: 'When your pet has bad behavior, say "no" firmly and guide to correct behavior. Always reward when your pet does right.',
       icon: '🚫'
     },
     {
       id: 3,
-      title: 'Huấn luyện nâng cao',
-      description: 'Các kỹ năng đặc biệt và trò chơi thông minh',
-      audioText: 'Dạy thú cưng các trò chơi trí tuệ như tìm đồ vật, vượt chướng ngại vật. Điều này giúp thú cưng phát triển trí não và giảm stress.',
+      title: 'Advanced Training',
+      description: 'Special skills and intelligent games',
+      audioText: 'Teach your pet brain games like finding objects, obstacle courses. This helps develop your pet\'s brain and reduce stress.',
       icon: '🧠'
     }
   ];
@@ -222,7 +222,7 @@ const PetCarePage = ({ userData: propUserData, userName: propUserName }) => {
               className="back-btn"
               onClick={() => window.history.back()}
             >
-              ← Quay lại
+              ← Back
             </button>
           </div>
         </div>
@@ -235,57 +235,57 @@ const PetCarePage = ({ userData: propUserData, userName: propUserName }) => {
           <div className="container">
             <div className="section-header">
               <div className="section-icon">📋</div>
-              <h2>Hồ sơ thú cưng</h2>
-              <p>Thông tin chi tiết về thú cưng của bạn</p>
+              <h2>Pet Profile</h2>
+              <p>Detailed information about your pet</p>
             </div>
             <div className="section-content">
               <div className="profile-grid">
                 <div className="profile-card">
-                  <h3>Thông tin cơ bản</h3>
+                  <h3>Basic Information</h3>
                   <div className="info-list">
                     <div className="info-item">
-                      <span className="label">Loài:</span>
-                      <span className="value">{petData?.species || 'Chưa cập nhật'}</span>
+                      <span className="label">Species:</span>
+                      <span className="value">{petData?.species || 'Not updated'}</span>
                     </div>
                     <div className="info-item">
-                      <span className="label">Giống:</span>
-                      <span className="value">{petData?.breed || 'Chưa cập nhật'}</span>
+                      <span className="label">Breed:</span>
+                      <span className="value">{petData?.breed || 'Not updated'}</span>
                     </div>
                     <div className="info-item">
-                      <span className="label">Độ tuổi:</span>
-                      <span className="value">{petData?.age || 'Chưa cập nhật'}</span>
+                      <span className="label">Age:</span>
+                      <span className="value">{petData?.age || 'Not updated'}</span>
                     </div>
                     <div className="info-item">
-                      <span className="label">Giới tính:</span>
-                      <span className="value">{petData?.gender || 'Chưa cập nhật'}</span>
+                      <span className="label">Gender:</span>
+                      <span className="value">{petData?.gender || 'Not updated'}</span>
                     </div>
                   </div>
                 </div>
                 <div className="profile-card">
-                  <h3>Thông tin sức khỏe</h3>
+                  <h3>Health Information</h3>
                   <div className="info-list">
                     <div className="info-item">
-                      <span className="label">Cân nặng:</span>
-                      <span className="value">{petData?.weight ? `${petData.weight} kg` : 'Chưa cập nhật'}</span>
+                      <span className="label">Weight:</span>
+                      <span className="value">{petData?.weight ? `${petData.weight} kg` : 'Not updated'}</span>
                     </div>
                     <div className="info-item">
-                      <span className="label">Tiêm chủng:</span>
-                      <span className="value">{petData?.vaccinations || 'Chưa cập nhật'}</span>
+                      <span className="label">Vaccinations:</span>
+                      <span className="value">{petData?.vaccinations || 'Not updated'}</span>
                     </div>
                     <div className="info-item">
-                      <span className="label">Dị ứng:</span>
-                      <span className="value">{petData?.allergies || 'Không có'}</span>
+                      <span className="label">Allergies:</span>
+                      <span className="value">{petData?.allergies || 'None'}</span>
                     </div>
                     <div className="info-item">
-                      <span className="label">Thuốc đang dùng:</span>
-                      <span className="value">{petData?.medications || 'Không có'}</span>
+                      <span className="label">Current Medications:</span>
+                      <span className="value">{petData?.medications || 'None'}</span>
                     </div>
                   </div>
                 </div>
               </div>
               <div className="section-actions">
                 <button className="action-btn" onClick={() => window.location.href = '/pet-profile'}>
-                  Xem chi tiết hồ sơ
+                  View Detailed Profile
                 </button>
               </div>
             </div>
@@ -297,50 +297,50 @@ const PetCarePage = ({ userData: propUserData, userName: propUserName }) => {
           <div className="container">
             <div className="section-header">
               <div className="section-icon">🍽️</div>
-              <h2>Hướng dẫn cho ăn</h2>
-              <p>Biểu đồ khuyến nghị số bữa ăn theo độ tuổi và loài</p>
+              <h2>Feeding Guide</h2>
+              <p>Recommended meal frequency chart by age and species</p>
             </div>
             <div className="section-content">
               <div className="feeding-charts-grid">
                 <div className="chart-card">
                   <div className="chart-header">
-                    <h3>🐕 Chó con (0-12 tháng)</h3>
-                    <span className="chart-value">4-5 bữa/ngày</span>
+                    <h3>🐕 Puppy (0-12 months)</h3>
+                    <span className="chart-value">4-5 meals/day</span>
                   </div>
                   <div className="chart">
                     <div className="chart-bar" style={{width: '80%'}}>
                       <span>80%</span>
                     </div>
                   </div>
-                  <p className="chart-description">Chó con cần ăn nhiều bữa nhỏ để phát triển tốt</p>
+                  <p className="chart-description">Puppies need multiple small meals for proper development</p>
                 </div>
                 <div className="chart-card">
                   <div className="chart-header">
-                    <h3>🐕 Chó trưởng thành (1-7 tuổi)</h3>
-                    <span className="chart-value">2-3 bữa/ngày</span>
+                    <h3>🐕 Adult Dog (1-7 years)</h3>
+                    <span className="chart-value">2-3 meals/day</span>
                   </div>
                   <div className="chart">
                     <div className="chart-bar" style={{width: '60%'}}>
                       <span>60%</span>
                     </div>
                   </div>
-                  <p className="chart-description">Chó trưởng thành cần chế độ ăn cân bằng</p>
+                  <p className="chart-description">Adult dogs need a balanced diet</p>
                 </div>
                 <div className="chart-card">
                   <div className="chart-header">
-                    <h3>🐱 Mèo</h3>
-                    <span className="chart-value">3-4 bữa/ngày</span>
+                    <h3>🐱 Cat</h3>
+                    <span className="chart-value">3-4 meals/day</span>
                   </div>
                   <div className="chart">
                     <div className="chart-bar" style={{width: '70%'}}>
                       <span>70%</span>
                     </div>
                   </div>
-                  <p className="chart-description">Mèo thích ăn nhiều bữa nhỏ trong ngày</p>
+                  <p className="chart-description">Cats prefer multiple small meals throughout the day</p>
                 </div>
               </div>
               <div className="section-actions">
-                <button className="action-btn">Xem biểu đồ chi tiết</button>
+                <button className="action-btn">View Detailed Chart</button>
               </div>
             </div>
           </div>
@@ -351,8 +351,8 @@ const PetCarePage = ({ userData: propUserData, userName: propUserName }) => {
           <div className="container">
             <div className="section-header">
               <div className="section-icon">🛁</div>
-              <h2>Video chải chuốt</h2>
-              <p>Hướng dẫn chăm sóc và làm đẹp cho thú cưng</p>
+              <h2>Grooming Videos</h2>
+              <p>Pet care and grooming guides</p>
             </div>
             <div className="section-content">
               <div className="videos-grid">
@@ -395,7 +395,7 @@ const PetCarePage = ({ userData: propUserData, userName: propUserName }) => {
               )}
               
               <div className="section-actions">
-                <button className="action-btn">Xem tất cả video</button>
+                <button className="action-btn">View All Videos</button>
               </div>
             </div>
           </div>
@@ -406,8 +406,8 @@ const PetCarePage = ({ userData: propUserData, userName: propUserName }) => {
           <div className="container">
             <div className="section-header">
               <div className="section-icon">💊</div>
-              <h2>Mẹo sức khỏe</h2>
-              <p>Chăm sóc sức khỏe toàn diện cho thú cưng</p>
+              <h2>Health Tips</h2>
+              <p>Comprehensive health care for your pet</p>
             </div>
             <div className="section-content">
               <div className="health-tips-grid">
@@ -423,14 +423,14 @@ const PetCarePage = ({ userData: propUserData, userName: propUserName }) => {
                         className={`audio-btn ${playingAudio === tip.id ? 'playing' : ''}`}
                         onClick={() => handleAudioPlay(tip.id)}
                       >
-                        {playingAudio === tip.id ? '🔊 Đang phát...' : '🔊 Nghe mẹo'}
+                        {playingAudio === tip.id ? '🔊 Playing...' : '🔊 Listen to tip'}
                       </button>
                     </div>
                   </div>
                 ))}
               </div>
               <div className="section-actions">
-                <button className="action-btn">Xem tất cả mẹo sức khỏe</button>
+                <button className="action-btn">View All Health Tips</button>
               </div>
             </div>
           </div>
@@ -441,8 +441,8 @@ const PetCarePage = ({ userData: propUserData, userName: propUserName }) => {
           <div className="container">
             <div className="section-header">
               <div className="section-icon">🎾</div>
-              <h2>Mẹo đào tạo</h2>
-              <p>Hướng dẫn huấn luyện và phát triển kỹ năng cho thú cưng</p>
+              <h2>Training Tips</h2>
+              <p>Training guides and skill development for your pet</p>
             </div>
             <div className="section-content">
               <div className="training-tips-grid">
@@ -457,7 +457,7 @@ const PetCarePage = ({ userData: propUserData, userName: propUserName }) => {
                     </div>
                     <div className="training-content">
                       <div className="audio-text">
-                        <h4>Hướng dẫn chi tiết:</h4>
+                        <h4>Detailed Guide:</h4>
                         <p>{tip.audioText}</p>
                       </div>
                       <div className="training-actions">
@@ -465,13 +465,13 @@ const PetCarePage = ({ userData: propUserData, userName: propUserName }) => {
                           className="audio-btn"
                           onClick={() => handleTextToSpeech(tip.audioText)}
                         >
-                          🔊 Nghe hướng dẫn
+                          🔊 Listen to guide
                         </button>
                         <button 
                           className="text-btn"
                           onClick={() => navigator.clipboard.writeText(tip.audioText)}
                         >
-                          📋 Sao chép văn bản
+                          📋 Copy text
                         </button>
                       </div>
                     </div>
@@ -479,7 +479,7 @@ const PetCarePage = ({ userData: propUserData, userName: propUserName }) => {
                 ))}
               </div>
               <div className="section-actions">
-                <button className="action-btn">Xem tất cả mẹo đào tạo</button>
+                <button className="action-btn">View All Training Tips</button>
               </div>
             </div>
           </div>

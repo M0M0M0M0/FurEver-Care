@@ -32,44 +32,44 @@ const Header = () => {
               className={`nav-link ${isActive('/') ? 'active' : ''}`}
               onClick={() => setIsMenuOpen(false)}
             >
-              Trang chủ
+              Home
             </Link>
             <Link 
               to="/products" 
               className={`nav-link ${isActive('/products') ? 'active' : ''}`}
               onClick={() => setIsMenuOpen(false)}
             >
-              Sản phẩm
+              Products
             </Link>
             <Link 
               to="/services" 
               className={`nav-link ${isActive('/services') ? 'active' : ''}`}
               onClick={() => setIsMenuOpen(false)}
             >
-              Dịch vụ
+              Services
             </Link>
             <Link 
               to="/about" 
               className={`nav-link ${isActive('/about') ? 'active' : ''}`}
               onClick={() => setIsMenuOpen(false)}
             >
-              Về chúng tôi
+              About Us
             </Link>
             <Link 
               to="/contact" 
               className={`nav-link ${isActive('/contact') ? 'active' : ''}`}
               onClick={() => setIsMenuOpen(false)}
             >
-              Liên hệ
+              Contact
             </Link>
           </nav>
 
           {/* Action Buttons */}
           <div className="header-actions">
-            <button className="action-btn" title="Giỏ hàng">
+            <button className="action-btn" title="Shopping Cart">
               <ShoppingCart size={20} />
             </button>
-            <button className="action-btn" title="Tài khoản">
+            <button className="action-btn" title="Account">
               <User size={20} />
             </button>
             <button 

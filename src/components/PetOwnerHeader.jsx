@@ -235,14 +235,14 @@ export default function PetOwnerHeader({ userName, userData }) {
             <div className="user-info">
               <div className="user-name">
                 <i className="fas fa-user"></i>
-                <span>{userName || 'Người dùng'}</span>
+                <span>{userName || 'User'}</span>
               </div>
               <div className="pet-name" onClick={() => {
-                const petData = { petName: userData?.petName || 'Thú cưng' };
+                const petData = { petName: userData?.petName || 'Pet' };
                 navigate(`/pet-care?petName=${encodeURIComponent(petData.petName)}`);
               }}>
                 <i className="fas fa-paw"></i>
-                <span>{userData?.petName || 'Thú cưng'}</span>
+                <span>{userData?.petName || 'Pet'}</span>
               </div>
             </div>
           </div>
