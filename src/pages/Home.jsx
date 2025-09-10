@@ -214,7 +214,7 @@ const Home = ({ userData, userName }) => {
         <div className="container">
           <div className="hero-content">
             <div className="hero-text">
-              <h1>Best Pet Care<br />For Your Family<br />FurEver Care - Where Love Begins!</h1>
+              <h1>Best Pet Care<br />For Your Family<br />FurEver Care - Where Love Begins! 🐾</h1>
               <div className="hero-images-inline">
                 <div className="hero-icon">🐕</div>
                 <div className="hero-icon">🐱</div>
