@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useCallback } from 'react'
 import { 
   Heart, 
   Filter, 
@@ -32,10 +32,10 @@ const PetAdoptionPage = ({ userData, userName }) => {
   const [events, setEvents] = useState([])
 
   // Helper function to create dynamic image paths
-  const getImagePath = (path) => {
+  const getImagePath = useCallback((path) => {
     const baseUrl = import.meta.env.BASE_URL || '/'
     return `${baseUrl}${path.startsWith('/') ? path.slice(1) : path}`
-  }
+  }, [])
 
   // Load pets data from JSON file
   useEffect(() => {
@@ -115,7 +115,7 @@ const PetAdoptionPage = ({ userData, userName }) => {
         image: getImagePath('/img/veg.jpg')
       }
     ])
-  }, [])
+  }, [getImagePath])
 
   // Filter pets based on current filters and search term
   useEffect(() => {
