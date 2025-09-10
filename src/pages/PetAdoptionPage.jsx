@@ -31,86 +31,21 @@ const PetAdoptionPage = ({ userData, userName }) => {
   const [successStories, setSuccessStories] = useState([])
   const [events, setEvents] = useState([])
 
-  // Mock data
+  // Load pets data from JSON file
   useEffect(() => {
-    // Mock pets data
-    setPets([
-      {
-        id: 1,
-        name: 'Buddy',
-        type: 'dog',
-        breed: 'Golden Retriever',
-        age: '2 years old',
-        gender: 'Male',
-        image: '/img/19960-avocado-salad-VAT-001-4x3-64241afdc3b04d00a9372e1573eac6f7.jpg',
-        description: 'Buddy is a very friendly and energetic dog. He loves to play and is great with children.',
-        location: 'Ho Chi Minh City',
-        vaccinated: true,
-        neutered: true,
-        healthStatus: 'Healthy',
-        adoptionFee: '$200'
-      },
-      {
-        id: 2,
-        name: 'Mimi',
-        type: 'cat',
-        breed: 'Persian',
-        age: '1 year old',
-        gender: 'Female',
-        image: '/img/3aeeee1d04b16f5ab613337aca0721e7.jpg',
-        description: 'Mimi is a beautiful and gentle cat. She loves to be petted and sleep on your lap.',
-        location: 'Hanoi',
-        vaccinated: true,
-        neutered: false,
-        healthStatus: 'Healthy',
-        adoptionFee: '$120'
-      },
-      {
-        id: 3,
-        name: 'Snowball',
-        type: 'rabbit',
-        breed: 'Holland Lop',
-        age: '6 months old',
-        gender: 'Female',
-        image: '/img/acai-bowl-1.jpg',
-        description: 'Snowball is a cute little rabbit with adorable floppy ears. She loves carrots and green vegetables.',
-        location: 'Da Nang',
-        vaccinated: false,
-        neutered: false,
-        healthStatus: 'Healthy',
-        adoptionFee: '$80'
-      },
-      {
-        id: 4,
-        name: 'Max',
-        type: 'dog',
-        breed: 'German Shepherd',
-        age: '3 years old',
-        gender: 'Male',
-        image: '/img/about_v1_9.jpg',
-        description: 'Max is a loyal and intelligent dog. Perfect for guard dog duties.',
-        location: 'Ho Chi Minh City',
-        vaccinated: true,
-        neutered: true,
-        healthStatus: 'Healthy',
-        adoptionFee: '$320'
-      },
-      {
-        id: 5,
-        name: 'Luna',
-        type: 'cat',
-        breed: 'British Shorthair',
-        age: '2 years old',
-        gender: 'Female',
-        image: '/img/banner-2021-04-16T110729.441.jpg',
-        description: 'Luna has soft fur and beautiful blue eyes. She loves playing with balls.',
-        location: 'Hanoi',
-        vaccinated: true,
-        neutered: true,
-        healthStatus: 'Healthy',
-        adoptionFee: '$160'
+    const loadPetsData = async () => {
+      try {
+        const response = await fetch('/json/pets.json')
+        const data = await response.json()
+        setPets(data.pets)
+      } catch (error) {
+        console.error('Error loading pets data:', error)
+        // Fallback to empty array if JSON fails to load
+        setPets([])
       }
-    ])
+    }
+
+    loadPetsData()
 
     // Mock success stories
     setSuccessStories([
@@ -230,7 +165,7 @@ const PetAdoptionPage = ({ userData, userName }) => {
       {/* Search and Filters */}
       <div className="search-filters">
         <div className="search-box">
-          <Search size={20} />
+          <Search size={20} style={{transform: 'translateX(10px) translateY(-10px)'}}/>
           <input
             type="text"
             placeholder="Search by name, breed or description..."
