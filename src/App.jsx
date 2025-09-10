@@ -15,6 +15,7 @@ import Products from './pages/Products'
 import Services from './pages/Services'
 import About from './pages/About'
 import Contact from './pages/Contact'
+import PetOwnerFeedback from './pages/PetOwnerFeedback'
 import BackToTop from './components/BackToTop'
 import { CartProvider } from './contexts/CartContext'
 import './App.css'
@@ -113,6 +114,7 @@ function AppContent() {
             <Route path="/pet-care" element={<PetCarePage userData={userData} userName={userName} />} />
             <Route path="/pet-profile" element={<PetProfilePage userData={userData || {}} userName={userName || ''} />} />
             <Route path="/contact" element={<Contact userType={userType} userData={userData} userName={userName} />}/>
+            <Route path="/feedback" element={<PetOwnerFeedback userName={userName || ''} />} />
           </Routes>
         ) : userType === 'veterinarian' ? (
           <Routes>
