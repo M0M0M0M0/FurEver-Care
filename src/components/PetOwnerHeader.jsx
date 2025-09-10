@@ -101,7 +101,7 @@ export default function PetOwnerHeader({ userName, userData }) {
       <nav className="navbar navbar-expand-lg navbar-light py-3 position-relative header-navbar">
         <div className="container-fluid">
           <RippleLink className="navbar-brand header-navbar-brand" to="/">
-            <img src="/img/logo/logo.svg" alt="FurEver Care Logo" height="50" />
+            <img src={`${import.meta.env.BASE_URL || '/'}img/logo/logo.svg`} alt="FurEver Care Logo" height="50" />
           </RippleLink>
 
           <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar">
