@@ -112,6 +112,7 @@ function AppContent() {
             <Route path="/" element={<Home userData={userData || {}} userName={userName || ''} />} />
             <Route path="/pet-care" element={<PetCarePage userData={userData} userName={userName} />} />
             <Route path="/pet-profile" element={<PetProfilePage userData={userData || {}} userName={userName || ''} />} />
+            <Route path="/contact" element={<Contact userType={userType} userData={userData} userName={userName} />}/>
           </Routes>
         ) : userType === 'veterinarian' ? (
           <Routes>
