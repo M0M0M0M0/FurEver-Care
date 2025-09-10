@@ -192,11 +192,12 @@
 }
 
 .section-header h2 {
-  font-size: 3.2rem;
-  font-weight: 700;
-  margin: 0 0 20px 0;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-  position: relative;
+  font-size: 4.5rem !important;
+  font-weight: 700 !important;
+  margin: 0 0 20px 0 !important;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3) !important;
+  position: relative !important;
+  text-align: center !important;
 }
 
 .section-header h2::after {
@@ -631,7 +632,6 @@
   font-size: 2.5rem;
   background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
   -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
   background-clip: text;
   flex-shrink: 0;
 }
@@ -708,6 +708,13 @@
 
 .training-header h4 {
   color: #333;
+  font-size: 1.2rem;
+  margin: 0 0 5px 0;
+  font-weight: 600;
+}
+
+.training-header h3 {
+  color: #000 !important;
   font-size: 1.2rem;
   margin: 0 0 5px 0;
   font-weight: 600;
@@ -845,7 +852,7 @@
   }
 
   .section-header h2 {
-    font-size: 2.5rem;
+    font-size: 3.5rem !important;
   }
 
   .section-header p {
@@ -925,7 +932,7 @@
   }
 
   .section-header h2 {
-    font-size: 2rem;
+    font-size: 3rem !important;
   }
 
   .section-header p {
