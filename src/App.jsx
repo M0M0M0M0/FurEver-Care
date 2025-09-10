@@ -81,7 +81,7 @@ function App() {
   // Show main application after registration
   return (
     <CartProvider>
-      <Router>
+      <Router basename={import.meta.env.BASE_URL}>
         <div className="App">
           {userType === 'pet-owner' ? (
             <Routes>

@@ -19,7 +19,8 @@ export default function PetOwnerHeader({ userName, userData }) {
 
   // Load products from JSON file
   useEffect(() => {
-    fetch('./json/pet-products.json')
+    const base = import.meta.env.BASE_URL || '/';
+    fetch(`${base}json/pet-products.json`)
       .then(response => response.json())
       .then(data => setProducts(data.products))
       .catch(error => console.error('Error loading products:', error));
@@ -33,14 +34,13 @@ export default function PetOwnerHeader({ userName, userData }) {
     if (term.length >= 2) {
       const filtered = products.filter(product => 
         product.name.toLowerCase().includes(term.toLowerCase()) ||
-        product.category.toLowerCase().includes(term.toLowerCase()) ||
-        product.description.toLowerCase().includes(term.toLowerCase())
+        product.category.toLowerCase().includes(term.toLowerCase())
       );
-      setSearchResults(filtered.slice(0, 5)); // Limit to 5 results
+      setSearchResults(filtered);
       setShowResults(true);
     } else {
-      setSearchResults([]);
       setShowResults(false);
+      setSearchResults([]);
     }
   };
 
