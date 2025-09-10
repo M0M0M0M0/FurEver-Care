@@ -1,0 +1,31 @@
+/* Pet Profile Page */
+.pet-profile-page {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.pet-profile-main {
+  padding: 20px;
+  min-height: calc(100vh - 80px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pet-profile-container {
+  width: 100%;
+  max-width: 1200px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .pet-profile-main {
+    padding: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .pet-profile-main {
+    padding: 5px;
+  }
+}

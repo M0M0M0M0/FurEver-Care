@@ -6,6 +6,7 @@ import VeterinarianForm from './components/VeterinarianForm'
 import Header from './components/Header'
 import Footer from './components/Footer'
 import PetOwnerPage from './pages/PetOwnerPage'
+import PetProfilePage from './pages/PetProfilePage'
 import PetCarePage from './pages/PetCarePage'
 import VeterinarianDashboard from './pages/VeterinarianDashboard'
 import PetAdoptionPage from './pages/PetAdoptionPage'
@@ -86,7 +87,7 @@ function App() {
             <Routes>
               <Route path="/" element={<Home userData={userData || {}} userName={userName || ''} />} />
               <Route path="/pet-care" element={<PetCarePage userData={userData} userName={userName} />} />
-              <Route path="/pet-profile" element={<PetOwnerPage userData={userData || {}} userName={userName || ''} />} />
+              <Route path="/pet-profile" element={<PetProfilePage userData={userData || {}} userName={userName || ''} />} />
             </Routes>
           ) : userType === 'veterinarian' ? (
             <Routes>
