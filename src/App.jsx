@@ -8,6 +8,7 @@ import Header from './components/Header'
 import Footer from './components/Footer'
 import PetOwnerPage from './pages/PetOwnerPage'
 import PetCarePage from './pages/PetCarePage'
+import VeterinarianDashboard from './pages/VeterinarianDashboard'
 import Home from './pages/Home'
 import Products from './pages/Products'
 import Services from './pages/Services'
@@ -88,6 +89,10 @@ function App() {
               <Route path="/" element={<Home userData={userData || {}} userName={userName || ''} />} />
               <Route path="/pet-care" element={<PetCarePage userData={userData} userName={userName} />} />
               <Route path="/pet-profile" element={<PetOwnerPage userData={userData || {}} userName={userName || ''} />} />
+            </Routes>
+          ) : userType === 'veterinarian' ? (
+            <Routes>
+              <Route path="/" element={<VeterinarianDashboard userData={userData || {}} userName={userName || ''} />} />
             </Routes>
           ) : (
             <>
