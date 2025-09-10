@@ -29,9 +29,9 @@ const WelcomePopup = ({ onUserTypeSelect }) => {
       color: '#4ECDC4'
     },
     {
-      id: 'shelter-volunteer',
-      title: 'Animal Shelter / Rescue Volunteer',
-      description: 'Rescue Volunteer',
+      id: 'shelter',
+      title: 'Animal Shelter',
+      description: 'Animal Shelter',
       icon: <Home size={32} />,
       color: '#4CAF50'
     }
