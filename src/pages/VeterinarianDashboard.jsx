@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useCallback } from 'react'
 import { 
   Calendar, 
   Clock, 
@@ -24,46 +24,70 @@ const VeterinarianDashboard = ({ userData, userName }) => {
   const [treatmentRecords, setTreatmentRecords] = useState([])
   const [searchTerm, setSearchTerm] = useState('')
   const [filterStatus, setFilterStatus] = useState('all')
+  const [avatarUrl, setAvatarUrl] = useState(null)
 
-  // Mock data - trong thực tế sẽ lấy từ API
+  // Helper function to create avatar URL and cleanup
+  const getAvatarUrl = useCallback(() => {
+    if (userData && userData.profileImage) {
+      if (userData.profileImage instanceof File) {
+        const url = URL.createObjectURL(userData.profileImage)
+        setAvatarUrl(url)
+        return url
+      }
+      return userData.profileImage
+    }
+    return null
+  }, [userData])
+
+  // Cleanup URL when component unmounts or userData changes
+  useEffect(() => {
+    const url = getAvatarUrl()
+    return () => {
+      if (url && userData && userData.profileImage instanceof File) {
+        URL.revokeObjectURL(url)
+      }
+    }
+  }, [getAvatarUrl, userData])
+
+  // Mock data - in real app, this would come from API
   useEffect(() => {
     // Mock appointments data
     setAppointments([
       {
         id: 1,
         petName: 'Buddy',
-        ownerName: 'Nguyễn Văn A',
+        ownerName: 'John Smith',
         ownerPhone: '0987654321',
         appointmentTime: '2024-01-15 09:00',
         status: 'confirmed',
-        reason: 'Khám định kỳ',
-        petType: 'Chó',
+        reason: 'Regular Checkup',
+        petType: 'Dog',
         breed: 'Golden Retriever',
-        age: '3 tuổi'
+        age: '3 years old'
       },
       {
         id: 2,
         petName: 'Mimi',
-        ownerName: 'Trần Thị B',
+        ownerName: 'Sarah Johnson',
         ownerPhone: '0987654322',
         appointmentTime: '2024-01-15 10:30',
         status: 'pending',
-        reason: 'Tiêm phòng',
-        petType: 'Mèo',
+        reason: 'Vaccination',
+        petType: 'Cat',
         breed: 'Persian',
-        age: '1 tuổi'
+        age: '1 year old'
       },
       {
         id: 3,
         petName: 'Max',
-        ownerName: 'Lê Văn C',
+        ownerName: 'Mike Wilson',
         ownerPhone: '0987654323',
         appointmentTime: '2024-01-15 14:00',
         status: 'completed',
-        reason: 'Phẫu thuật',
-        petType: 'Chó',
+        reason: 'Surgery',
+        petType: 'Dog',
         breed: 'German Shepherd',
-        age: '5 tuổi'
+        age: '5 years old'
       }
     ])
 
@@ -72,21 +96,21 @@ const VeterinarianDashboard = ({ userData, userName }) => {
       {
         id: 1,
         petName: 'Buddy',
-        ownerName: 'Nguyễn Văn A',
+        ownerName: 'John Smith',
         visitDate: '2024-01-10',
-        diagnosis: 'Viêm tai',
-        treatment: 'Thuốc kháng sinh',
-        vetNotes: 'Tình trạng tốt, cần theo dõi',
+        diagnosis: 'Ear Infection',
+        treatment: 'Antibiotics',
+        vetNotes: 'Good condition, needs monitoring',
         nextVisit: '2024-01-20'
       },
       {
         id: 2,
         petName: 'Mimi',
-        ownerName: 'Trần Thị B',
+        ownerName: 'Sarah Johnson',
         visitDate: '2024-01-08',
-        diagnosis: 'Tiêm phòng định kỳ',
-        treatment: 'Vaccine 5 bệnh',
-        vetNotes: 'Phản ứng tốt với vaccine',
+        diagnosis: 'Regular Vaccination',
+        treatment: '5-in-1 Vaccine',
+        vetNotes: 'Good response to vaccine',
         nextVisit: '2024-02-08'
       }
     ])
@@ -96,24 +120,24 @@ const VeterinarianDashboard = ({ userData, userName }) => {
       {
         id: 1,
         petName: 'Max',
-        ownerName: 'Lê Văn C',
+        ownerName: 'Mike Wilson',
         treatmentDate: '2024-01-12',
-        procedure: 'Phẫu thuật cắt bỏ khối u',
+        procedure: 'Tumor Removal Surgery',
         medications: ['Antibiotic', 'Pain relief'],
         followUp: '2024-01-19',
         status: 'Recovering well',
-        cost: '2,500,000 VNĐ'
+        cost: '$100'
       },
       {
         id: 2,
         petName: 'Buddy',
-        ownerName: 'Nguyễn Văn A',
+        ownerName: 'John Smith',
         treatmentDate: '2024-01-10',
-        procedure: 'Điều trị viêm tai',
+        procedure: 'Ear Infection Treatment',
         medications: ['Ear drops', 'Antibiotic'],
         followUp: '2024-01-20',
         status: 'Treatment completed',
-        cost: '450,000 VNĐ'
+        cost: '$18'
       }
     ])
   }, [])
@@ -130,10 +154,10 @@ const VeterinarianDashboard = ({ userData, userName }) => {
 
   const getStatusText = (status) => {
     switch (status) {
-      case 'confirmed': return 'Đã xác nhận'
-      case 'pending': return 'Chờ xác nhận'
-      case 'completed': return 'Hoàn thành'
-      case 'cancelled': return 'Đã hủy'
+      case 'confirmed': return 'Confirmed'
+      case 'pending': return 'Pending'
+      case 'completed': return 'Completed'
+      case 'cancelled': return 'Cancelled'
       default: return status
     }
   }
@@ -148,13 +172,13 @@ const VeterinarianDashboard = ({ userData, userName }) => {
   const renderAppointments = () => (
     <div className="dashboard-section">
       <div className="section-header">
-        <h2>Lịch hẹn</h2>
+        <h2>Appointments</h2>
         <div className="section-controls">
           <div className="search-box">
             <Search size={16} />
             <input
               type="text"
-              placeholder="Tìm kiếm theo tên thú cưng hoặc chủ..."
+              placeholder="Search by pet name or owner..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
             />
@@ -164,11 +188,11 @@ const VeterinarianDashboard = ({ userData, userName }) => {
             onChange={(e) => setFilterStatus(e.target.value)}
             className="filter-select"
           >
-            <option value="all">Tất cả</option>
-            <option value="pending">Chờ xác nhận</option>
-            <option value="confirmed">Đã xác nhận</option>
-            <option value="completed">Hoàn thành</option>
-            <option value="cancelled">Đã hủy</option>
+            <option value="all">All</option>
+            <option value="pending">Pending</option>
+            <option value="confirmed">Confirmed</option>
+            <option value="completed">Completed</option>
+            <option value="cancelled">Cancelled</option>
           </select>
         </div>
       </div>
@@ -180,7 +204,7 @@ const VeterinarianDashboard = ({ userData, userName }) => {
               <div className="pet-info">
                 <h3>{appointment.petName}</h3>
                 <p>{appointment.petType} - {appointment.breed}</p>
-                <p>Tuổi: {appointment.age}</p>
+                <p>Age: {appointment.age}</p>
               </div>
               <div className={`status-badge ${getStatusColor(appointment.status)}`}>
                 {getStatusText(appointment.status)}
@@ -209,11 +233,11 @@ const VeterinarianDashboard = ({ userData, userName }) => {
             <div className="appointment-actions">
               <button className="btn-secondary">
                 <Eye size={16} />
-                Xem chi tiết
+                View Details
               </button>
               {appointment.status === 'pending' && (
                 <button className="btn-primary">
-                  Xác nhận
+                  Confirm
                 </button>
               )}
             </div>
@@ -226,10 +250,10 @@ const VeterinarianDashboard = ({ userData, userName }) => {
   const renderMedicalHistory = () => (
     <div className="dashboard-section">
       <div className="section-header">
-        <h2>Lịch sử y tế</h2>
+        <h2>Medical History</h2>
         <button className="btn-primary">
           <Plus size={16} />
-          Thêm hồ sơ
+          Add Record
         </button>
       </div>
 
@@ -239,7 +263,7 @@ const VeterinarianDashboard = ({ userData, userName }) => {
             <div className="history-header">
               <div className="pet-info">
                 <h3>{record.petName}</h3>
-                <p>Chủ: {record.ownerName}</p>
+                <p>Owner: {record.ownerName}</p>
               </div>
               <div className="visit-date">
                 <Calendar size={16} />
@@ -249,20 +273,20 @@ const VeterinarianDashboard = ({ userData, userName }) => {
 
             <div className="history-content">
               <div className="diagnosis-section">
-                <h4>Chẩn đoán:</h4>
+                <h4>Diagnosis:</h4>
                 <p>{record.diagnosis}</p>
               </div>
               <div className="treatment-section">
-                <h4>Điều trị:</h4>
+                <h4>Treatment:</h4>
                 <p>{record.treatment}</p>
               </div>
               <div className="notes-section">
-                <h4>Ghi chú bác sĩ:</h4>
+                <h4>Veterinarian Notes:</h4>
                 <p>{record.vetNotes}</p>
               </div>
               {record.nextVisit && (
                 <div className="next-visit">
-                  <h4>Lần khám tiếp theo:</h4>
+                  <h4>Next Visit:</h4>
                   <p>{record.nextVisit}</p>
                 </div>
               )}
@@ -271,11 +295,11 @@ const VeterinarianDashboard = ({ userData, userName }) => {
             <div className="history-actions">
               <button className="btn-secondary">
                 <Eye size={16} />
-                Xem chi tiết
+                View Details
               </button>
               <button className="btn-secondary">
                 <Download size={16} />
-                Xuất PDF
+                Export PDF
               </button>
             </div>
           </div>
@@ -287,10 +311,10 @@ const VeterinarianDashboard = ({ userData, userName }) => {
   const renderTreatmentRecords = () => (
     <div className="dashboard-section">
       <div className="section-header">
-        <h2>Hồ sơ điều trị</h2>
+        <h2>Treatment Records</h2>
         <button className="btn-primary">
           <Plus size={16} />
-          Thêm hồ sơ
+          Add Record
         </button>
       </div>
 
@@ -300,7 +324,7 @@ const VeterinarianDashboard = ({ userData, userName }) => {
             <div className="treatment-header">
               <div className="pet-info">
                 <h3>{record.petName}</h3>
-                <p>Chủ: {record.ownerName}</p>
+                <p>Owner: {record.ownerName}</p>
               </div>
               <div className="treatment-date">
                 <Calendar size={16} />
@@ -310,11 +334,11 @@ const VeterinarianDashboard = ({ userData, userName }) => {
 
             <div className="treatment-content">
               <div className="procedure-section">
-                <h4>Thủ thuật:</h4>
+                <h4>Procedure:</h4>
                 <p>{record.procedure}</p>
               </div>
               <div className="medications-section">
-                <h4>Thuốc:</h4>
+                <h4>Medications:</h4>
                 <ul>
                   {record.medications.map((med, index) => (
                     <li key={index}>{med}</li>
@@ -322,15 +346,15 @@ const VeterinarianDashboard = ({ userData, userName }) => {
                 </ul>
               </div>
               <div className="follow-up-section">
-                <h4>Tái khám:</h4>
+                <h4>Follow-up:</h4>
                 <p>{record.followUp}</p>
               </div>
               <div className="status-section">
-                <h4>Tình trạng:</h4>
+                <h4>Status:</h4>
                 <p className="status-text">{record.status}</p>
               </div>
               <div className="cost-section">
-                <h4>Chi phí:</h4>
+                <h4>Cost:</h4>
                 <p className="cost-text">{record.cost}</p>
               </div>
             </div>
@@ -338,11 +362,11 @@ const VeterinarianDashboard = ({ userData, userName }) => {
             <div className="treatment-actions">
               <button className="btn-secondary">
                 <Eye size={16} />
-                Xem chi tiết
+                View Details
               </button>
               <button className="btn-secondary">
                 <Download size={16} />
-                Xuất báo cáo
+                Export Report
               </button>
             </div>
           </div>
@@ -357,11 +381,18 @@ const VeterinarianDashboard = ({ userData, userName }) => {
       <div className="dashboard-header">
         <div className="vet-profile">
           <div className="profile-avatar">
-            <Stethoscope size={32} />
+            {userData && userData.profileImage ? (
+              <img 
+                src={avatarUrl || getAvatarUrl()}
+                alt="Veterinarian Profile"
+                className="avatar-image"
+              />
+            ) : (
+              <Stethoscope size={32} />
+            )}
           </div>
           <div className="profile-info">
-            <h1>Xin chào, {userName || 'Bác sĩ'}</h1>
-            <p>Bảng điều khiển bác sĩ thú y</p>
+            <h1>{userData?.name || userName || 'Doctor'}</h1>
             {userData && (
               <div className="vet-details">
                 <span>{userData.specialization}</span>
@@ -380,21 +411,21 @@ const VeterinarianDashboard = ({ userData, userName }) => {
           onClick={() => setActiveTab('appointments')}
         >
           <Calendar size={20} />
-          Lịch hẹn
+          Appointments
         </button>
         <button
           className={`nav-tab ${activeTab === 'medical-history' ? 'active' : ''}`}
           onClick={() => setActiveTab('medical-history')}
         >
           <FileText size={20} />
-          Lịch sử y tế
+          Medical History
         </button>
         <button
           className={`nav-tab ${activeTab === 'treatment-records' ? 'active' : ''}`}
           onClick={() => setActiveTab('treatment-records')}
         >
           <Activity size={20} />
-          Hồ sơ điều trị
+          Treatment Records
         </button>
       </div>
 

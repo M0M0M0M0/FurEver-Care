@@ -332,7 +332,14 @@ const VeterinarianForm = ({ userName, onComplete }) => {
                 <span>Upload professional image</span>
               </label>
               {formData.profileImage && (
-                <p className="file-name">{formData.profileImage.name}</p>
+                <div className="image-preview">
+                  <img 
+                    src={URL.createObjectURL(formData.profileImage)}
+                    alt="Profile Preview"
+                    className="preview-image"
+                  />
+                  <p className="file-name">{formData.profileImage.name}</p>
+                </div>
               )}
             </div>
           </div>

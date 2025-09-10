@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useCallback } from 'react'
 import { 
   Heart, 
   Filter, 
@@ -31,11 +31,18 @@ const PetAdoptionPage = ({ userData, userName }) => {
   const [successStories, setSuccessStories] = useState([])
   const [events, setEvents] = useState([])
 
+  // Helper function to create dynamic image paths
+  const getImagePath = useCallback((path) => {
+    const baseUrl = import.meta.env.BASE_URL || '/'
+    return `${baseUrl}${path.startsWith('/') ? path.slice(1) : path}`
+  }, [])
+
   // Load pets data from JSON file
   useEffect(() => {
     const loadPetsData = async () => {
       try {
-        const response = await fetch('/json/pets.json')
+        const baseUrl = import.meta.env.BASE_URL || '/'
+        const response = await fetch(`${baseUrl}json/pets.json`)
         const data = await response.json()
         setPets(data.pets)
       } catch (error) {
@@ -56,8 +63,8 @@ const PetAdoptionPage = ({ userData, userName }) => {
         petType: 'Dog',
         ownerName: 'Nguyen Family',
         story: 'Bella was adopted 6 months ago. She has integrated very well with her new family and become a close friend to the two children.',
-        beforeImage: '/img/19960-avocado-salad-VAT-001-4x3-64241afdc3b04d00a9372e1573eac6f7.jpg',
-        afterImage: '/img/about_v1_9.jpg',
+        beforeImage: getImagePath('/img/19960-avocado-salad-VAT-001-4x3-64241afdc3b04d00a9372e1573eac6f7.jpg'),
+        afterImage: getImagePath('/img/about_v1_9.jpg'),
         adoptionDate: '2023-07-15',
         location: 'Ho Chi Minh City'
       },
@@ -68,8 +75,8 @@ const PetAdoptionPage = ({ userData, userName }) => {
         petType: 'Cat',
         ownerName: 'Ms. Minh',
         story: 'Whiskers found the perfect home with Ms. Minh. She is very happy and healthy in her new environment.',
-        beforeImage: '/img/3aeeee1d04b16f5ab613337aca0721e7.jpg',
-        afterImage: '/img/banner-2021-04-16T110729.441.jpg',
+        beforeImage: getImagePath('/img/3aeeee1d04b16f5ab613337aca0721e7.jpg'),
+        afterImage: getImagePath('/img/banner-2021-04-16T110729.441.jpg'),
         adoptionDate: '2023-08-20',
         location: 'Hanoi'
       }
@@ -85,7 +92,7 @@ const PetAdoptionPage = ({ userData, userName }) => {
         time: '09:00 - 17:00',
         location: 'Le Van Tam Park, Ho Chi Minh City',
         description: 'The biggest pet adoption event of the year with over 100 pets waiting for loving families.',
-        image: '/img/field.jpg'
+        image: getImagePath('/img/field.jpg')
       },
       {
         id: 2,
@@ -95,7 +102,7 @@ const PetAdoptionPage = ({ userData, userName }) => {
         time: '08:00 - 16:00',
         location: 'Animal Rescue Center, Hanoi',
         description: 'Free vaccination for pets adopted from our rescue center.',
-        image: '/img/lamtruong.jpg'
+        image: getImagePath('/img/lamtruong.jpg')
       },
       {
         id: 3,
@@ -105,10 +112,10 @@ const PetAdoptionPage = ({ userData, userName }) => {
         time: '14:00 - 17:00',
         location: 'Convention Center, Da Nang',
         description: 'Learn proper pet care from veterinary experts.',
-        image: '/img/veg.jpg'
+        image: getImagePath('/img/veg.jpg')
       }
     ])
-  }, [])
+  }, [getImagePath])
 
   // Filter pets based on current filters and search term
   useEffect(() => {
