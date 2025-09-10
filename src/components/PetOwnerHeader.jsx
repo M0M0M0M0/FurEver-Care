@@ -117,10 +117,10 @@ export default function PetOwnerHeader({ userName, userData }) {
                 <RippleLink className="nav-link dropdown-toggle header-nav-link" to="/pet-care" id="petCareDropdown">PET CARE</RippleLink>
                 <ul className="dropdown-menu header-dropdown-menu">
                   <li><RippleAnchor className="dropdown-item header-dropdown-item" href="#" onClick={(e) => { e.preventDefault(); navigate('/pet-profile'); }}>Pet Profile</RippleAnchor></li>
-                  <li><RippleAnchor className="dropdown-item header-dropdown-item" href="#" onClick={(e) => { e.preventDefault(); navigate('/feeding-guide'); }}>Feeding Guide</RippleAnchor></li>
-                  <li><RippleAnchor className="dropdown-item header-dropdown-item" href="#" onClick={(e) => { e.preventDefault(); navigate('/grooming-videos'); }}>Grooming Videos</RippleAnchor></li>
-                  <li><RippleAnchor className="dropdown-item header-dropdown-item" href="#" onClick={(e) => { e.preventDefault(); navigate('/health-tips'); }}>Health Tips</RippleAnchor></li>
-                  <li><RippleAnchor className="dropdown-item header-dropdown-item" href="#" onClick={(e) => { e.preventDefault(); navigate('/training-tips'); }}>Training Tips</RippleAnchor></li>
+                  <li><RippleAnchor className="dropdown-item header-dropdown-item" href="#" onClick={(e) => { e.preventDefault(); navigate('/pet-care#feeding-guide'); }}>Feeding Guide</RippleAnchor></li>
+                  <li><RippleAnchor className="dropdown-item header-dropdown-item" href="#" onClick={(e) => { e.preventDefault(); navigate('/pet-care#grooming-videos'); }}>Grooming Videos</RippleAnchor></li>
+                  <li><RippleAnchor className="dropdown-item header-dropdown-item" href="#" onClick={(e) => { e.preventDefault(); navigate('/pet-care#health-tips'); }}>Health Tips</RippleAnchor></li>
+                  <li><RippleAnchor className="dropdown-item header-dropdown-item" href="#" onClick={(e) => { e.preventDefault(); navigate('/pet-care#training-tips'); }}>Training Tips</RippleAnchor></li>
                 </ul>
               </li>
               <li className="nav-item dropdown">

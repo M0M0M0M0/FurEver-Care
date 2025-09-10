@@ -62,6 +62,23 @@ const PetCarePage = ({ userData: propUserData, userName: propUserName }) => {
     }
   }, [propUserData, propUserName]);
 
+  // Handle hash navigation to scroll to specific sections
+  useEffect(() => {
+    const hash = location.hash;
+    if (hash) {
+      // Small delay to ensure page is fully loaded
+      setTimeout(() => {
+        const element = document.querySelector(hash);
+        if (element) {
+          element.scrollIntoView({ 
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      }, 100);
+    }
+  }, [location.hash]);
+
   // Update time every second
   useEffect(() => {
     const timer = setInterval(() => {
@@ -292,7 +309,7 @@ const PetCarePage = ({ userData: propUserData, userName: propUserName }) => {
         </section>
 
         {/* Feeding Guide Section */}
-        <section className="care-section-full feeding-section">
+        <section id="feeding-guide" className="care-section-full feeding-section">
           <div className="container">
             <div className="section-header">
               <h2>🍽️Feeding Guide</h2>
@@ -344,7 +361,7 @@ const PetCarePage = ({ userData: propUserData, userName: propUserName }) => {
         </section>
 
         {/* Grooming Videos Section */}
-        <section className="care-section-full grooming-section">
+        <section id="grooming-videos" className="care-section-full grooming-section">
           <div className="container">
             <div className="section-header">
               <h2>🛁Grooming Videos</h2>
@@ -398,7 +415,7 @@ const PetCarePage = ({ userData: propUserData, userName: propUserName }) => {
         </section>
 
         {/* Health Tips Section */}
-        <section className="care-section-full health-section">
+        <section id="health-tips" className="care-section-full health-section">
           <div className="container">
             <div className="section-header">
               <h2>💊Health Tips</h2>
@@ -431,7 +448,7 @@ const PetCarePage = ({ userData: propUserData, userName: propUserName }) => {
         </section>
 
         {/* Training Tips Section */}
-        <section className="care-section-full training-section">
+        <section id="training-tips" className="care-section-full training-section">
           <div className="container">
             <div className="section-header">
               <h2>🎾Training Tips</h2>
