@@ -239,8 +239,7 @@ export default function PetOwnerHeader({ userName, userData }) {
                 <span>{userName || 'User'}</span>
               </div>
               <div className="pet-name" onClick={() => {
-                const petData = { petName: userData?.petName || 'Pet' };
-                navigate(`/pet-care?petName=${encodeURIComponent(petData.petName)}`);
+                navigate('/pet-profile');
               }}>
                 <i className="fas fa-paw"></i>
                 <span>{userData?.petName || 'Pet'}</span>

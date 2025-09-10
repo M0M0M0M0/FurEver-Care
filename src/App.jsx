@@ -15,6 +15,7 @@ import Products from './pages/Products'
 import Services from './pages/Services'
 import About from './pages/About'
 import Contact from './pages/Contact'
+import BackToTop from './components/BackToTop'
 import { CartProvider } from './contexts/CartContext'
 import './App.css'
 
@@ -135,6 +136,7 @@ function AppContent() {
             <Footer />
           </>
         )}
+        <BackToTop />
       </div>
     </CartProvider>
   )
