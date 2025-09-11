@@ -222,13 +222,17 @@ const Home = ({ userData, userName }) => {
           <div className="home-hero-content">
             <div className="home-hero-text">
               <h1>FurEver Care<br />Where Love Begins! 🐾</h1>
-              <div className="hero-images-inline">
-                <div className="hero-icon">🐕</div>
-                <div className="hero-icon">🐱</div>
-                <div className="hero-icon">🐰</div>
-              </div>
-              <p>Professional pet care with high-quality products, expert services and a loving community.</p>
-              <div className="home-hero-features">
+            </div>
+          </div>
+        </div>
+      </section>
+      {/* introduce Banner Section */}
+      <section className="home-introduce-banners">
+        <div className="home-container">
+          <div className="home-introduce-content">
+            <div className="home-introduce-text">
+              <h3>Professional pet care with high-quality products, expert services and a loving community.</h3>
+              <div className="home-introduce-features">
                 <div className="feature-item">
                   <div className="feature-icon">🍽️</div>
                   <span>Premium Pet Food</span>
