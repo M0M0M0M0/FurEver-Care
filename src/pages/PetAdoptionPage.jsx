@@ -46,27 +46,47 @@ const PetAdoptionPage = ({ userData, userName }) => {
       .replace(/[^a-z0-9-]/g, '')
   }, [])
 
-  // Function để tìm ảnh phù hợp với breed
+  // Function để tìm ảnh phù hợp với breed (tối ưu hóa)
   const findPetImage = useCallback((breed, availableImages) => {
     const normalizedBreed = normalizeName(breed)
     
+    // Tạo map để tránh gọi normalizeName nhiều lần
+    const normalizedImages = availableImages.map(img => ({
+      original: img,
+      normalized: normalizeName(img.replace('.jpg', ''))
+    }))
+    
     // Tìm ảnh khớp chính xác
-    const exactMatch = availableImages.find(img => 
-      normalizeName(img.replace('.jpg', '')) === normalizedBreed
+    const exactMatch = normalizedImages.find(({ normalized }) => 
+      normalized === normalizedBreed
     )
     
-    if (exactMatch) return exactMatch
+    if (exactMatch) return exactMatch.original
     
     // Tìm ảnh chứa breed name
-    const partialMatch = availableImages.find(img => 
-      normalizeName(img.replace('.jpg', '')).includes(normalizedBreed) ||
-      normalizedBreed.includes(normalizeName(img.replace('.jpg', '')))
+    const partialMatch = normalizedImages.find(({ normalized }) => 
+      normalized.includes(normalizedBreed) || normalizedBreed.includes(normalized)
     )
     
-    return partialMatch || 'default-pet.jpg' // Ảnh mặc định nếu không tìm thấy
+    return partialMatch ? partialMatch.original : 'Golden-Retriever.jpg'
   }, [normalizeName])
 
-  // Load pets data from JSON file
+  // Load danh sách ảnh có sẵn (chỉ chạy 1 lần)
+  useEffect(() => {
+    const images = [
+      'Golden-Retriever.jpg', 'Persian.jpg', 'Holland-Lop.jpg',
+      'German-Shepherd.jpg', 'British-Shorthair.jpg', 'Labrador-Retriever.jpg',
+      'Maine-Coon.jpg', 'Netherland-Dwarf.jpg', 'Bulldog.jpg',
+      'Siamese.jpg', 'Flemish-Giant.jpg', 'Beagle.jpg',
+      'Russian-Blue.jpg', 'Mini-Rex.jpg', 'Ragdoll.jpg',
+      'Lionhead.jpg', 'Poodle.jpg', 'Bombay.jpg',
+      'Angora.jpg', 'Boxer.jpg', 'Birman.jpg',
+      'Dutch.jpg', 'Great-dane.jpg', 'Munchkin.jpg'
+    ]
+    setAvailableImages(images)
+  }, []) // Empty dependency array - chỉ chạy 1 lần
+
+  // Load pets data from JSON file (chỉ chạy 1 lần)
   useEffect(() => {
     const loadPetsData = async () => {
       try {
@@ -81,21 +101,11 @@ const PetAdoptionPage = ({ userData, userName }) => {
       }
     }
 
-    // Danh sách ảnh có sẵn trong thư mục img-pet
-    const images = [
-      'Golden-Retriever.jpg', 'Persian.jpg', 'Holland-Lop.jpg',
-      'German-Shepherd.jpg', 'British-Shorthair.jpg', 'Labrador-Retriever.jpg',
-      'Maine-Coon.jpg', 'Netherland-Dwarf.jpg', 'Bulldog.jpg',
-      'Siamese.jpg', 'Flemish-Giant.jpg', 'Beagle.jpg',
-      'Russian-Blue.jpg', 'Mini-Rex.jpg', 'Ragdoll.jpg',
-      'Lionhead.jpg', 'Poodle.jpg', 'Bombay.jpg',
-      'Angora.jpg', 'Boxer.jpg', 'Birman.jpg',
-      'Dutch.jpg', 'Great-dane.jpg', 'Munchkin.jpg'
-    ]
-    setAvailableImages(images)
-
     loadPetsData()
+  }, []) // Empty dependency array - chỉ chạy 1 lần
 
+  // Mock success stories và events (chỉ chạy 1 lần)
+  useEffect(() => {
     // Mock success stories
     setSuccessStories([
       {
@@ -157,7 +167,7 @@ const PetAdoptionPage = ({ userData, userName }) => {
         image: getImagePath('/img/veg.jpg')
       }
     ])
-  }, [getImagePath, findPetImage, availableImages])
+  }, [getImagePath])
 
   // Filter pets based on current filters and search term
   useEffect(() => {
@@ -284,7 +294,15 @@ const PetAdoptionPage = ({ userData, userName }) => {
             <div className="pet-image">
               <img 
                 src={getImagePath(`/img-pet/${findPetImage(pet.breed, availableImages)}`)} 
-                alt={pet.name} 
+                alt={pet.name}
+                loading="lazy"
+                onError={(e) => {
+                  // Sử dụng ảnh có sẵn thay vì default-pet.jpg không tồn tại
+                  if (!e.target.dataset.fallback) {
+                    e.target.src = getImagePath('/img-pet/Golden-Retriever.jpg')
+                    e.target.dataset.fallback = 'true'
+                  }
+                }}
               />
               <div className="pet-badges">
                 {pet.vaccinated && <span className="badge vaccinated">Vaccinated</span>}
