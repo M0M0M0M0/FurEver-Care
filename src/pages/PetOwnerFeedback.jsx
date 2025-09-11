@@ -1,127 +1,110 @@
-import React, { useState } from 'react'
-import PetOwnerHeader from '../components/PetOwnerHeader'
-import Footer from '../components/Footer'
+import React, { useState, useEffect } from "react"
+import PetOwnerHeader from "../components/PetOwnerHeader"
+import Footer from "../components/Footer"
 
-/**
- * PetOwnerFeedback page — UI only (no backend).
- * Props:
- *  - userName (string) optional, taken from App state when rendering route
- */
-const PetOwnerFeedback = ({ userName = '' }) => {
+const PetOwnerFeedback = ({ userName }) => {
   const [feedbacks, setFeedbacks] = useState([])
   const [rating, setRating] = useState(0)
-  const [comment, setComment] = useState('')
+  const [comment, setComment] = useState("")
+
+  // Load feedbacks from JSON file
+  useEffect(() => {
+    fetch("/json/feedback.json")
+      .then((res) => res.json())
+      .then((data) => setFeedbacks(data))
+      .catch((err) => console.error("Error loading feedbacks:", err))
+  }, [])
 
   const handleSubmit = (e) => {
     e.preventDefault()
+
     if (!rating || !comment.trim()) {
-      alert('Please provide both rating and comment.')
+      alert("Please provide both rating and comment.")
       return
     }
 
     const newFeedback = {
-      id: Date.now(),
-      name: userName || 'Anonymous',
+      id: feedbacks.length + 1,
+      name: userName || "Anonymous",
       rating,
-      comment: comment.trim(),
-      date: new Date().toLocaleDateString()
+      comment,
     }
 
-    setFeedbacks([newFeedback, ...feedbacks])
+    setFeedbacks([...feedbacks, newFeedback])
     setRating(0)
-    setComment('')
+    setComment("")
   }
 
   return (
     <>
-      {/* Pet owner header (keeps layout consistent with other pet-owner pages) */}
-      <PetOwnerHeader userName={userName} userData={null} />
-
-      {/* Main section uses the same container/section pattern as Contact.jsx */}
+      <PetOwnerHeader userName={userName} />
       <div className="section">
         <div className="container">
-          <h1 className="section-title">Pet Owner Feedback</h1>
+          <h1 className="section-title">Feedback</h1>
 
-          <div className="grid" style={{ gap: '30px' }}>
-            {/* Feedback form (left) */}
-            <div style={{ maxWidth: 720 }}>
-              <form onSubmit={handleSubmit} className="feedback-form" style={{ marginBottom: '20px' }}>
-                <div className="form-group" style={{ marginBottom: '12px' }}>
-                  <label style={{ display: 'block', marginBottom: '8px' }}>Rating *</label>
-                  <div style={{ display: 'flex', gap: '8px', cursor: 'pointer' }}>
-                    {[1, 2, 3, 4, 5].map((star) => (
-                      <span
-                        key={star}
-                        onClick={() => setRating(star)}
-                        style={{
-                          fontSize: '26px',
-                          color: star <= rating ? '#fbbf24' : '#d1d5db',
-                          userSelect: 'none'
-                        }}
-                        role="button"
-                        aria-label={`Rate ${star} star`}
-                      >
-                        ★
-                      </span>
-                    ))}
-                  </div>
-                </div>
-
-                <div className="form-group" style={{ marginBottom: '12px' }}>
-                  <label htmlFor="comment">Comment *</label>
-                  <textarea
-                    id="comment"
-                    rows="5"
-                    value={comment}
-                    onChange={(e) => setComment(e.target.value)}
-                    required
-                    style={{ width: '100%', padding: '10px' }}
-                    placeholder="Write your feedback here..."
-                  />
-                </div>
-
-                <div style={{ display: 'flex', gap: '12px' }}>
-                  <button type="submit" className="btn">Submit Feedback</button>
-                </div>
-              </form>
+          {/* Feedback form */}
+          <form
+            onSubmit={handleSubmit}
+            style={{ marginBottom: "40px", maxWidth: "600px" }}
+          >
+            <div className="form-group">
+              <label>Rating:</label>
+              <select
+                value={rating}
+                onChange={(e) => setRating(Number(e.target.value))}
+                required
+              >
+                <option value="">Select rating</option>
+                <option value="1">1 - Poor</option>
+                <option value="2">2 - Fair</option>
+                <option value="3">3 - Good</option>
+                <option value="4">4 - Very Good</option>
+                <option value="5">5 - Excellent</option>
+              </select>
             </div>
 
-            {/* Feedback list (right) */}
-            <div style={{ flex: 1 }}>
-              {feedbacks.length === 0 ? (
-                <p>No feedback yet. Be the first to share your experience!</p>
-              ) : (
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
-                  {feedbacks.map((fb) => (
-                    <div
-                      key={fb.id}
-                      className="feedback-card"
-                      style={{
-                        border: '1px solid #e5e7eb',
-                        borderRadius: '8px',
-                        padding: '12px',
-                        background: '#fff'
-                      }}
-                    >
-                      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline' }}>
-                        <div style={{ fontWeight: 600 }}>{fb.name}</div>
-                        <div style={{ fontSize: 12, color: '#6b7280' }}>{fb.date}</div>
-                      </div>
-
-                      <div style={{ color: '#fbbf24', margin: '8px 0' }}>
-                        {'★'.repeat(fb.rating) + '☆'.repeat(5 - fb.rating)}
-                      </div>
-
-                      <div style={{ marginTop: 4 }}>{fb.comment}</div>
-                    </div>
-                  ))}
-                </div>
-              )}
+            <div className="form-group">
+              <label>Comment:</label>
+              <textarea
+                value={comment}
+                onChange={(e) => setComment(e.target.value)}
+                rows="4"
+                required
+              />
             </div>
+
+            <button type="submit" className="btn">
+              Submit Feedback
+            </button>
+          </form>
+
+          {/* Feedback list */}
+          <div>
+            <h2 style={{ marginBottom: "20px" }}>All Feedback</h2>
+            {feedbacks.length === 0 ? (
+              <p>No feedback yet.</p>
+            ) : (
+              <ul style={{ listStyle: "none", padding: 0 }}>
+                {feedbacks.map((fb) => (
+                  <li
+                    key={fb.id}
+                    style={{
+                      border: "1px solid #ddd",
+                      padding: "15px",
+                      borderRadius: "10px",
+                      marginBottom: "15px",
+                    }}
+                  >
+                    <strong>{fb.name}</strong> -{" "}
+                    {"⭐".repeat(fb.rating) || "No rating"}
+                    <p style={{ marginTop: "8px" }}>{fb.comment}</p>
+                  </li>
+                ))}
+              </ul>
+            )}
           </div>
         </div>
       </div>
-
       <Footer />
     </>
   )

@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "name": "Alice",
+    "rating": 5,
+    "comment": "Great service and friendly staff!"
+  },
+  {
+    "id": 2,
+    "name": "Bob",
+    "rating": 4,
+    "comment": "Good experience overall, my pet was well taken care of."
+  },
+  {
+    "id": 3,
+    "name": "Charlie",
+    "rating": 3,
+    "comment": "Overall okay, but the waiting time was a bit long."
+  }
+]
