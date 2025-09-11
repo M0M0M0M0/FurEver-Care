@@ -30,12 +30,41 @@ const PetAdoptionPage = ({ userData, userName }) => {
   const [searchTerm, setSearchTerm] = useState('')
   const [successStories, setSuccessStories] = useState([])
   const [events, setEvents] = useState([])
+  const [availableImages, setAvailableImages] = useState([])
 
   // Helper function to create dynamic image paths
   const getImagePath = useCallback((path) => {
     const baseUrl = import.meta.env.BASE_URL || '/'
     return `${baseUrl}${path.startsWith('/') ? path.slice(1) : path}`
   }, [])
+
+  // Function để chuẩn hóa tên (chuyển về chữ thường, thay dấu cách bằng gạch ngang)
+  const normalizeName = useCallback((name) => {
+    return name
+      .toLowerCase()          
+      .replace(/\s+/g, '-')    
+      .replace(/[^a-z0-9-]/g, '')
+  }, [])
+
+  // Function để tìm ảnh phù hợp với breed
+  const findPetImage = useCallback((breed, availableImages) => {
+    const normalizedBreed = normalizeName(breed)
+    
+    // Tìm ảnh khớp chính xác
+    const exactMatch = availableImages.find(img => 
+      normalizeName(img.replace('.jpg', '')) === normalizedBreed
+    )
+    
+    if (exactMatch) return exactMatch
+    
+    // Tìm ảnh chứa breed name
+    const partialMatch = availableImages.find(img => 
+      normalizeName(img.replace('.jpg', '')).includes(normalizedBreed) ||
+      normalizedBreed.includes(normalizeName(img.replace('.jpg', '')))
+    )
+    
+    return partialMatch || 'default-pet.jpg' // Ảnh mặc định nếu không tìm thấy
+  }, [normalizeName])
 
   // Load pets data from JSON file
   useEffect(() => {
@@ -51,6 +80,19 @@ const PetAdoptionPage = ({ userData, userName }) => {
         setPets([])
       }
     }
+
+    // Danh sách ảnh có sẵn trong thư mục img-pet
+    const images = [
+      'Golden-Retriever.jpg', 'Persian.jpg', 'Holland-Lop.jpg',
+      'German-Shepherd.jpg', 'British-Shorthair.jpg', 'Labrador-Retriever.jpg',
+      'Maine-Coon.jpg', 'Netherland-Dwarf.jpg', 'Bulldog.jpg',
+      'Siamese.jpg', 'Flemish-Giant.jpg', 'Beagle.jpg',
+      'Russian-Blue.jpg', 'Mini-Rex.jpg', 'Ragdoll.jpg',
+      'Lionhead.jpg', 'Poodle.jpg', 'Bombay.jpg',
+      'Angora.jpg', 'Boxer.jpg', 'Birman.jpg',
+      'Dutch.jpg', 'Great-dane.jpg', 'Munchkin.jpg'
+    ]
+    setAvailableImages(images)
 
     loadPetsData()
 
@@ -115,7 +157,7 @@ const PetAdoptionPage = ({ userData, userName }) => {
         image: getImagePath('/img/veg.jpg')
       }
     ])
-  }, [getImagePath])
+  }, [getImagePath, findPetImage, availableImages])
 
   // Filter pets based on current filters and search term
   useEffect(() => {
@@ -161,6 +203,8 @@ const PetAdoptionPage = ({ userData, userName }) => {
       default: return type
     }
   }
+  // Src pet img
+
 
   const renderGallery = () => (
     <div className="gallery-section">
@@ -238,7 +282,10 @@ const PetAdoptionPage = ({ userData, userName }) => {
         {filteredPets.map(pet => (
           <div key={pet.id} className="pet-card">
             <div className="pet-image">
-              <img src={pet.image} alt={pet.name} />
+              <img 
+                src={getImagePath(`/img-pet/${findPetImage(pet.breed, availableImages)}`)} 
+                alt={pet.name} 
+              />
               <div className="pet-badges">
                 {pet.vaccinated && <span className="badge vaccinated">Vaccinated</span>}
                 {pet.neutered && <span className="badge neutered">Neutered</span>}
