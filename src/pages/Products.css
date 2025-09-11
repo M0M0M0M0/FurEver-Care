@@ -2,7 +2,7 @@
 .products-hero {
   background: linear-gradient(135deg, #2d5016 0%, #7fb069 100%);
   color: white;
-  padding: 80px 0;
+  padding: 40px 0;
   text-align: center;
 }
 
@@ -77,7 +77,7 @@
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 30px;
-  margin-top: 40px;
+  margin-top: 20px;
 }
 
 .products-product-card {
@@ -261,7 +261,7 @@
 
 @media (max-width: 480px) {
   .products-hero {
-    padding: 60px 0;
+    padding: 30px 0;
   }
 
   .products-hero h1 {

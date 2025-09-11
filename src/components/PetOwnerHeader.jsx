@@ -78,7 +78,7 @@ export default function PetOwnerHeader({ userName, userData }) {
     if (offersCategories.includes(category)) {
       navigate(`/offers?category=${category}`);
     } else {
-      navigate(`/product?category=${category}`);
+      navigate(`/products?category=${category}`);
     }
   };
 
