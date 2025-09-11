@@ -225,7 +225,7 @@ const PetCarePage = ({ userData: propUserData, userName: propUserName }) => {
       
       {/* Header */}
       <div className="pet-care-header">
-        <div className="container">
+        <div className="pet-care-container">
           <div className="header-content">
             <div className="pet-info">
               <h1>🐾 {petName}</h1>
@@ -249,8 +249,8 @@ const PetCarePage = ({ userData: propUserData, userName: propUserName }) => {
       <div className="pet-care-content">
         {/* Pet Profile Section */}
         <section className="care-section-full">
-          <div className="container">
-            <div className="section-header">
+          <div className="pet-care-container">
+            <div className="pet-care-section-header">
 
               <h2>📋Pet Profile</h2>
             </div>
@@ -310,8 +310,8 @@ const PetCarePage = ({ userData: propUserData, userName: propUserName }) => {
 
         {/* Feeding Guide Section */}
         <section id="feeding-guide" className="care-section-full feeding-section">
-          <div className="container">
-            <div className="section-header">
+          <div className="pet-care-container">
+            <div className="pet-care-section-header">
               <h2>🍽️Feeding Guide</h2>
             </div>
             <div className="section-content">
@@ -362,8 +362,8 @@ const PetCarePage = ({ userData: propUserData, userName: propUserName }) => {
 
         {/* Grooming Videos Section */}
         <section id="grooming-videos" className="care-section-full grooming-section">
-          <div className="container">
-            <div className="section-header">
+          <div className="pet-care-container">
+            <div className="pet-care-section-header">
               <h2>🛁Grooming Videos</h2>
               
             </div>
@@ -416,8 +416,8 @@ const PetCarePage = ({ userData: propUserData, userName: propUserName }) => {
 
         {/* Health Tips Section */}
         <section id="health-tips" className="care-section-full health-section">
-          <div className="container">
-            <div className="section-header">
+          <div className="pet-care-container">
+            <div className="pet-care-section-header">
               <h2>💊Health Tips</h2>
             </div>
             <div className="section-content">
@@ -449,8 +449,8 @@ const PetCarePage = ({ userData: propUserData, userName: propUserName }) => {
 
         {/* Training Tips Section */}
         <section id="training-tips" className="care-section-full training-section">
-          <div className="container">
-            <div className="section-header">
+          <div className="pet-care-container">
+            <div className="pet-care-section-header">
               <h2>🎾Training Tips</h2>
               
             </div>

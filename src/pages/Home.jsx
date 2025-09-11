@@ -215,7 +215,7 @@ const Home = ({ userData, userName }) => {
       
       {/* Hero Banner Section */}
       <section className="home-hero-banner">
-        <div className="container">
+        <div className="home-container">
           <div className="home-hero-content">
             <div className="home-hero-text">
               <h1>FurEver Care<br />Where Love Begins! 🐾</h1>
@@ -246,7 +246,7 @@ const Home = ({ userData, userName }) => {
 
       {/* Promotional Banners */}
       <section className="home-promo-banners">
-        <div className="container">
+        <div className="home-container">
           <div className="banner-grid">
             <div className="home-banner-card boarding">
               <div className="home-banner-content">
@@ -271,7 +271,7 @@ const Home = ({ userData, userName }) => {
 
       {/* Why Choose FurEver Care Section */}
       <section className="home-why-choose-section">
-        <div className="container">
+        <div className="home-container">
           <div className="home-why-choose-content">
             <h2>Why Choose FurEver Care?</h2>
             <div className="home-why-choose-features">
@@ -297,7 +297,7 @@ const Home = ({ userData, userName }) => {
 
       {/* Featured Products Section */}
       <section className="trending-products">
-        <div className="container">
+        <div className="home-container">
           <div className="home-section-header">
             <h2>Featured Products</h2>
             <div className="product-tabs">
@@ -356,7 +356,7 @@ const Home = ({ userData, userName }) => {
 
       {/* Customer Reviews */}
       <section className="home-best-featured">
-        <div className="container">
+        <div className="home-container">
           <div className="home-section-header">
             <h2>Customer Reviews</h2>
             <p>What our customers say about our services</p>
@@ -381,7 +381,7 @@ const Home = ({ userData, userName }) => {
 
       {/* Latest News Section */}
       <section className="home-latest-news">
-        <div className="container">
+        <div className="home-container">
           <div className="home-section-header">
             <h2>Latest News</h2>
             <p>Stay updated with useful pet care information</p>

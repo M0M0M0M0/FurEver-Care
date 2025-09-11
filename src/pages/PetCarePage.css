@@ -71,6 +71,12 @@
   padding: 0 20px;
 }
 
+.pet-care-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
 /* Full Section Layout */
 .care-section-full {
   padding: 100px 0;
@@ -164,13 +170,13 @@
   background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="train" x="0" y="0" width="25" height="25" patternUnits="userSpaceOnUse"><circle cx="12.5" cy="12.5" r="4" fill="none" stroke="%23ffffff" stroke-width="1" opacity="0.1"/><circle cx="12.5" cy="12.5" r="2" fill="%23ffffff" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23train)"/></svg>');
 }
 
-.section-header {
+.pet-care-section-header {
   text-align: center;
   margin-bottom: 80px;
   position: relative;
 }
 
-.section-header::before {
+.pet-care-section-header::before {
   content: "";
   position: absolute;
   top: -20px;
@@ -196,7 +202,7 @@
   filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
 }
 
-.section-header h2 {
+.pet-care-section-header h2 {
   font-size: 3.5rem !important;
   font-weight: 700 !important;
   margin: 0 0 20px 0 !important;
@@ -205,7 +211,7 @@
   text-align: center !important;
 }
 
-.section-header h2::after {
+.pet-care-section-header h2::after {
   content: "";
   position: absolute;
   bottom: -10px;
@@ -222,7 +228,7 @@
   border-radius: 2px;
 }
 
-.section-header p {
+.pet-care-section-header p {
   font-size: 1.3rem;
   opacity: 0.9;
   margin: 0;
@@ -849,7 +855,7 @@
     padding: 60px 0;
   }
 
-  .section-header {
+  .pet-care-section-header {
     margin-bottom: 50px;
   }
 
@@ -857,11 +863,11 @@
     font-size: 3.5rem;
   }
 
-  .section-header h2 {
+  .pet-care-section-header h2 {
     font-size: 3.5rem !important;
   }
 
-  .section-header p {
+  .pet-care-section-header p {
     font-size: 1.1rem;
   }
 
@@ -929,7 +935,7 @@
     padding: 40px 0;
   }
 
-  .section-header {
+  .pet-care-section-header {
     margin-bottom: 40px;
   }
 
@@ -937,11 +943,11 @@
     font-size: 3rem;
   }
 
-  .section-header h2 {
+  .pet-care-section-header h2 {
     font-size: 3rem !important;
   }
 
-  .section-header p {
+  .pet-care-section-header p {
     font-size: 1rem;
   }
 
@@ -961,7 +967,7 @@
     padding: 20px;
   }
 
-  .section-header h3 {
+  .pet-care-section-header h3 {
     font-size: 1.2rem;
   }
 }

@@ -164,7 +164,7 @@ const PetAdoptionPage = ({ userData, userName }) => {
 
   const renderGallery = () => (
     <div className="gallery-section">
-      <div className="section-header">
+      <div className="pet-adoption-section-header">
         <h2>Pet Gallery</h2>
         <p>Find the perfect companion for your family</p>
       </div>
@@ -306,7 +306,7 @@ const PetAdoptionPage = ({ userData, userName }) => {
 
   const renderSuccessStories = () => (
     <div className="success-stories-section">
-      <div className="section-header">
+      <div className="pet-adoption-section-header">
         <h2>Success Stories</h2>
         <p>Heartwarming stories about pet adoptions</p>
       </div>
@@ -354,7 +354,7 @@ const PetAdoptionPage = ({ userData, userName }) => {
 
   const renderEvents = () => (
     <div className="events-section">
-      <div className="section-header">
+      <div className="pet-adoption-section-header">
         <h2>Events</h2>
         <p>Upcoming activities and events</p>
       </div>
@@ -406,7 +406,7 @@ const PetAdoptionPage = ({ userData, userName }) => {
 
   const renderShelterContact = () => (
     <div className="shelter-contact-section">
-      <div className="section-header">
+      <div className="pet-adoption-section-header">
         <h2>Shelter Contact</h2>
         <p>Our contact information and address</p>
       </div>

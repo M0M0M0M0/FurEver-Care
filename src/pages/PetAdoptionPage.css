@@ -110,19 +110,19 @@
 }
 
 /* Section Headers */
-.section-header {
+.pet-adoption-section-header {
   text-align: center;
   margin-bottom: 32px;
 }
 
-.section-header h2 {
+.pet-adoption-section-header h2 {
   margin: 0 0 8px 0;
   color: #2d3748;
   font-size: 28px;
   font-weight: 700;
 }
 
-.section-header p {
+.pet-adoption-section-header p {
   margin: 0;
   color: #718096;
   font-size: 16px;
@@ -780,7 +780,7 @@
     font-size: 24px;
   }
 
-  .section-header h2 {
+  .pet-adoption-section-header h2 {
     font-size: 24px;
   }
 

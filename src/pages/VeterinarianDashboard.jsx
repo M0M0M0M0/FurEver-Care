@@ -171,7 +171,7 @@ const VeterinarianDashboard = ({ userData, userName }) => {
 
   const renderAppointments = () => (
     <div className="dashboard-section">
-      <div className="section-header">
+      <div className="vet-dashboard-section-header">
         <h2>Appointments</h2>
         <div className="section-controls">
           <div className="search-box">
@@ -249,7 +249,7 @@ const VeterinarianDashboard = ({ userData, userName }) => {
 
   const renderMedicalHistory = () => (
     <div className="dashboard-section">
-      <div className="section-header">
+      <div className="vet-dashboard-section-header">
         <h2>Medical History</h2>
         <button className="btn-primary">
           <Plus size={16} />
@@ -310,7 +310,7 @@ const VeterinarianDashboard = ({ userData, userName }) => {
 
   const renderTreatmentRecords = () => (
     <div className="dashboard-section">
-      <div className="section-header">
+      <div className="vet-dashboard-section-header">
         <h2>Treatment Records</h2>
         <button className="btn-primary">
           <Plus size={16} />

@@ -129,7 +129,7 @@ export default function Products() {
           <div id="productGrid" className="product-grid home-product-grid">
             {filteredProducts.length > 0 ? (
               filteredProducts.map(p => (
-                <div key={p.id} className="product-card home-product-card">
+                <div key={p.id} className="products-product-card home-products-product-card">
                   <Link to={`/product/${p.id}`} className="product-image-link">
                     <img 
                       src={p.images && p.images[0] ? p.images[0] : './img-pet-product/default.jpg'} 

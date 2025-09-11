@@ -119,7 +119,7 @@ const PetOwnerPage = ({ userData, userName }) => {
       <main className="main-content">
         {/* About Us Section */}
         <section className="about-section">
-          <div className="container">
+          <div className="pet-owner-container">
             <h2>About Us</h2>
             <div className="about-content">
               <div className="about-text">
@@ -136,7 +136,7 @@ const PetOwnerPage = ({ userData, userName }) => {
 
         {/* Pet Care Sections */}
         <section className="pet-care-section">
-          <div className="container">
+          <div className="pet-owner-container">
             <h2>Pet Care Sections</h2>
             <div className="care-grid">
               <div className="care-card">
@@ -175,11 +175,11 @@ const PetOwnerPage = ({ userData, userName }) => {
 
         {/* Pet Product Showcase */}
         <section className="products-section">
-          <div className="container">
+          <div className="pet-owner-container">
             <h2>Pet Product Showcase</h2>
             <div className="products-grid">
               {petProducts.map(product => (
-                <div key={product.id} className="product-card">
+                <div key={product.id} className="pet-owner-product-card">
                   <div className="product-image">
                     <img src={product.image} alt={product.name} />
                   </div>
@@ -203,7 +203,7 @@ const PetOwnerPage = ({ userData, userName }) => {
 
         {/* Emergency and Vet Help */}
         <section className="emergency-section">
-          <div className="container">
+          <div className="pet-owner-container">
             <h2>Emergency and Vet Help</h2>
             <div className="emergency-content">
               <div className="emergency-info">
@@ -236,7 +236,7 @@ const PetOwnerPage = ({ userData, userName }) => {
 
         {/* Feedback Page */}
         <section className="feedback-section">
-          <div className="container">
+          <div className="pet-owner-container">
             <h2>Feedback Page</h2>
             <div className="feedback-content">
               <div className="feedback-form">
@@ -263,7 +263,7 @@ const PetOwnerPage = ({ userData, userName }) => {
 
         {/* Contact Us */}
         <section className="contact-section">
-          <div className="container">
+          <div className="pet-owner-container">
             <h2>Contact Us</h2>
             <div className="contact-content">
               <div className="contact-info">

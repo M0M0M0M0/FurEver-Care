@@ -47,6 +47,12 @@
   padding: 0 20px;
 }
 
+.pet-owner-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
 /* Section Styles */
 section {
   margin-bottom: 0;
@@ -152,7 +158,7 @@ section h2 {
   gap: 30px;
 }
 
-.product-card {
+.pet-owner-product-card {
   background: white;
   border-radius: 15px;
   overflow: hidden;
@@ -160,7 +166,7 @@ section h2 {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.product-card:hover {
+.pet-owner-product-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
 }
@@ -177,7 +183,7 @@ section h2 {
   transition: transform 0.3s ease;
 }
 
-.product-card:hover .product-image img {
+.pet-owner-product-card:hover .product-image img {
   transform: scale(1.05);
 }
 
@@ -439,7 +445,7 @@ section h2 {
   }
 
   .care-card,
-  .product-card {
+  .pet-owner-product-card {
     margin: 0 10px;
   }
 }
