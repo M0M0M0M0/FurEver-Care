@@ -3,8 +3,6 @@ import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-route
 import WelcomePopup from './components/WelcomePopup'
 import PetOwnerForm from './components/PetOwnerForm'
 import VeterinarianForm from './components/VeterinarianForm'
-import Header from './components/Header'
-import Footer from './components/Footer'
 import PetOwnerPage from './pages/PetOwnerPage'
 import PetProfilePage from './pages/PetProfilePage'
 import PetCarePage from './pages/PetCarePage'
@@ -12,6 +10,7 @@ import VeterinarianDashboard from './pages/VeterinarianDashboard'
 import PetAdoptionPage from './pages/PetAdoptionPage'
 import Home from './pages/Home'
 import Products from './pages/Products'
+import ProductDetail from './pages/ProductDetail'
 import Services from './pages/Services'
 import About from './pages/About'
 import Contact from './pages/Contact'
@@ -110,31 +109,32 @@ function AppContent() {
         {userType === 'pet-owner' ? (
           <Routes>
             <Route path="/" element={<Home userData={userData || {}} userName={userName || ''} />} />
+            <Route path="/products" element={<Products />} />
+            <Route path="/product/:id" element={<ProductDetail />} />
             <Route path="/pet-care" element={<PetCarePage userData={userData} userName={userName} />} />
             <Route path="/pet-profile" element={<PetProfilePage userData={userData || {}} userName={userName || ''} />} />
           </Routes>
         ) : userType === 'veterinarian' ? (
           <Routes>
             <Route path="/" element={<VeterinarianDashboard userData={userData || {}} userName={userName || ''} />} />
+            <Route path="/products" element={<Products />} />
+            <Route path="/product/:id" element={<ProductDetail />} />
           </Routes>
         ) : userType === 'shelter' ? (
           <Routes>
             <Route path="/" element={<PetAdoptionPage userData={userData || {}} userName={userName || ''} />} />
+            <Route path="/products" element={<Products />} />
+            <Route path="/product/:id" element={<ProductDetail />} />
           </Routes>
         ) : (
-          <>
-            <Header />
-            <main>
-              <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/products" element={<Products />} />
-                <Route path="/services" element={<Services />} />
-                <Route path="/about" element={<About />} />
-                <Route path="/contact" element={<Contact />} />
-              </Routes>
-            </main>
-            <Footer />
-          </>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/products" element={<Products />} />
+            <Route path="/product/:id" element={<ProductDetail />} />
+            <Route path="/services" element={<Services />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/contact" element={<Contact />} />
+          </Routes>
         )}
         <BackToTop />
       </div>

@@ -7,17 +7,21 @@
       "price": 45.99,
       "description": "High-quality dry dog food made with real chicken and brown rice. Perfect for adult dogs of all sizes.",
       "brand": "Royal Canin",
-      "images": ["/img/19960-avocado-salad-VAT-001-4x3-64241afdc3b04d00a9372e1573eac6f7.jpg"],
+      "images": [
+        "./img-pet-product/Premium-Chicken-&-Rice-Dog-Food.jpg"
+      ],
       "flavor": "Chicken & Rice"
     },
     {
       "id": 2,
       "name": "Salmon & Sweet Potato Formula",
       "category": "dog-food",
-      "price": 52.50,
+      "price": 52.5,
       "description": "Grain-free dog food with fresh salmon and sweet potato. Rich in omega-3 fatty acids for healthy skin and coat.",
       "brand": "Blue Buffalo",
-      "images": ["/img/3aeeee1d04b16f5ab613337aca0721e7.jpg"],
+      "images": [
+        "./img-pet-product/Salmon-&-Sweet-Potato-Formula.jpg"
+      ],
       "flavor": "Salmon & Sweet Potato"
     },
     {
@@ -27,7 +31,9 @@
       "price": 38.75,
       "description": "Natural dog food with lamb as the first ingredient. Formulated for adult dogs with sensitive stomachs.",
       "brand": "Hill's Science Diet",
-      "images": ["/img/acai-bowl-1.jpg"],
+      "images": [
+        "./img-pet-product/Lamb-&-Brown-Rice-Adult-Formula.jpg"
+      ],
       "flavor": "Lamb & Brown Rice"
     },
     {
@@ -37,7 +43,9 @@
       "price": 41.25,
       "description": "Wet dog food with tender beef chunks and fresh vegetables. Great for picky eaters.",
       "brand": "Purina Pro Plan",
-      "images": ["/img/about_v1_9.jpg"],
+      "images": [
+        "./img-pet-product/Beef-&-Vegetable-Stew.jpg"
+      ],
       "flavor": "Beef & Vegetable"
     },
     {
@@ -47,17 +55,21 @@
       "price": 35.99,
       "description": "Specially formulated puppy food with turkey and oatmeal. Supports healthy growth and development.",
       "brand": "Wellness",
-      "images": ["/img/banner-2021-04-16T110729.441.jpg"],
+      "images": [
+        "./img-pet-product/Turkey-&-Oatmeal-Puppy-Food.jpg"
+      ],
       "flavor": "Turkey & Oatmeal"
     },
     {
       "id": 6,
       "name": "Duck & Pea Formula",
       "category": "dog-food",
-      "price": 48.50,
+      "price": 48.5,
       "description": "Limited ingredient dog food with duck and peas. Perfect for dogs with food allergies.",
       "brand": "Natural Balance",
-      "images": ["/img/field.jpg"],
+      "images": [
+        "./img-pet-product/Duck-&-Pea-Formula.jpg"
+      ],
       "flavor": "Duck & Pea"
     },
     {
@@ -67,7 +79,9 @@
       "price": 55.75,
       "description": "Premium dog food with venison and green beans. High protein, low carbohydrate formula.",
       "brand": "Taste of the Wild",
-      "images": ["/img/lamtruong.jpg"],
+      "images": [
+        "./img-pet-product/Venison-&-Green-Bean.jpg"
+      ],
       "flavor": "Venison & Green Bean"
     },
     {
@@ -77,7 +91,9 @@
       "price": 42.99,
       "description": "Senior dog food with fish and potato. Easy to digest and supports joint health.",
       "brand": "Iams",
-      "images": ["/img/veg.jpg"],
+      "images": [
+        "./img-pet-product/Fish-&-Potato-Senior-Formula.jpg"
+      ],
       "flavor": "Fish & Potato"
     },
     {
@@ -87,17 +103,21 @@
       "price": 59.25,
       "description": "Exotic protein dog food with kangaroo and apple. Novel protein source for sensitive dogs.",
       "brand": "Ziwi Peak",
-      "images": ["/img/vn.jpg"],
+      "images": [
+        "./img-pet-product/Kangaroo-&-Apple.jpg"
+      ],
       "flavor": "Kangaroo & Apple"
     },
     {
       "id": 10,
       "name": "Pork & Barley Formula",
       "category": "dog-food",
-      "price": 39.50,
+      "price": 39.5,
       "description": "Traditional dog food with pork and barley. Wholesome ingredients for everyday nutrition.",
       "brand": "Pedigree",
-      "images": ["/img/anhbapcai.jpg"],
+      "images": [
+        "./img-pet-product/Pork-&-Barley-Formula.jpg"
+      ],
       "flavor": "Pork & Barley"
     },
     {
@@ -107,17 +127,21 @@
       "price": 28.99,
       "description": "Premium dry cat food with ocean fish and rice. Rich in protein and essential nutrients.",
       "brand": "Royal Canin",
-      "images": ["/img/anhcafe.jpg"],
+      "images": [
+        "./img-pet-product/Ocean-Fish-&-Rice-Cat-Food.jpg"
+      ],
       "flavor": "Ocean Fish & Rice"
     },
     {
       "id": 12,
       "name": "Chicken & Liver Pate",
       "category": "cat-food",
-      "price": 24.50,
+      "price": 24.5,
       "description": "Wet cat food with chicken and liver pate. Smooth texture that cats love.",
       "brand": "Fancy Feast",
-      "images": ["/img/anhchanleo.jpg"],
+      "images": [
+        "./img-pet-product/Chicken-&-Liver-Pate.jpg"
+      ],
       "flavor": "Chicken & Liver"
     },
     {
@@ -127,7 +151,9 @@
       "price": 32.75,
       "description": "Grain-free cat food with salmon and sweet potato. Supports urinary tract health.",
       "brand": "Blue Buffalo",
-      "images": ["/img/anhduahau.jpg"],
+      "images": [
+        "./img-pet-product/Salmon-&-Sweet-Potato.jpg"
+      ],
       "flavor": "Salmon & Sweet Potato"
     },
     {
@@ -137,7 +163,9 @@
       "price": 26.25,
       "description": "Wet cat food with turkey and giblets in rich gravy. High moisture content for hydration.",
       "brand": "Whiskas",
-      "images": ["/img/anhkhoailang.jpg"],
+      "images": [
+        "./img-pet-product/Turkey-&-Giblets-Gravy.jpg"
+      ],
       "flavor": "Turkey & Giblets"
     },
     {
@@ -147,17 +175,21 @@
       "price": 35.99,
       "description": "Kitten food with duck and peas. Formulated for growing kittens with high energy needs.",
       "brand": "Hill's Science Diet",
-      "images": ["/img/anhrauma.jpg"],
+      "images": [
+        "./img-pet-product/Duck-&-Pea-Kitten-Food.jpg"
+      ],
       "flavor": "Duck & Pea"
     },
     {
       "id": 16,
       "name": "Tuna & Shrimp Feast",
       "category": "cat-food",
-      "price": 29.50,
+      "price": 29.5,
       "description": "Premium cat food with tuna and shrimp. Ocean-inspired flavors that cats crave.",
       "brand": "Sheba",
-      "images": ["/img/anhtrangtrai.jpg"],
+      "images": [
+        "./img-pet-product/Tuna-&-Shrimp-Feast.jpg"
+      ],
       "flavor": "Tuna & Shrimp"
     },
     {
@@ -167,7 +199,9 @@
       "price": 31.75,
       "description": "Indoor cat food with lamb and rice. Helps control hairballs and weight management.",
       "brand": "Purina Pro Plan",
-      "images": ["/img/a1.jpg"],
+      "images": [
+        "./img-pet-product/Lamb-&-Rice-Indoor-Formula.jpg"
+      ],
       "flavor": "Lamb & Rice"
     },
     {
@@ -177,17 +211,21 @@
       "price": 27.99,
       "description": "Senior cat food with chicken and egg. Easy to digest and supports aging cats.",
       "brand": "Wellness",
-      "images": ["/img/a2.jpg"],
+      "images": [
+        "./img-pet-product/Chicken-&-Egg-Senior.jpg"
+      ],
       "flavor": "Chicken & Egg"
     },
     {
       "id": 19,
       "name": "Venison & Green Pea",
       "category": "cat-food",
-      "price": 38.50,
+      "price": 38.5,
       "description": "Limited ingredient cat food with venison and green peas. Perfect for sensitive cats.",
       "brand": "Natural Balance",
-      "images": ["/img/a3.jpg"],
+      "images": [
+        "./img-pet-product/Venison-&-Green-Pea.jpg"
+      ],
       "flavor": "Venison & Green Pea"
     },
     {
@@ -197,7 +235,9 @@
       "price": 25.75,
       "description": "Classic cat food with beef and liver. Rich in iron and essential vitamins.",
       "brand": "Friskies",
-      "images": ["/img/field.jpg"],
+      "images": [
+        "./img-pet-product/Beef-&-Liver-Dinner.jpg"
+      ],
       "flavor": "Beef & Liver"
     },
     {
@@ -207,17 +247,21 @@
       "price": 15.99,
       "description": "Interactive puzzle ball that dispenses treats as your pet plays. Great for mental stimulation.",
       "brand": "Kong",
-      "images": ["/img/lamtruong.jpg"],
+      "images": [
+        "./img-pet-product/Interactive-Puzzle-Ball.jpg"
+      ],
       "flavor": "N/A"
     },
     {
       "id": 22,
       "name": "Plush Squeaky Duck",
       "category": "toys",
-      "price": 12.50,
+      "price": 12.5,
       "description": "Soft plush duck toy with squeaker inside. Perfect for gentle play and cuddling.",
       "brand": "Chuckit!",
-      "images": ["/img/veg.jpg"],
+      "images": [
+        "./img-pet-product/Plush-Squeaky-Duck.jpg"
+      ],
       "flavor": "N/A"
     },
     {
@@ -227,7 +271,9 @@
       "price": 18.75,
       "description": "Durable rope tug toy for interactive play. Helps clean teeth and strengthen jaw muscles.",
       "brand": "Nylabone",
-      "images": ["/img/vn.jpg"],
+      "images": [
+        "./img-pet-product/Rope-Tug-Toy.jpg"
+      ],
       "flavor": "N/A"
     },
     {
@@ -237,7 +283,9 @@
       "price": 14.25,
       "description": "Interactive feather wand toy for cats. Encourages natural hunting instincts and exercise.",
       "brand": "Da Bird",
-      "images": ["/img/anhbapcai.jpg"],
+      "images": [
+        "./img-pet-product/Feather-Wand-Cat-Toy.jpg"
+      ],
       "flavor": "N/A"
     },
     {
@@ -247,17 +295,21 @@
       "price": 9.99,
       "description": "Set of 3 high-quality tennis balls. Perfect for fetch and outdoor play.",
       "brand": "Chuckit!",
-      "images": ["/img/anhcafe.jpg"],
+      "images": [
+        "./img-pet-product/Tennis-Ball-Set-(3-pack).jpg"
+      ],
       "flavor": "N/A"
     },
     {
       "id": 26,
       "name": "Catnip Mouse",
       "category": "toys",
-      "price": 8.50,
+      "price": 8.5,
       "description": "Small catnip-filled mouse toy. Drives cats wild with excitement and play.",
       "brand": "Yeowww!",
-      "images": ["/img/anhchanleo.jpg"],
+      "images": [
+        "./img-pet-product/Catnip-Mouse.jpg"
+      ],
       "flavor": "Catnip"
     },
     {
@@ -267,7 +319,9 @@
       "price": 16.99,
       "description": "Durable frisbee disc for outdoor play. Floats in water and bounces on land.",
       "brand": "Kong",
-      "images": ["/img/anhduahau.jpg"],
+      "images": [
+        "./img-pet-product/Frisbee-Disc.jpg"
+      ],
       "flavor": "N/A"
     },
     {
@@ -277,17 +331,21 @@
       "price": 11.75,
       "description": "Red laser pointer for cats and dogs. Provides endless entertainment and exercise.",
       "brand": "PetSafe",
-      "images": ["/img/anhkhoailang.jpg"],
+      "images": [
+        "./img-pet-product/Laser-Pointer.jpg"
+      ],
       "flavor": "N/A"
     },
     {
       "id": 29,
       "name": "Chew Bone",
       "category": "toys",
-      "price": 13.50,
+      "price": 13.5,
       "description": "Long-lasting chew bone for dogs. Helps clean teeth and satisfies chewing needs.",
       "brand": "Nylabone",
-      "images": ["/img/anhrauma.jpg"],
+      "images": [
+        "./img-pet-product/Chew-Bone.jpg"
+      ],
       "flavor": "Bacon"
     },
     {
@@ -297,7 +355,9 @@
       "price": 24.99,
       "description": "Automatic ball launcher for dogs. Launches balls up to 30 feet for active play.",
       "brand": "Chuckit!",
-      "images": ["/img/anhtrangtrai.jpg"],
+      "images": [
+        "./img-pet-product/Ball-Launcher.jpg"
+      ],
       "flavor": "N/A"
     },
     {
@@ -307,17 +367,21 @@
       "price": 22.99,
       "description": "Gentle shampoo and conditioner set for dogs and cats. Hypoallergenic and tear-free formula.",
       "brand": "Earthbath",
-      "images": ["/img/a1.jpg"],
+      "images": [
+        "./img-pet-product/Shampoo-&-Conditioner-Set.jpg"
+      ],
       "flavor": "Oatmeal & Aloe"
     },
     {
       "id": 32,
       "name": "Slicker Brush",
       "category": "grooming",
-      "price": 18.50,
+      "price": 18.5,
       "description": "Professional slicker brush for removing tangles and loose fur. Suitable for all coat types.",
       "brand": "Furminator",
-      "images": ["/img/a2.jpg"],
+      "images": [
+        "./img-pet-product/Slicker-Brush.jpg"
+      ],
       "flavor": "N/A"
     },
     {
@@ -327,7 +391,9 @@
       "price": 14.75,
       "description": "Professional nail clippers with safety guard. Sharp stainless steel blades for clean cuts.",
       "brand": "Safari",
-      "images": ["/img/a3.jpg"],
+      "images": [
+        "./img-pet-product/Nail-Clippers.jpg"
+      ],
       "flavor": "N/A"
     },
     {
@@ -337,7 +403,9 @@
       "price": 12.25,
       "description": "Gentle ear cleaning solution for dogs and cats. Removes wax and prevents infections.",
       "brand": "Virbac",
-      "images": ["/img/field.jpg"],
+      "images": [
+        "./img-pet-product/Ear-Cleaning-Solution.jpg"
+      ],
       "flavor": "N/A"
     },
     {
@@ -347,17 +415,21 @@
       "price": 16.99,
       "description": "Complete dental care kit with toothbrush and poultry-flavored toothpaste.",
       "brand": "CET",
-      "images": ["/img/lamtruong.jpg"],
+      "images": [
+        "./img-pet-product/Toothbrush-&-Toothpaste-Kit.jpg"
+      ],
       "flavor": "Poultry"
     },
     {
       "id": 36,
       "name": "Deodorizing Spray",
       "category": "grooming",
-      "price": 11.50,
+      "price": 11.5,
       "description": "Natural deodorizing spray for pets. Neutralizes odors between baths.",
       "brand": "Nature's Miracle",
-      "images": ["/img/veg.jpg"],
+      "images": [
+        "./img-pet-product/Deodorizing-Spray.jpg"
+      ],
       "flavor": "Fresh Scent"
     },
     {
@@ -367,7 +439,9 @@
       "price": 19.75,
       "description": "Undercoat rake for removing dead undercoat. Perfect for double-coated breeds.",
       "brand": "Furminator",
-      "images": ["/img/vn.jpg"],
+      "images": [
+        "./img-pet-product/Undercoat-Rake.jpg"
+      ],
       "flavor": "N/A"
     },
     {
@@ -377,17 +451,21 @@
       "price": 9.99,
       "description": "Convenient grooming wipes for quick cleanups. Gentle on skin and coat.",
       "brand": "Earthbath",
-      "images": ["/img/anhbapcai.jpg"],
+      "images": [
+        "./img-pet-product/Grooming-Wipes.jpg"
+      ],
       "flavor": "Cucumber & Aloe"
     },
     {
       "id": 39,
       "name": "Styptic Powder",
       "category": "grooming",
-      "price": 8.50,
+      "price": 8.5,
       "description": "Styptic powder to stop bleeding from minor cuts during grooming.",
       "brand": "Kwik Stop",
-      "images": ["/img/anhcafe.jpg"],
+      "images": [
+        "./img-pet-product/Styptic-Powder.jpg"
+      ],
       "flavor": "N/A"
     },
     {
@@ -397,7 +475,9 @@
       "price": 89.99,
       "description": "Professional grooming table with adjustable height and non-slip surface.",
       "brand": "PetEdge",
-      "images": ["/img/anhchanleo.jpg"],
+      "images": [
+        "./img-pet-product/Grooming-Table.jpg"
+      ],
       "flavor": "N/A"
     },
     {
@@ -407,17 +487,21 @@
       "price": 79.99,
       "description": "Memory foam orthopedic dog bed for joint support and comfort. Machine washable cover.",
       "brand": "PetSafe",
-      "images": ["/img/anhduahau.jpg"],
+      "images": [
+        "./img-pet-product/Orthopedic-Dog-Bed.jpg"
+      ],
       "flavor": "N/A"
     },
     {
       "id": 42,
       "name": "Cat Cave Bed",
       "category": "bedding",
-      "price": 45.50,
+      "price": 45.5,
       "description": "Cozy cat cave bed made from natural wool. Provides security and warmth for cats.",
       "brand": "Paws & Pals",
-      "images": ["/img/anhkhoailang.jpg"],
+      "images": [
+        "./img-pet-product/Cat-Cave-Bed.jpg"
+      ],
       "flavor": "N/A"
     },
     {
@@ -427,7 +511,9 @@
       "price": 28.75,
       "description": "Soft fleece dog hoodie for cold weather. Available in multiple sizes and colors.",
       "brand": "Gooby",
-      "images": ["/img/anhrauma.jpg"],
+      "images": [
+        "./img-pet-product/Dog-Hoodie.jpg"
+      ],
       "flavor": "N/A"
     },
     {
@@ -437,7 +523,9 @@
       "price": 22.25,
       "description": "Adorable cat sweater with cute patterns. Keeps your cat warm and stylish.",
       "brand": "Petco",
-      "images": ["/img/anhtrangtrai.jpg"],
+      "images": [
+        "./img-pet-product/Cat-Sweater.jpg"
+      ],
       "flavor": "N/A"
     },
     {
@@ -447,17 +535,21 @@
       "price": 35.99,
       "description": "Self-warming pet pad that reflects body heat. Perfect for senior pets.",
       "brand": "K&H Pet Products",
-      "images": ["/img/a1.jpg"],
+      "images": [
+        "./img-pet-product/Heated-Pet-Pad.jpg"
+      ],
       "flavor": "N/A"
     },
     {
       "id": 46,
       "name": "Dog Raincoat",
       "category": "bedding",
-      "price": 32.50,
+      "price": 32.5,
       "description": "Waterproof dog raincoat with reflective strips. Keeps your dog dry during walks.",
       "brand": "Hurtta",
-      "images": ["/img/a2.jpg"],
+      "images": [
+        "./img-pet-product/Dog-Raincoat.jpg"
+      ],
       "flavor": "N/A"
     },
     {
@@ -467,7 +559,9 @@
       "price": 12.99,
       "description": "Adjustable cat collar with safety bell. Breakaway design for safety.",
       "brand": "Beastie Bands",
-      "images": ["/img/a3.jpg"],
+      "images": [
+        "./img-pet-product/Cat-Collar-with-Bell.jpg"
+      ],
       "flavor": "N/A"
     },
     {
@@ -477,7 +571,9 @@
       "price": 8.75,
       "description": "Stylish dog bandana in various patterns. Easy to tie and machine washable.",
       "brand": "Blueberry Pet",
-      "images": ["/img/field.jpg"],
+      "images": [
+        "./img-pet-product/Dog-Bandana.jpg"
+      ],
       "flavor": "N/A"
     },
     {
@@ -487,7 +583,9 @@
       "price": 24.99,
       "description": "Soft and cozy pet blanket. Perfect for covering pet beds or car seats.",
       "brand": "Snoozer",
-      "images": ["/img/lamtruong.jpg"],
+      "images": [
+        "./img-pet-product/Pet-Blanket.jpg"
+      ],
       "flavor": "N/A"
     },
     {
@@ -497,7 +595,9 @@
       "price": 55.75,
       "description": "Multi-level cat scratching post with platforms and hiding spots. Saves furniture from claws.",
       "brand": "Trixie",
-      "images": ["/img/veg.jpg"],
+      "images": [
+        "./img-pet-product/Cat-Scratching-Post.jpg"
+      ],
       "flavor": "N/A"
     },
     {
@@ -507,17 +607,21 @@
       "price": 34.99,
       "description": "Glucosamine and chondroitin supplements for joint health. Helps with mobility and flexibility.",
       "brand": "Cosequin",
-      "images": ["/img/vn.jpg"],
+      "images": [
+        "./img-pet-product/Glucosamine-Joint-Supplements.jpg"
+      ],
       "flavor": "Chicken"
     },
     {
       "id": 52,
       "name": "Omega-3 Fish Oil",
       "category": "supplements",
-      "price": 28.50,
+      "price": 28.5,
       "description": "High-quality fish oil rich in omega-3 fatty acids. Supports skin, coat, and heart health.",
       "brand": "Nordic Naturals",
-      "images": ["/img/anhbapcai.jpg"],
+      "images": [
+        "./img-pet-product/Omega-3-Fish-Oil.jpg"
+      ],
       "flavor": "Natural"
     },
     {
@@ -527,7 +631,9 @@
       "price": 31.75,
       "description": "Probiotic supplements for digestive health. Helps maintain healthy gut bacteria.",
       "brand": "FortiFlora",
-      "images": ["/img/anhcafe.jpg"],
+      "images": [
+        "./img-pet-product/Probiotic-Digestive-Support.jpg"
+      ],
       "flavor": "Beef"
     },
     {
@@ -537,7 +643,9 @@
       "price": 25.25,
       "description": "Daily multivitamin chews for dogs. Supports overall health and vitality.",
       "brand": "Zesty Paws",
-      "images": ["/img/anhchanleo.jpg"],
+      "images": [
+        "./img-pet-product/Multivitamin-Chews.jpg"
+      ],
       "flavor": "Chicken Liver"
     },
     {
@@ -547,17 +655,21 @@
       "price": 29.99,
       "description": "Natural calming supplements for anxious pets. Contains chamomile and L-theanine.",
       "brand": "Solliquin",
-      "images": ["/img/anhduahau.jpg"],
+      "images": [
+        "./img-pet-product/Calming-Supplements.jpg"
+      ],
       "flavor": "Natural"
     },
     {
       "id": 56,
       "name": "Dental Health Chews",
       "category": "supplements",
-      "price": 19.50,
+      "price": 19.5,
       "description": "Dental health chews that reduce plaque and tartar. Promotes fresh breath.",
       "brand": "Greenies",
-      "images": ["/img/anhkhoailang.jpg"],
+      "images": [
+        "./img-pet-product/Dental-Health-Chews.jpg"
+      ],
       "flavor": "Original"
     },
     {
@@ -567,7 +679,9 @@
       "price": 36.75,
       "description": "Specialized vitamins for senior dogs. Supports aging joints and cognitive function.",
       "brand": "Nutramax",
-      "images": ["/img/anhrauma.jpg"],
+      "images": [
+        "./img-pet-product/Senior-Dog-Vitamins.jpg"
+      ],
       "flavor": "Chicken"
     },
     {
@@ -577,17 +691,21 @@
       "price": 27.99,
       "description": "Supplements for healthy skin and shiny coat. Contains biotin and essential fatty acids.",
       "brand": "VetriScience",
-      "images": ["/img/anhtrangtrai.jpg"],
+      "images": [
+        "./img-pet-product/Skin-&-Coat-Supplements.jpg"
+      ],
       "flavor": "Natural"
     },
     {
       "id": 59,
       "name": "Immune Support Drops",
       "category": "supplements",
-      "price": 22.50,
+      "price": 22.5,
       "description": "Liquid immune support drops for cats and dogs. Easy to administer with food.",
       "brand": "Pet Naturals",
-      "images": ["/img/a1.jpg"],
+      "images": [
+        "./img-pet-product/Immune-Support-Drops.jpg"
+      ],
       "flavor": "Natural"
     },
     {
@@ -597,7 +715,9 @@
       "price": 33.25,
       "description": "Weight management supplements with L-carnitine. Helps maintain healthy weight.",
       "brand": "VetriScience",
-      "images": ["/img/a2.jpg"],
+      "images": [
+        "./img-pet-product/Weight-Management-Formula.jpg"
+      ],
       "flavor": "Natural"
     }
   ]
