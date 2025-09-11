@@ -29,10 +29,37 @@
   max-width: 650px;
   width: 100%;
   max-height: 95vh;
-  overflow: hidden;
+  overflow-y: auto;
+  overflow-x: hidden;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
   animation: popupSlideIn 0.4s ease-out;
   position: relative;
+  /* Custom Scrollbar */
+  scrollbar-width: thin;
+  scrollbar-color: #7fb069 #f1f1f1;
+}
+
+.welcome-popup::-webkit-scrollbar {
+  width: 8px;
+}
+
+.welcome-popup::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+  margin: 5px 0;
+}
+
+.welcome-popup::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #7fb069, #2d5016);
+  border-radius: 10px;
+  border: 2px solid #f1f1f1;
+  transition: all 0.3s ease;
+}
+
+.welcome-popup::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, #2d5016, #7fb069);
+  transform: scale(1.1);
+  box-shadow: 0 2px 6px rgba(127, 176, 105, 0.3);
 }
 
 @keyframes popupSlideIn {

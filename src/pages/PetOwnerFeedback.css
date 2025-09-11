@@ -3,6 +3,32 @@
   min-height: 100vh;
   background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
   padding: 40px 0;
+  /* Custom Scrollbar for entire page */
+  scrollbar-width: thin;
+  scrollbar-color: #7fb069 #f1f1f1;
+}
+
+.feedback-page::-webkit-scrollbar {
+  width: 12px;
+}
+
+.feedback-page::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+  margin: 10px 0;
+}
+
+.feedback-page::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #7fb069, #2d5016);
+  border-radius: 10px;
+  border: 2px solid #f1f1f1;
+  transition: all 0.3s ease;
+}
+
+.feedback-page::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, #2d5016, #7fb069);
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(127, 176, 105, 0.3);
 }
 
 .feedback-container {
@@ -117,6 +143,29 @@
 .feedback-form-group textarea {
   resize: vertical;
   min-height: 120px;
+  /* Custom Scrollbar */
+  scrollbar-width: thin;
+  scrollbar-color: #7fb069 #f1f1f1;
+}
+
+.feedback-form-group textarea::-webkit-scrollbar {
+  width: 8px;
+}
+
+.feedback-form-group textarea::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+.feedback-form-group textarea::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #7fb069, #2d5016);
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+
+.feedback-form-group textarea::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, #2d5016, #7fb069);
+  transform: scale(1.1);
 }
 
 .feedback-submit-btn {

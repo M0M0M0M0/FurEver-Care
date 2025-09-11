@@ -279,7 +279,7 @@ const Home = ({ userData, userName }) => {
       {/* Why Choose FurEver Care Section */}
       <section className="home-why-choose-section">
         <div className="home-container">
-          <div className="home-why-choose-content">
+          <div className="home-section-header">
             <h2>Why Choose FurEver Care?</h2>
             <div className="home-why-choose-features">
               <div className="home-why-choose-feature">
