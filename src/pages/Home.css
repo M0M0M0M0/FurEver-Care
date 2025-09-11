@@ -16,7 +16,7 @@ html {
 }
 
 /* Hero Banner Section */
-.hero-banner {
+.home-hero-banner {
   background: linear-gradient(135deg, #2c1810 0%, #1a0e08 50%, #0d0d0d 100%);
   height: 70vh;
   min-height: 500px;
@@ -28,7 +28,7 @@ html {
   border-radius: 0;
 }
 
-.hero-banner::before {
+.home-hero-banner::before {
   content: "";
   position: absolute;
   top: 0;
@@ -49,7 +49,7 @@ html {
   opacity: 0.6;
 }
 
-.hero-content {
+.home-hero-content {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -61,7 +61,7 @@ html {
   padding: 40px 20px;
 }
 
-.hero-text h1 {
+.home-hero-text h1 {
   font-size: 2.5rem;
   font-weight: 700;
   line-height: 1.2;
@@ -94,7 +94,7 @@ html {
   background: rgba(255, 255, 255, 0.2);
 }
 
-.hero-text p {
+.home-hero-text p {
   font-size: 1.1rem;
   margin-bottom: 40px;
   opacity: 0.9;
@@ -103,7 +103,7 @@ html {
   text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
 }
 
-.hero-features {
+.home-hero-features {
   display: flex;
   justify-content: center;
   gap: 40px;
@@ -138,7 +138,7 @@ html {
 }
 
 /* Promotional Banners */
-.promo-banners {
+.home-promo-banners {
   padding: 60px 0;
   background: white;
 }
@@ -149,7 +149,7 @@ html {
   gap: 30px;
 }
 
-.banner-card {
+.home-banner-card {
   padding: 25px;
   border-radius: 15px;
   color: white;
@@ -160,15 +160,15 @@ html {
   align-items: center;
 }
 
-.banner-card.boarding {
+.home-banner-card.boarding {
   background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
 }
 
-.banner-card.discount {
+.home-banner-card.discount {
   background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
 }
 
-.banner-card::before {
+.home-banner-card::before {
   content: "";
   position: absolute;
   top: 0;
@@ -180,7 +180,7 @@ html {
   transform: translate(30px, -30px);
 }
 
-.banner-content h3 {
+.home-banner-content h3 {
   font-size: 0.9rem;
   font-weight: 600;
   margin-bottom: 3px;
@@ -188,21 +188,21 @@ html {
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
 }
 
-.banner-content h2 {
+.home-banner-content h2 {
   font-size: 1.8rem;
   font-weight: 700;
   margin-bottom: 10px;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
 }
 
-.banner-content p {
+.home-banner-content p {
   font-size: 0.85rem;
   margin-bottom: 15px;
   color: rgba(255, 255, 255, 0.9);
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
 }
 
-.banner-btn {
+.home-banner-btn {
   background: rgba(255, 255, 255, 0.9);
   color: #333;
   border: 2px solid rgba(255, 255, 255, 0.9);
@@ -214,7 +214,7 @@ html {
   text-shadow: none;
 }
 
-.banner-btn:hover {
+.home-banner-btn:hover {
   background: white;
   color: #333;
   transform: translateY(-2px);
@@ -223,27 +223,27 @@ html {
 }
 
 /* Home-1 Section */
-.home-1-section {
+.home-why-choose-section {
   padding: 60px 0;
   background: #f8f9fa;
   text-align: center;
 }
 
-.home-1-content h2 {
+.home-why-choose-content h2 {
   font-size: 2.2rem;
   font-weight: 600;
   color: #333;
   margin-bottom: 30px;
 }
 
-.home-1-features {
+.home-why-choose-features {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 25px;
   margin-top: 25px;
 }
 
-.home-1-feature {
+.home-why-choose-feature {
   text-align: center;
   padding: 20px 15px;
   background: white;
@@ -252,25 +252,25 @@ html {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.home-1-feature:hover {
+.home-why-choose-feature:hover {
   transform: translateY(-5px);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
 }
 
-.home-1-feature .feature-icon {
+.home-why-choose-feature .feature-icon {
   font-size: 2.2rem;
   margin-bottom: 15px;
   display: block;
 }
 
-.home-1-feature h3 {
+.home-why-choose-feature h3 {
   font-size: 1.2rem;
   font-weight: 600;
   color: #333;
   margin-bottom: 10px;
 }
 
-.home-1-feature p {
+.home-why-choose-feature p {
   color: #666;
   line-height: 1.5;
   font-size: 0.9rem;
@@ -321,13 +321,13 @@ html {
   color: white;
 }
 
-.products-grid {
+.home-products-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 20px;
 }
 
-.product-card {
+.home-product-card {
   background: white;
   border-radius: 15px;
   overflow: hidden;
@@ -336,24 +336,24 @@ html {
   position: relative;
 }
 
-.product-card:hover {
+.home-product-card:hover {
   transform: translateY(-10px);
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
 }
 
-.product-image {
+.home-product-image {
   position: relative;
   overflow: hidden;
 }
 
-.product-image img {
+.home-product-image img {
   width: 100%;
   height: 200px;
   object-fit: cover;
   transition: transform 0.3s ease;
 }
 
-.product-card:hover .product-image img {
+.home-product-card:hover .home-product-image img {
   transform: scale(1.1);
 }
 
@@ -369,7 +369,7 @@ html {
   font-weight: 600;
 }
 
-.product-info {
+.home-product-info {
   padding: 18px;
 }
 
@@ -393,21 +393,21 @@ html {
   margin-bottom: 5px;
 }
 
-.product-name {
+.home-product-name {
   font-size: 1rem;
   font-weight: 600;
   color: #333;
   margin-bottom: 10px;
 }
 
-.product-price {
+.home-product-price {
   display: flex;
   align-items: center;
   gap: 8px;
   margin-bottom: 15px;
 }
 
-.current-price {
+.home-current-price {
   font-size: 1.1rem;
   font-weight: 700;
   color: #333;
@@ -419,7 +419,7 @@ html {
   text-decoration: line-through;
 }
 
-.add-to-cart-btn {
+.home-add-to-cart-btn {
   width: 100%;
   padding: 12px;
   background: #667eea;
@@ -431,7 +431,7 @@ html {
   transition: all 0.3s ease;
 }
 
-.add-to-cart-btn:hover {
+.home-add-to-cart-btn:hover {
   background: #5a6fd8;
   transform: translateY(-2px);
 }
@@ -507,11 +507,11 @@ html {
   box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
 }
 
-.special-product-card .product-image {
+.special-product-card .home-product-image {
   position: relative;
 }
 
-.special-product-card .product-image img {
+.special-product-card .home-product-image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -531,7 +531,7 @@ html {
   margin-bottom: 10px;
 }
 
-.product-details .product-name {
+.product-details .home-product-name {
   font-size: 1.5rem;
   font-weight: 700;
   color: #333;
@@ -600,7 +600,7 @@ html {
 }
 
 /* Best Featured Products */
-.best-featured {
+.home-best-featured {
   min-height: 100vh;
   background: white;
   display: flex;
@@ -609,7 +609,7 @@ html {
 }
 
 /* Latest News Section */
-.latest-news {
+.home-latest-news {
   min-height: 100vh;
   background: #f8f9fa;
   display: flex;
@@ -686,16 +686,16 @@ html {
 
 /* Responsive Design */
 @media (max-width: 768px) {
-  .hero-banner {
+  .home-hero-banner {
     height: 100vh;
     padding: 20px 0;
   }
 
-  .hero-text h1 {
+  .home-hero-text h1 {
     font-size: 2.5rem;
   }
 
-  .hero-features {
+  .home-hero-features {
     gap: 20px;
   }
 
@@ -703,7 +703,7 @@ html {
     max-width: 150px;
   }
 
-  .promo-banners {
+  .home-promo-banners {
     padding: 40px 0;
   }
 
@@ -712,11 +712,11 @@ html {
     gap: 20px;
   }
 
-  .home-1-section {
+  .home-why-choose-section {
     padding: 40px 0;
   }
 
-  .home-1-content h2 {
+  .home-why-choose-content h2 {
     font-size: 1.8rem;
   }
 
@@ -740,12 +740,12 @@ html {
     padding: 20px 0;
   }
 
-  .best-featured {
+  .home-best-featured {
     min-height: 100vh;
     padding: 20px 0;
   }
 
-  .latest-news {
+  .home-latest-news {
     min-height: 100vh;
     padding: 20px 0;
   }
@@ -754,7 +754,7 @@ html {
     flex-wrap: wrap;
   }
 
-  .products-grid {
+  .home-products-grid {
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   }
 
@@ -776,16 +776,16 @@ html {
     padding: 0 15px;
   }
 
-  .hero-banner {
+  .home-hero-banner {
     height: 100vh;
     padding: 15px 0;
   }
 
-  .hero-text h1 {
+  .home-hero-text h1 {
     font-size: 2rem;
   }
 
-  .hero-features {
+  .home-hero-features {
     flex-direction: column;
     gap: 15px;
   }
@@ -794,16 +794,16 @@ html {
     max-width: 100%;
   }
 
-  .promo-banners {
+  .home-promo-banners {
     height: 100vh;
     padding: 15px 0;
   }
 
-  .home-1-section {
+  .home-why-choose-section {
     padding: 40px 0;
   }
 
-  .home-1-content h2 {
+  .home-why-choose-content h2 {
     font-size: 1.6rem;
   }
 
@@ -811,15 +811,15 @@ html {
     font-size: 1.2rem !important;
   }
 
-  .products-grid {
+  .home-products-grid {
     grid-template-columns: 1fr;
   }
 
   .trending-products,
   .special-products,
   .testimonials,
-  .best-featured,
-  .latest-news {
+  .home-best-featured,
+  .home-latest-news {
     min-height: 100vh;
     padding: 15px 0;
   }

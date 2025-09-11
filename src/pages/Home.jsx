@@ -214,10 +214,10 @@ const Home = ({ userData, userName }) => {
         <PetOwnerHeader userName={userName} userData={userData} />
       
       {/* Hero Banner Section */}
-      <section className="hero-banner">
+      <section className="home-hero-banner">
         <div className="container">
-          <div className="hero-content">
-            <div className="hero-text">
+          <div className="home-hero-content">
+            <div className="home-hero-text">
               <h1>FurEver Care<br />Where Love Begins! 🐾</h1>
               <div className="hero-images-inline">
                 <div className="hero-icon">🐕</div>
@@ -225,7 +225,7 @@ const Home = ({ userData, userName }) => {
                 <div className="hero-icon">🐰</div>
               </div>
               <p>Professional pet care with high-quality products, expert services and a loving community.</p>
-              <div className="hero-features">
+              <div className="home-hero-features">
                 <div className="feature-item">
                   <div className="feature-icon">🍽️</div>
                   <span>Premium Pet Food</span>
@@ -245,23 +245,23 @@ const Home = ({ userData, userName }) => {
       </section>
 
       {/* Promotional Banners */}
-      <section className="promo-banners">
+      <section className="home-promo-banners">
         <div className="container">
           <div className="banner-grid">
-            <div className="banner-card boarding">
-              <div className="banner-content">
+            <div className="home-banner-card boarding">
+              <div className="home-banner-content">
                 <h3>New</h3>
                 <h2>Pet Care Services</h2>
                 <p>Professional pet care center with experienced veterinary team</p>
-                <button className="banner-btn">Learn More</button>
+                <button className="home-banner-btn">Learn More</button>
               </div>
             </div>
-            <div className="banner-card discount">
-              <div className="banner-content">
+            <div className="home-banner-card discount">
+              <div className="home-banner-content">
                 <h3>Up to 70% Off</h3>
                 <h2>Pet Products Sale</h2>
                 <p>High-quality food, toys, accessories at the best market prices</p>
-                <button className="banner-btn">Buy Now</button>
+                <button className="home-banner-btn">Buy Now</button>
               </div>
             </div>
           </div>
@@ -270,22 +270,22 @@ const Home = ({ userData, userName }) => {
 
 
       {/* Why Choose FurEver Care Section */}
-      <section className="home-1-section">
+      <section className="home-why-choose-section">
         <div className="container">
-          <div className="home-1-content">
+          <div className="home-why-choose-content">
             <h2>Why Choose FurEver Care?</h2>
-            <div className="home-1-features">
-              <div className="home-1-feature">
+            <div className="home-why-choose-features">
+              <div className="home-why-choose-feature">
                 <div className="feature-icon">🏆</div>
                 <h3>Premium Quality</h3>
                 <p>All products are carefully selected and tested to ensure the highest quality and safety for your pets</p>
               </div>
-              <div className="home-1-feature">
+              <div className="home-why-choose-feature">
                 <div className="feature-icon">👨‍⚕️</div>
                 <h3>Expert Care</h3>
                 <p>Our team of veterinarians and pet care experts provide professional advice and 24/7 support</p>
               </div>
-              <div className="home-1-feature">
+              <div className="home-why-choose-feature">
                 <div className="feature-icon">🚚</div>
                 <h3>Fast Delivery</h3>
                 <p>Quick and reliable delivery service to bring happiness to your pets as soon as possible</p>
@@ -298,7 +298,7 @@ const Home = ({ userData, userName }) => {
       {/* Featured Products Section */}
       <section className="trending-products">
         <div className="container">
-          <div className="section-header">
+          <div className="home-section-header">
             <h2>Featured Products</h2>
             <div className="product-tabs">
               <button 
@@ -322,26 +322,26 @@ const Home = ({ userData, userName }) => {
             </div>
           </div>
           
-          <div className="products-grid">
+          <div className="home-products-grid">
             {petProducts[activeTab].map((product) => (
-              <div key={product.id} className="product-card">
-                <div className="product-image">
+              <div key={product.id} className="home-product-card">
+                <div className="home-product-image">
                   <img src={product.image} alt={product.name} />
                   {product.isSale && <span className="sale-badge">Sale</span>}
                 </div>
-                <div className="product-info">
+                <div className="home-product-info">
                   <div className="product-rating">
                     <span className="rating-text">Rated <strong>{product.rating}</strong>/5 stars</span>
                   </div>
                   <h3 className="product-brand">{product.brand}</h3>
-                  <div className="product-price">
-                    <span className="current-price">{product.price.toLocaleString('vi-VN')}₫</span>
+                  <div className="home-product-price">
+                    <span className="home-current-price">{product.price.toLocaleString('vi-VN')}₫</span>
                     {product.originalPrice && (
                       <span className="original-price">{product.originalPrice.toLocaleString('vi-VN')}₫</span>
                     )}
                   </div>
                   <button 
-                    className="add-to-cart-btn"
+                    className="home-add-to-cart-btn"
                     onClick={() => handleBuyNow(product)}
                   >
                     Add to Cart
@@ -355,9 +355,9 @@ const Home = ({ userData, userName }) => {
 
 
       {/* Customer Reviews */}
-      <section className="best-featured">
+      <section className="home-best-featured">
         <div className="container">
-          <div className="section-header">
+          <div className="home-section-header">
             <h2>Customer Reviews</h2>
             <p>What our customers say about our services</p>
           </div>
@@ -380,9 +380,9 @@ const Home = ({ userData, userName }) => {
       </section>
 
       {/* Latest News Section */}
-      <section className="latest-news">
+      <section className="home-latest-news">
         <div className="container">
-          <div className="section-header">
+          <div className="home-section-header">
             <h2>Latest News</h2>
             <p>Stay updated with useful pet care information</p>
           </div>
