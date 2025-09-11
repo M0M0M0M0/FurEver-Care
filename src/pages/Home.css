@@ -17,8 +17,9 @@ html {
 
 /* Hero Banner Section */
 .hero-banner {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  height: 100vh;
+  background: linear-gradient(135deg, #2c1810 0%, #1a0e08 50%, #0d0d0d 100%);
+  height: 70vh;
+  min-height: 500px;
   color: white;
   position: relative;
   overflow: hidden;
@@ -34,8 +35,18 @@ html {
   left: 0;
   right: 0;
   bottom: 0;
-  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="paw" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="2" fill="%23ffffff" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23paw)"/></svg>');
-  opacity: 0.3;
+  background: radial-gradient(
+      circle at 20% 80%,
+      rgba(255, 255, 255, 0.1) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      circle at 80% 20%,
+      rgba(255, 255, 255, 0.08) 0%,
+      transparent 50%
+    ),
+    url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="paw" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="2" fill="%23ffffff" opacity="0.05"/></pattern></defs><rect width="100" height="100" fill="url(%23paw)"/></svg>');
+  opacity: 0.6;
 }
 
 .hero-content {
@@ -45,17 +56,17 @@ html {
   text-align: center;
   position: relative;
   z-index: 2;
-  max-width: 800px;
+  max-width: 600px;
   margin: 0 auto;
-  border-radius: 0;
+  padding: 40px 20px;
 }
 
 .hero-text h1 {
-  font-size: 3rem;
+  font-size: 2.5rem;
   font-weight: 700;
   line-height: 1.2;
-  margin-bottom: 30px;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  margin-bottom: 15px;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6), 0 0 20px rgba(255, 255, 255, 0.1);
 }
 
 .hero-images-inline {
@@ -89,6 +100,7 @@ html {
   opacity: 0.9;
   line-height: 1.6;
   max-width: 600px;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
 }
 
 .hero-features {
@@ -127,10 +139,8 @@ html {
 
 /* Promotional Banners */
 .promo-banners {
-  height: 100vh;
+  padding: 60px 0;
   background: white;
-  display: flex;
-  align-items: center;
 }
 
 .banner-grid {
@@ -140,12 +150,12 @@ html {
 }
 
 .banner-card {
-  padding: 40px;
-  border-radius: 20px;
+  padding: 25px;
+  border-radius: 15px;
   color: white;
   position: relative;
   overflow: hidden;
-  min-height: 200px;
+  min-height: 150px;
   display: flex;
   align-items: center;
 }
@@ -171,71 +181,74 @@ html {
 }
 
 .banner-content h3 {
-  font-size: 1rem;
+  font-size: 0.9rem;
   font-weight: 600;
-  margin-bottom: 5px;
-  opacity: 0.8;
+  margin-bottom: 3px;
+  color: rgba(255, 255, 255, 0.95);
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
 }
 
 .banner-content h2 {
   font-size: 1.8rem;
   font-weight: 700;
   margin-bottom: 10px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
 }
 
 .banner-content p {
-  font-size: 1rem;
-  margin-bottom: 20px;
-  opacity: 0.9;
+  font-size: 0.85rem;
+  margin-bottom: 15px;
+  color: rgba(255, 255, 255, 0.9);
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
 }
 
 .banner-btn {
-  background: rgba(255, 255, 255, 0.2);
-  color: white;
-  border: 2px solid white;
+  background: rgba(255, 255, 255, 0.9);
+  color: #333;
+  border: 2px solid rgba(255, 255, 255, 0.9);
   padding: 12px 25px;
   border-radius: 25px;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
+  text-shadow: none;
 }
 
 .banner-btn:hover {
   background: white;
   color: #333;
   transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  border-color: white;
 }
 
 /* Home-1 Section */
 .home-1-section {
-  height: 100vh;
+  padding: 60px 0;
   background: #f8f9fa;
   text-align: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .home-1-content h2 {
-  font-size: 3rem;
-  font-weight: 700;
+  font-size: 2.2rem;
+  font-weight: 600;
   color: #333;
-  margin-bottom: 50px;
+  margin-bottom: 30px;
 }
 
 .home-1-features {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 40px;
-  margin-top: 40px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  margin-top: 25px;
 }
 
 .home-1-feature {
   text-align: center;
-  padding: 30px 20px;
+  padding: 20px 15px;
   background: white;
-  border-radius: 15px;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  box-shadow: 0 3px 15px rgba(0, 0, 0, 0.08);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -245,22 +258,22 @@ html {
 }
 
 .home-1-feature .feature-icon {
-  font-size: 3rem;
-  margin-bottom: 20px;
+  font-size: 2.2rem;
+  margin-bottom: 15px;
   display: block;
 }
 
 .home-1-feature h3 {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   font-weight: 600;
   color: #333;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
 }
 
 .home-1-feature p {
   color: #666;
-  line-height: 1.6;
-  font-size: 1rem;
+  line-height: 1.5;
+  font-size: 0.9rem;
 }
 
 /* Trending Products Section */
@@ -272,16 +285,16 @@ html {
   justify-content: center;
 }
 
-.section-header {
+.home-section-header {
   text-align: center;
-  margin-bottom: 50px;
+  margin-bottom: 30px;
 }
 
-.section-header h2 {
-  font-size: 2.5rem;
-  font-weight: 700;
-  color: #333;
-  margin-bottom: 20px;
+.home-page .home-section-header h2 {
+  font-size: 3rem !important;
+  font-weight: 600 !important;
+  color: #333 !important;
+  margin-bottom: 8px !important;
 }
 
 .product-tabs {
@@ -310,15 +323,15 @@ html {
 
 .products-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 30px;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
 }
 
 .product-card {
   background: white;
-  border-radius: 20px;
+  border-radius: 15px;
   overflow: hidden;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
   transition: all 0.3s ease;
   position: relative;
 }
@@ -335,7 +348,7 @@ html {
 
 .product-image img {
   width: 100%;
-  height: 250px;
+  height: 200px;
   object-fit: cover;
   transition: transform 0.3s ease;
 }
@@ -356,32 +369,8 @@ html {
   font-weight: 600;
 }
 
-.product-actions-row {
-  display: flex;
-  gap: 5px;
-  margin-bottom: 15px;
-  flex-wrap: wrap;
-}
-
-.action-btn-small {
-  padding: 5px 10px;
-  border: 1px solid #ddd;
-  background: transparent;
-  color: #666;
-  border-radius: 15px;
-  font-size: 0.8rem;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.action-btn-small:hover {
-  background: #667eea;
-  color: white;
-  border-color: #667eea;
-}
-
 .product-info {
-  padding: 25px;
+  padding: 18px;
 }
 
 .product-rating {
@@ -405,21 +394,21 @@ html {
 }
 
 .product-name {
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-weight: 600;
   color: #333;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
 }
 
 .product-price {
   display: flex;
   align-items: center;
-  gap: 10px;
-  margin-bottom: 20px;
+  gap: 8px;
+  margin-bottom: 15px;
 }
 
 .current-price {
-  font-size: 1.3rem;
+  font-size: 1.1rem;
   font-weight: 700;
   color: #333;
 }
@@ -561,26 +550,6 @@ html {
   flex-wrap: wrap;
 }
 
-.quick-view-btn,
-.wishlist-btn,
-.compare-btn {
-  padding: 10px 15px;
-  border: 2px solid #667eea;
-  background: transparent;
-  color: #667eea;
-  border-radius: 20px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.quick-view-btn:hover,
-.wishlist-btn:hover,
-.compare-btn:hover {
-  background: #667eea;
-  color: white;
-}
-
 /* Testimonials Section */
 .testimonials {
   min-height: 100vh;
@@ -637,25 +606,6 @@ html {
   display: flex;
   flex-direction: column;
   justify-content: center;
-}
-
-.featured-products-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 30px;
-}
-
-.featured-product-card {
-  background: white;
-  border-radius: 20px;
-  overflow: hidden;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease;
-}
-
-.featured-product-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
 }
 
 /* Latest News Section */
@@ -754,8 +704,7 @@ html {
   }
 
   .promo-banners {
-    height: 100vh;
-    padding: 20px 0;
+    padding: 40px 0;
   }
 
   .banner-grid {
@@ -764,11 +713,11 @@ html {
   }
 
   .home-1-section {
-    height: 100vh;
+    padding: 40px 0;
   }
 
   .home-1-content h2 {
-    font-size: 2.5rem;
+    font-size: 1.8rem;
   }
 
   .trending-products {
@@ -806,11 +755,7 @@ html {
   }
 
   .products-grid {
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  }
-
-  .product-actions-row {
-    justify-content: center;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   }
 
   .special-product-card {
@@ -855,15 +800,15 @@ html {
   }
 
   .home-1-section {
-    height: 100vh;
+    padding: 40px 0;
   }
 
   .home-1-content h2 {
-    font-size: 2rem;
+    font-size: 1.6rem;
   }
 
-  .section-header h2 {
-    font-size: 2rem;
+  .home-page .home-section-header h2 {
+    font-size: 1.2rem !important;
   }
 
   .products-grid {

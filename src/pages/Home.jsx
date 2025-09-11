@@ -218,25 +218,25 @@ const Home = ({ userData, userName }) => {
         <div className="container">
           <div className="hero-content">
             <div className="hero-text">
-              <h1>Best Pet Care<br />For Your Family<br />FurEver Care - Where Love Begins! 🐾</h1>
+              <h1>FurEver Care<br />Where Love Begins! 🐾</h1>
               <div className="hero-images-inline">
                 <div className="hero-icon">🐕</div>
                 <div className="hero-icon">🐱</div>
                 <div className="hero-icon">🐰</div>
               </div>
-              <p>Discover the world of professional pet care with high-quality products, expert consulting services and a loving animal community.</p>
+              <p>Professional pet care with high-quality products, expert services and a loving community.</p>
               <div className="hero-features">
                 <div className="feature-item">
                   <div className="feature-icon">🍽️</div>
-                  <span>High Quality Food - Optimal Nutrition for Your Pet</span>
+                  <span>Premium Pet Food</span>
                 </div>
                 <div className="feature-item">
                   <div className="feature-icon">🏥</div>
-                  <span>Medical Care Services - 24/7 Veterinary Consultation</span>
+                  <span>Expert Vet Care</span>
                 </div>
                 <div className="feature-item">
-                  <div className="feature-icon">🎉</div>
-                  <span>30% Off - Special Offer for New Customers</span>
+                  <div className="feature-icon">🛍️</div>
+                  <span>Quality Products</span>
                 </div>
               </div>
             </div>
@@ -268,7 +268,8 @@ const Home = ({ userData, userName }) => {
         </div>
       </section>
 
-      {/* Home-1 Section */}
+
+      {/* Why Choose FurEver Care Section */}
       <section className="home-1-section">
         <div className="container">
           <div className="home-1-content">
@@ -276,25 +277,25 @@ const Home = ({ userData, userName }) => {
             <div className="home-1-features">
               <div className="home-1-feature">
                 <div className="feature-icon">🏆</div>
-                <h3>Top Quality</h3>
-                <p>Products are strictly tested, ensuring absolute safety for your pets</p>
+                <h3>Premium Quality</h3>
+                <p>All products are carefully selected and tested to ensure the highest quality and safety for your pets</p>
               </div>
               <div className="home-1-feature">
                 <div className="feature-icon">👨‍⚕️</div>
-                <h3>Expert Team</h3>
-                <p>Experienced veterinarians, 24/7 consultation for all pet health issues</p>
+                <h3>Expert Care</h3>
+                <p>Our team of veterinarians and pet care experts provide professional advice and 24/7 support</p>
               </div>
               <div className="home-1-feature">
                 <div className="feature-icon">🚚</div>
                 <h3>Fast Delivery</h3>
-                <p>Free delivery within the city, ensuring fresh products reach you</p>
+                <p>Quick and reliable delivery service to bring happiness to your pets as soon as possible</p>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Trending Products Section */}
+      {/* Featured Products Section */}
       <section className="trending-products">
         <div className="container">
           <div className="section-header">
@@ -333,11 +334,6 @@ const Home = ({ userData, userName }) => {
                     <span className="rating-text">Rated <strong>{product.rating}</strong>/5 stars</span>
                   </div>
                   <h3 className="product-brand">{product.brand}</h3>
-                  <div className="product-actions-row">
-                    <button className="action-btn-small wishlist">Wishlist</button>
-                    <button className="action-btn-small compare">Compare</button>
-                    <button className="action-btn-small quick-view">Quick View</button>
-                  </div>
                   <div className="product-price">
                     <span className="current-price">{product.price.toLocaleString('vi-VN')}₫</span>
                     {product.originalPrice && (
@@ -357,64 +353,18 @@ const Home = ({ userData, userName }) => {
         </div>
       </section>
 
-      {/* Big Sale Banner */}
-      <section className="big-sale-banner">
-        <div className="container">
-          <div className="sale-content">
-            <h2>Big Pet Products Sale</h2>
-            <p>Save Up to 30% on All Products</p>
-            <button className="sale-btn">Buy Now</button>
-          </div>
-        </div>
-      </section>
 
-      {/* Special Products Section */}
-      <section className="special-products">
+      {/* Customer Reviews */}
+      <section className="best-featured">
         <div className="container">
           <div className="section-header">
-            <h2>Best Deals This Week!</h2>
+            <h2>Customer Reviews</h2>
+            <p>What our customers say about our services</p>
           </div>
-          <div className="special-products-grid">
-            {specialProducts.map((product) => (
-              <div key={product.id} className="special-product-card">
-                <div className="product-image">
-                  <img src={product.image} alt={product.name} />
-                  <span className="sale-badge">Sale</span>
-                </div>
-                <div className="product-details">
-                  <h3 className="product-brand">{product.brand}</h3>
-                  <h4 className="product-name">{product.name}</h4>
-                  <div className="product-rating">
-                    <span className="stars">★★★★★</span>
-                    <span className="rating-text">Rated {product.rating}/5 stars</span>
-                  </div>
-                  <div className="product-price">
-                    <span className="current-price">{product.price.toLocaleString('vi-VN')}₫</span>
-                    <span className="original-price">{product.originalPrice.toLocaleString('vi-VN')}₫</span>
-                  </div>
-                  <p className="product-description">{product.description}</p>
-                  <div className="product-actions">
-                    <button className="add-to-cart-btn">Add to Cart</button>
-                    <button className="quick-view-btn">Quick View</button>
-                    <button className="wishlist-btn">♡</button>
-                    <button className="compare-btn">⚖</button>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Testimonials Section */}
-      <section className="testimonials">
-        <div className="container">
-          <div className="section-header">
-            <h2>What Our Customers Say!</h2>
-            <p>Genuine feedback from customers who trust FurEver Care</p>
-          </div>
-          <div className="testimonials-grid">
-            {testimonials.map((testimonial) => (
+          
+          {/* Testimonials */}
+          <div className="testimonials-grid" style={{ marginBottom: '40px' }}>
+            {testimonials.slice(0, 3).map((testimonial) => (
               <div key={testimonial.id} className="testimonial-card">
                 <div className="testimonial-content">
                   <p>"{testimonial.content}"</p>
@@ -422,46 +372,6 @@ const Home = ({ userData, userName }) => {
                 <div className="testimonial-author">
                   <h4>{testimonial.name}</h4>
                   <span>{testimonial.position}</span>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Best Featured Products */}
-      <section className="best-featured">
-        <div className="container">
-          <div className="section-header">
-            <h2>Most Featured Products</h2>
-            <p>Most loved products from our customers</p>
-          </div>
-          <div className="featured-products-grid">
-            {petProducts.featured.slice(0, 2).map((product) => (
-              <div key={product.id} className="featured-product-card">
-                <div className="product-image">
-                  <img src={product.image} alt={product.name} />
-                  {product.isSale && <span className="sale-badge">Sale</span>}
-                </div>
-                <div className="product-info">
-                  <div className="product-rating">
-                    <span className="stars">★★★★★</span>
-                    <span className="rating-text">Rated {product.rating}/5 stars</span>
-                  </div>
-                  <h3 className="product-brand">{product.brand}</h3>
-                  <h4 className="product-name">{product.name}</h4>
-                  <div className="product-price">
-                    <span className="current-price">{product.price.toLocaleString('vi-VN')}₫</span>
-                    {product.originalPrice && (
-                      <span className="original-price">{product.originalPrice.toLocaleString('vi-VN')}₫</span>
-                    )}
-                  </div>
-                  <button 
-                    className="add-to-cart-btn"
-                    onClick={() => handleBuyNow(product)}
-                  >
-                    Add to Cart
-                  </button>
                 </div>
               </div>
             ))}
