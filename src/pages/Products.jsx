@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { useSearchParams } from 'react-router-dom'
 import { Link } from 'react-router-dom'
 import PetOwnerHeader from '../components/PetOwnerHeader'
+import { useCart } from '../contexts/CartContext'
 import './Products.css'
 
 const CATEGORIES = ['all', 'dog-food', 'cat-food', 'toys', 'grooming', 'bedding', 'supplements']
@@ -12,6 +13,7 @@ export default function Products() {
   const [category, setCategory] = useState('all')
   const [loading, setLoading] = useState(true)
   const [searchParams, setSearchParams] = useSearchParams()
+  const { addToCart } = useCart()
 
   // Read category from URL parameters
   useEffect(() => {
@@ -59,7 +61,7 @@ export default function Products() {
   })
 
   const handleAddToCart = (product) => {
-    console.log('Adding to cart:', product)
+    addToCart(product, 1)
     alert(`Added ${product.name} to cart!`)
   }
 

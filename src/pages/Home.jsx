@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import PetOwnerHeader from '../components/PetOwnerHeader';
 import Footer from '../components/Footer';
 import PetProfile from '../components/PetProfile';
+import { useCart } from '../contexts/CartContext';
 import './Home.css';
 
 const Home = ({ userData, userName }) => {
@@ -9,6 +10,7 @@ const Home = ({ userData, userName }) => {
   const [location, setLocation] = useState('Ho Chi Minh City, Vietnam');
   const [showPetProfile, setShowPetProfile] = useState(false);
   const [activeTab, setActiveTab] = useState('featured');
+  const { addToCart } = useCart();
 
   // Debug logging
   console.log('Home component rendered with:', { userData, userName });
@@ -186,7 +188,8 @@ const Home = ({ userData, userName }) => {
   ];
 
   const handleBuyNow = (product) => {
-    alert(`Buy Now clicked for ${product.name}`);
+    addToCart(product, 1);
+    alert(`Added ${product.name} to cart!`);
   };
 
   const handleCareAction = (action) => {

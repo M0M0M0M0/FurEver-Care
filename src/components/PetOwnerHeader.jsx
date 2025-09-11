@@ -10,7 +10,7 @@ import './PetOwnerHeader.css'
 
 export default function PetOwnerHeader({ userName, userData }) {
   const navigate = useNavigate();
-  const { getCartItemCount } = useCart();
+  const { getCartItemsCount } = useCart();
   const [searchTerm, setSearchTerm] = useState('');
   const [searchResults, setSearchResults] = useState([]);
   const [showResults, setShowResults] = useState(false);
@@ -229,7 +229,7 @@ export default function PetOwnerHeader({ userName, userData }) {
               <RippleLink to="/cart" className="cart-link position-relative">
                 <i className="fas fa-shopping-cart" style={{ fontSize: '1.5rem', color: 'rgb(222, 223, 224)' }}></i>
                 <span className="cart-badge position-absolute top-0 start-100 translate-middle badge rounded-pill">
-                  {getCartItemCount()}
+                  {getCartItemsCount()}
                 </span>
               </RippleLink>
             </div>

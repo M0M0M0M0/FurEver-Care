@@ -11,6 +11,7 @@ import PetAdoptionPage from './pages/PetAdoptionPage'
 import Home from './pages/Home'
 import Products from './pages/Products'
 import ProductDetail from './pages/ProductDetail'
+import Cart from './pages/Cart'
 import Services from './pages/Services'
 import About from './pages/About'
 import Contact from './pages/Contact'
@@ -112,6 +113,7 @@ function AppContent() {
             <Route path="/" element={<Home userData={userData || {}} userName={userName || ''} />} />
             <Route path="/products" element={<Products />} />
             <Route path="/product/:id" element={<ProductDetail />} />
+            <Route path="/cart" element={<Cart userData={userData} userName={userName} />} />
             <Route path="/pet-care" element={<PetCarePage userData={userData} userName={userName} />} />
             <Route path="/pet-profile" element={<PetProfilePage userData={userData || {}} userName={userName || ''} />} />
             <Route path="/contact" element={<Contact userType={userType} userData={userData} userName={userName} />}/>
@@ -122,18 +124,21 @@ function AppContent() {
             <Route path="/" element={<VeterinarianDashboard userData={userData || {}} userName={userName || ''} />} />
             <Route path="/products" element={<Products />} />
             <Route path="/product/:id" element={<ProductDetail />} />
+            <Route path="/cart" element={<Cart userData={userData} userName={userName} />} />
           </Routes>
         ) : userType === 'shelter' ? (
           <Routes>
             <Route path="/" element={<PetAdoptionPage userData={userData || {}} userName={userName || ''} />} />
             <Route path="/products" element={<Products />} />
             <Route path="/product/:id" element={<ProductDetail />} />
+            <Route path="/cart" element={<Cart userData={userData} userName={userName} />} />
           </Routes>
         ) : (
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/products" element={<Products />} />
             <Route path="/product/:id" element={<ProductDetail />} />
+            <Route path="/cart" element={<Cart userData={userData} userName={userName} />} />
             <Route path="/services" element={<Services />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />

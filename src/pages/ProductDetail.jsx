@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { useParams, Link } from 'react-router-dom'
 import PetOwnerHeader from '../components/PetOwnerHeader'
+import { useCart } from '../contexts/CartContext'
 import './ProductDetail.css'
 
 export default function ProductDetail() {
@@ -10,6 +11,7 @@ export default function ProductDetail() {
   const [selectedImage, setSelectedImage] = useState(0)
   const [quantity, setQuantity] = useState(1)
   const [otherProducts, setOtherProducts] = useState([])
+  const { addToCart } = useCart()
 
   useEffect(() => {
     // Fetch product data
@@ -42,7 +44,7 @@ export default function ProductDetail() {
   }
 
   const handleAddToCart = () => {
-    console.log('Adding to cart:', { product, quantity })
+    addToCart(product, quantity)
     alert(`Added ${quantity} ${product.name} to cart!`)
   }
 
