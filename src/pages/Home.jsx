@@ -221,7 +221,7 @@ const Home = ({ userData, userName }) => {
         <div className="home-container">
           <div className="home-hero-content">
             <div className="home-hero-text">
-              <h1>FurEver Care<br />Where Love Begins! 🐾</h1>
+              <h1>FurEver Care Where Love Begins! 🐾</h1>
             </div>
           </div>
         </div>
