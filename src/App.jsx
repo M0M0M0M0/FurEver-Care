@@ -4,6 +4,7 @@ import WelcomePopup from './components/WelcomePopup'
 import WelcomeMessagePopup from './components/WelcomeMessagePopup'
 import PetOwnerForm from './components/PetOwnerForm'
 import VeterinarianForm from './components/VeterinarianForm'
+import VeterinarianRegisterPage from './pages/VeterinarianRegisterPage'
 import PetOwnerPage from './pages/PetOwnerPage'
 import PetProfilePage from './pages/PetProfilePage'
 import PetCarePage from './pages/PetCarePage'
@@ -13,8 +14,7 @@ import Home from './pages/Home'
 import Products from './pages/Products'
 import ProductDetail from './pages/ProductDetail'
 import Cart from './pages/Cart'
-import Services from './pages/Services'
-import About from './pages/About'
+
 import Contact from './pages/Contact'
 import PetOwnerFeedback from './pages/PetOwnerFeedback'
 import EmergencyVetPage from './pages/EmergencyVetPage'
@@ -140,6 +140,7 @@ function AppContent() {
             <Route path="/feedback" element={<PetOwnerFeedback userName={userName || ''} />} />
             <Route path="/pet-adoption" element={<PetAdoptionPage userData={userData || {}} userName={userName || ''} />} />
             <Route path="/veterinarian" element={<VeterinarianDashboard userData={userData || {}} userName={userName || ''} />} />
+            <Route path="/veterinarian-register" element={<VeterinarianRegisterPage />} />
           </Routes>
         ) : userType === 'veterinarian' ? (
           <Routes>
@@ -171,6 +172,7 @@ function AppContent() {
             <Route path="/emergency-vet" element={<EmergencyVetPage />} />
             <Route path="/pet-adoption" element={<PetAdoptionPage />} />
             <Route path="/veterinarian" element={<VeterinarianDashboard />} />
+            <Route path="/veterinarian-register" element={<VeterinarianRegisterPage />} />
           </Routes>
         )}
         <BackToTop />

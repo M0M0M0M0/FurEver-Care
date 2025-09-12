@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react'
-import { Link, useNavigate } from 'react-router-dom'
+import { Link, useNavigate, useLocation } from 'react-router-dom'
 import { Heart, Mail, Phone, MapPin, Facebook, Instagram, Twitter, Eye } from 'lucide-react'
 import './Footer.css'
 
 const Footer = () => {
   const [visitCount, setVisitCount] = useState(0)
   const navigate = useNavigate()
+  const location = useLocation()
 
   // Function to handle navigation with scroll to top
   const handleNavigation = (path) => {
@@ -28,6 +29,11 @@ const Footer = () => {
         window.scrollTo({ top: 0, behavior: 'smooth' })
       }, 100)
     }
+  }
+
+  // Function to handle Veterinary button click
+  const handleVeterinaryClick = () => {
+    window.location.reload()
   }
 
   useEffect(() => {
@@ -92,11 +98,11 @@ const Footer = () => {
           <div className="footer-section">
             <h3 className="footer-title">Pages</h3>
             <ul className="footer-links">
-              <li><button onClick={() => handleNavigation('/veterinarian')} className="footer-link-btn">Veterinary</button></li>
+              <li><button onClick={handleVeterinaryClick} className="footer-link-btn">Veterinary</button></li>
               <li><button onClick={() => handleNavigation('/')} className="footer-link-btn">Pet Owner</button></li>
               <li><button onClick={() => handleNavigation('/pet-care#training-tips')} className="footer-link-btn">Pet Training</button></li>
               <li><button onClick={() => handleNavigation('/pet-care#health-tips')} className="footer-link-btn">Care Consultant</button></li>
-              <li><button onClick={() => handleNavigation('/pet-adoption')} className="footer-link-btn">Animal Rescue</button></li>
+              <li><button onClick={() => window.location.reload()} className="footer-link-btn">Animal Rescue</button></li>
             </ul>
           </div>
 
