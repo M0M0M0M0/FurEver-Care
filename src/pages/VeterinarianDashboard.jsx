@@ -18,6 +18,7 @@ import {
   AlertTriangle
 } from 'lucide-react'
 import ScrollingInfoBar from '../components/ScrollingInfoBar'
+import Footer from '../components/Footer'
 import './VeterinarianDashboard.css'
 
 const VeterinarianDashboard = ({ userData, userName }) => {
@@ -513,6 +514,7 @@ const VeterinarianDashboard = ({ userData, userName }) => {
   )
 
   return (
+    <>
     <div className="veterinarian-dashboard">
       <ScrollingInfoBar />
       {/* Header */}
@@ -589,6 +591,8 @@ const VeterinarianDashboard = ({ userData, userName }) => {
         {activeTab === 'schedule' && renderSchedule()}
       </div>
     </div>
+    <Footer />
+    </>
   )
 }
 

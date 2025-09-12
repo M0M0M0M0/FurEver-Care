@@ -18,6 +18,7 @@ import {
 } from 'lucide-react'
 import WelcomeMessagePopup from '../components/WelcomeMessagePopup'
 import ScrollingInfoBar from '../components/ScrollingInfoBar'
+import Footer from '../components/Footer'
 import './PetAdoptionPage.css'
 
 const PetAdoptionPage = ({ userData, userName }) => {
@@ -794,6 +795,7 @@ const PetAdoptionPage = ({ userData, userName }) => {
   )
 
   return (
+    <>
     <div className="pet-adoption-page">
       <ScrollingInfoBar />
       {/* Welcome Message Popup */}
@@ -895,6 +897,8 @@ const PetAdoptionPage = ({ userData, userName }) => {
         </div>
       )}
     </div>
+    <Footer />
+    </>
   )
 }
 
