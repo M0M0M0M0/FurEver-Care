@@ -71,8 +71,6 @@ export default function Products() {
       <>
 
         <ScrollingInfoBar />
-        <div style={{ paddingTop: '30px' }}></div>
-        
         <PetOwnerHeader />
         
         <main className="section main layout-section">
