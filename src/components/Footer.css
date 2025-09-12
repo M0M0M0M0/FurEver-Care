@@ -118,6 +118,9 @@
 .footer-bottom {
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   padding-top: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
 .footer-bottom-content {
@@ -147,6 +150,23 @@
 }
 
 .footer-bottom-links a:hover {
+  color: #667eea;
+}
+
+.visit-counter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 10px 20px;
+  border-radius: 25px;
+  font-size: 0.9rem;
+  color: #bdc3c7;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.visit-counter svg {
   color: #667eea;
 }
 

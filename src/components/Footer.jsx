@@ -1,8 +1,28 @@
-import React from 'react'
-import { Heart, Mail, Phone, MapPin, Facebook, Instagram, Twitter } from 'lucide-react'
+import React, { useState, useEffect } from 'react'
+import { Heart, Mail, Phone, MapPin, Facebook, Instagram, Twitter, Eye } from 'lucide-react'
 import './Footer.css'
 
 const Footer = () => {
+  const [visitCount, setVisitCount] = useState(0)
+
+  useEffect(() => {
+    // Fake visit counter - starts from a random number and increments
+    const baseCount = 125847
+    const randomIncrement = Math.floor(Math.random() * 50) + 1
+    setVisitCount(baseCount + randomIncrement)
+    
+    // Simulate visits increasing over time
+    const interval = setInterval(() => {
+      setVisitCount(prev => prev + Math.floor(Math.random() * 3) + 1)
+    }, 30000) // Update every 30 seconds
+
+    return () => clearInterval(interval)
+  }, [])
+
+  const formatNumber = (num) => {
+    return num.toLocaleString()
+  }
+
   return (
     <footer className="footer">
       <div className="container">
@@ -84,6 +104,10 @@ const Footer = () => {
               <a href="#">Terms of Service</a>
               <a href="#">Cookie Policy</a>
             </div>
+          </div>
+          <div className="visit-counter">
+            <Eye size={16} />
+            <span>Total Visits: {formatNumber(visitCount)}</span>
           </div>
         </div>
       </div>
