@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-router-dom'
 import WelcomePopup from './components/WelcomePopup'
+import WelcomeMessagePopup from './components/WelcomeMessagePopup'
 import PetOwnerForm from './components/PetOwnerForm'
 import VeterinarianForm from './components/VeterinarianForm'
 import PetOwnerPage from './pages/PetOwnerPage'
@@ -37,6 +38,7 @@ function AppContent() {
   const [userType, setUserType] = useState(null)
   const [userName, setUserName] = useState('')
   const [userData, setUserData] = useState(null)
+  const [showWelcomeMessage, setShowWelcomeMessage] = useState(false)
 
   // Scroll to top when userData changes (after form completion)
   useEffect(() => {
@@ -65,10 +67,12 @@ function AppContent() {
     setUserData(data)
     // Here you would typically save the data to a backend
     console.log('User registration completed:', { type, data })
-    // Show success message
-    alert('Registration successful! Welcome to FurEver Care!')
-    // Navigate to home page
-    navigate('/')
+    // Show welcome message popup instead of alert
+    setShowWelcomeMessage(true)
+    // Navigate to home page after a short delay
+    setTimeout(() => {
+      navigate('/')
+    }, 1000)
   }
 
   const handleBackToWelcome = () => {
@@ -76,6 +80,11 @@ function AppContent() {
     setUserType(null)
     setUserName('')
     setUserData(null)
+    setShowWelcomeMessage(false)
+  }
+
+  const handleWelcomeMessageClose = () => {
+    setShowWelcomeMessage(false)
   }
 
   // Show welcome popup first
@@ -109,6 +118,15 @@ function AppContent() {
   return (
     <CartProvider>
       <div className="App">
+        {/* Welcome Message Popup */}
+        {showWelcomeMessage && (
+          <WelcomeMessagePopup
+            userName={userName}
+            userType={userType}
+            onClose={handleWelcomeMessageClose}
+          />
+        )}
+        
         {userType === 'pet-owner' ? (
           <Routes>
             <Route path="/" element={<Home userData={userData || {}} userName={userName || ''} />} />
