@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { Mail, Phone, MapPin, Send } from 'lucide-react'
 import PetOwnerHeader from '../components/PetOwnerHeader'
 import Footer from '../components/Footer'
+import ScrollingInfoBar from '../components/ScrollingInfoBar'
 
 /**
  * Contact page with PetOwnerHeader
@@ -97,9 +98,10 @@ const Contact = ({ userType = null, userData = null, userName = '' }) => {
         }
       `}</style>
       
+      <ScrollingInfoBar />
       <PetOwnerHeader userName={userName} userData={userData} />
 
-      <div className="section">
+      <div className="section" style={{ paddingTop: '70px' }}>
         <div className="container">
           <h1 className="section-title">Contact Us</h1>
           <div className="grid grid-2" style={{ gap: '50px', alignItems: 'start' }}>

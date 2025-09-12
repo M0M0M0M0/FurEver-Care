@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useMemo, useCallback } from 'react';
 import { useLocation } from 'react-router-dom';
 import PetOwnerHeader from '../components/PetOwnerHeader';
+import ScrollingInfoBar from '../components/ScrollingInfoBar';
 import './EmergencyVetPage.css';
 
 // Move static data outside component to prevent recreation on every render
@@ -183,6 +184,7 @@ const EmergencyVetPage = ({ userData: propUserData, userName: propUserName }) =>
 
   return (
     <div className="emergency-vet-page">
+      <ScrollingInfoBar />
       <PetOwnerHeader userName={userName} userData={userData} />
       
       {/* Quick Actions - Full Width Horizontal Bar */}

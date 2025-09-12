@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react"
 import PetOwnerHeader from "../components/PetOwnerHeader"
 import Footer from "../components/Footer"
+import ScrollingInfoBar from "../components/ScrollingInfoBar"
 import "./PetOwnerFeedback.css"
 
 const PetOwnerFeedback = ({ userName }) => {
@@ -78,6 +79,7 @@ const PetOwnerFeedback = ({ userName }) => {
 
   return (
     <>
+      <ScrollingInfoBar />
       <PetOwnerHeader userName={userName} />
       <div className="feedback-page">
         <div className="feedback-container">

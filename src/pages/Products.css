@@ -4,6 +4,7 @@
   color: white;
   padding: 40px 0;
   text-align: center;
+  margin-top: 40px; /* Space for scrolling info bar */
 }
 
 .products-hero h1 {

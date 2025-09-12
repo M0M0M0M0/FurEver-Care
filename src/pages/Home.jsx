@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import PetOwnerHeader from '../components/PetOwnerHeader';
 import Footer from '../components/Footer';
 import PetProfile from '../components/PetProfile';
+import ScrollingInfoBar from '../components/ScrollingInfoBar';
 import { useCart } from '../contexts/CartContext';
 import './Home.css';
 
@@ -157,6 +158,7 @@ const Home = ({ userData, userName }) => {
   try {
     return (
       <div className="home-page">
+        <ScrollingInfoBar />
         <PetOwnerHeader userName={userName} userData={userData} />
       
       {/* Hero Banner Section */}

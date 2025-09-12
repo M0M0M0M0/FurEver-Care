@@ -3,6 +3,7 @@
   min-height: 100vh;
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   padding: 20px;
+  padding-top: 50px; /* Space for scrolling info bar */
 }
 
 /* Page Header */

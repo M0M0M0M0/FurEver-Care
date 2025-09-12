@@ -1,0 +1,29 @@
+.scrolling-info-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: #2c3e50;
+  color: white;
+  padding: 6px 0;
+  z-index: 1000;
+  overflow: hidden;
+}
+
+.scrolling-content {
+  display: flex;
+  align-items: center;
+  animation: scroll 20s linear infinite;
+  white-space: nowrap;
+  gap: 15px;
+  font-size: 12px;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}

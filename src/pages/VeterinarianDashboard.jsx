@@ -17,6 +17,7 @@ import {
   Plus,
   AlertTriangle
 } from 'lucide-react'
+import ScrollingInfoBar from '../components/ScrollingInfoBar'
 import './VeterinarianDashboard.css'
 
 const VeterinarianDashboard = ({ userData, userName }) => {
@@ -513,6 +514,7 @@ const VeterinarianDashboard = ({ userData, userName }) => {
 
   return (
     <div className="veterinarian-dashboard">
+      <ScrollingInfoBar />
       {/* Header */}
       <div className="dashboard-header">
         <div className="vet-profile">

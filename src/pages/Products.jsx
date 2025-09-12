@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { useSearchParams } from 'react-router-dom'
 import { Link } from 'react-router-dom'
 import PetOwnerHeader from '../components/PetOwnerHeader'
+import ScrollingInfoBar from '../components/ScrollingInfoBar'
 import { useCart } from '../contexts/CartContext'
 import './Products.css'
 
@@ -68,6 +69,7 @@ export default function Products() {
   if (loading) {
     return (
       <>
+        <ScrollingInfoBar />
         <PetOwnerHeader />
         <main className="section main layout-section">
           <section className="products-hero">
@@ -91,6 +93,7 @@ export default function Products() {
 
   return (
     <>
+      <ScrollingInfoBar />
       <PetOwnerHeader />
       <main className="section main layout-section">
       <section className="products-hero">

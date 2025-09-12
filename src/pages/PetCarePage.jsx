@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useLocation, useSearchParams } from 'react-router-dom';
 import PetOwnerHeader from '../components/PetOwnerHeader';
+import ScrollingInfoBar from '../components/ScrollingInfoBar';
 import './PetCarePage.css';
 
 const PetCarePage = ({ userData: propUserData, userName: propUserName }) => {
@@ -221,29 +222,10 @@ const PetCarePage = ({ userData: propUserData, userName: propUserName }) => {
 
   return (
     <div className="pet-care-page">
+      <ScrollingInfoBar />
       <PetOwnerHeader userName={userName} userData={userData} />
       
-      {/* Header */}
-      <div className="pet-care-header">
-        <div className="pet-care-container">
-          <div className="header-content">
-            <div className="pet-info">
-              <h1>🐾 {petName}</h1>
-              <div className="location-time">
-                <span className="location">📍 {userLocation}</span>
-                <span className="time">{formatTime(currentTime)}</span>
-                <span className="date">{formatDate(currentTime)}</span>
-              </div>
-            </div>
-            <button 
-              className="back-btn"
-              onClick={() => window.history.back()}
-            >
-              ← Back
-            </button>
-          </div>
-        </div>
-      </div>
+      
 
       {/* Main Content */}
       <div className="pet-care-content">

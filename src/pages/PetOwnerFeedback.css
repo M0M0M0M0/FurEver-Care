@@ -3,6 +3,7 @@
   min-height: 100vh;
   background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
   padding: 40px 0;
+  padding-top: 70px; /* Space for scrolling info bar */
   /* Custom Scrollbar for entire page */
   scrollbar-width: thin;
   scrollbar-color: #7fb069 #f1f1f1;
