@@ -185,6 +185,7 @@ const EmergencyVetPage = ({ userData: propUserData, userName: propUserName }) =>
   return (
     <div className="emergency-vet-page">
       <ScrollingInfoBar />
+      <div style={{ paddingTop: '30px' }}></div>
       <PetOwnerHeader userName={userName} userData={userData} />
       
       {/* Quick Actions - Full Width Horizontal Bar */}

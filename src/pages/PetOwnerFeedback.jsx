@@ -80,6 +80,7 @@ const PetOwnerFeedback = ({ userName }) => {
   return (
     <>
       <ScrollingInfoBar />
+      <div style={{ paddingTop: '30px' }}></div>
       <PetOwnerHeader userName={userName} />
       <div className="feedback-page">
         <div className="feedback-container">

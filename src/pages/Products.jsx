@@ -69,8 +69,12 @@ export default function Products() {
   if (loading) {
     return (
       <>
+
         <ScrollingInfoBar />
+        <div style={{ paddingTop: '30px' }}></div>
+        
         <PetOwnerHeader />
+        
         <main className="section main layout-section">
           <section className="products-hero">
             <div>
@@ -94,6 +98,7 @@ export default function Products() {
   return (
     <>
       <ScrollingInfoBar />
+      <div style={{ paddingTop: '30px' }}></div>
       <PetOwnerHeader />
       <main className="section main layout-section">
       <section className="products-hero">

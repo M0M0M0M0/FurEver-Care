@@ -61,6 +61,10 @@ const Contact = ({ userType = null, userData = null, userName = '' }) => {
   return (
     <>
       <style>{`
+        body {
+          padding-top: 0 !important; /* Reset padding-top */
+        }
+        
         @keyframes fadeIn {
           from { opacity: 0; }
           to { opacity: 1; }
@@ -99,9 +103,10 @@ const Contact = ({ userType = null, userData = null, userName = '' }) => {
       `}</style>
       
       <ScrollingInfoBar />
+      <div style={{ paddingTop: '30px' }}></div>
       <PetOwnerHeader userName={userName} userData={userData} />
 
-      <div className="section" style={{ paddingTop: '70px' }}>
+      <div className="section">
         <div className="container">
           <h1 className="section-title">Contact Us</h1>
           <div className="grid grid-2" style={{ gap: '50px', alignItems: 'start' }}>
