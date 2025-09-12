@@ -2,7 +2,7 @@
   min-height: 100vh;
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   font-family: "Roboto", sans-serif;
-  padding-top: 30px; /* Space for scrolling info bar */
+  padding-top: 0px; /* Space for scrolling info bar */
   /* Performance optimizations */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

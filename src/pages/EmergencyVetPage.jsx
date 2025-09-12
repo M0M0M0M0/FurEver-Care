@@ -148,24 +148,20 @@ const EmergencyVetPage = ({ userData: propUserData, userName: propUserName }) =>
   const [userData, setUserData] = useState(null);
   const [userName, setUserName] = useState('');
   const [showAllTips, setShowAllTips] = useState(false);
-  // Load user data from props or localStorage - optimized with useMemo
-  const memoizedUserData = useMemo(() => {
+  // Load user data from props or localStorage - simplified
+  useEffect(() => {
     if (propUserData && propUserName) {
-      return { userData: propUserData, userName: propUserName };
+      setUserData(propUserData);
+      setUserName(propUserName);
     } else {
       const savedUserData = localStorage.getItem('userRegistrationData');
       if (savedUserData) {
         const user = JSON.parse(savedUserData);
-        return { userData: user, userName: user.name || 'User' };
+        setUserData(user);
+        setUserName(user.name || 'User');
       }
     }
-    return { userData: null, userName: '' };
   }, [propUserData, propUserName]);
-
-  useEffect(() => {
-    setUserData(memoizedUserData.userData);
-    setUserName(memoizedUserData.userName);
-  }, [memoizedUserData]);
 
 
   // Memoize event handlers to prevent recreation on every render
@@ -185,7 +181,6 @@ const EmergencyVetPage = ({ userData: propUserData, userName: propUserName }) =>
   return (
     <div className="emergency-vet-page">
       <ScrollingInfoBar />
-      <div style={{ paddingTop: '30px' }}></div>
       <PetOwnerHeader userName={userName} userData={userData} />
       
       {/* Quick Actions - Full Width Horizontal Bar */}

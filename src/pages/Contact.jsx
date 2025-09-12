@@ -103,7 +103,7 @@ const Contact = ({ userType = null, userData = null, userName = '' }) => {
       `}</style>
       
       <ScrollingInfoBar />
-      <div style={{ paddingTop: '30px' }}></div>
+
       <PetOwnerHeader userName={userName} userData={userData} />
 
       <div className="section">

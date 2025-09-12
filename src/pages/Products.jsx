@@ -98,7 +98,6 @@ export default function Products() {
   return (
     <>
       <ScrollingInfoBar />
-      <div style={{ paddingTop: '30px' }}></div>
       <PetOwnerHeader />
       <main className="section main layout-section">
       <section className="products-hero">

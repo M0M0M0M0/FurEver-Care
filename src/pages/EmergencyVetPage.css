@@ -1,9 +1,8 @@
 /* Emergency & Vet Help Page Styles */
 .emergency-vet-page {
   min-height: 100vh;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: #667eea;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-
 }
 
 /* Container Styles */
@@ -62,13 +61,7 @@
   border-radius: 15px;
   padding: 1.5rem;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease;
   border: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-.hotline-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
 }
 
 .hotline-header {
@@ -80,7 +73,7 @@
 
 .hotline-icon {
   font-size: 2rem;
-  background: linear-gradient(45deg, #e74c3c, #c0392b);
+  background: #e74c3c;
   border-radius: 50%;
   width: 60px;
   height: 60px;
@@ -113,21 +106,15 @@
 }
 
 .call-btn {
-  background: linear-gradient(45deg, #27ae60, #2ecc71);
+  background: #27ae60;
   color: white;
   border: none;
   padding: 0.75rem 1.5rem;
   border-radius: 25px;
   font-weight: 600;
   cursor: pointer;
-  transition: all 0.3s ease;
   box-shadow: 0 4px 15px rgba(39, 174, 96, 0.3);
   flex: 1;
-}
-
-.call-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(39, 174, 96, 0.4);
 }
 
 .availability {
@@ -161,13 +148,7 @@
   border-radius: 15px;
   padding: 1.5rem;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease;
   border: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-.vet-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
 }
 
 .vet-header {
@@ -230,21 +211,15 @@
 }
 
 .directions-btn {
-  background: linear-gradient(45deg, #3498db, #2980b9);
+  background: #3498db;
   color: white;
   border: none;
   padding: 0.75rem 1.5rem;
   border-radius: 25px;
   font-weight: 600;
   cursor: pointer;
-  transition: all 0.3s ease;
   box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
   flex: 1;
-}
-
-.directions-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(52, 152, 219, 0.4);
 }
 
 /* Emergency Tips Section */
@@ -268,13 +243,7 @@
   border-radius: 12px;
   padding: 1.2rem;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease;
   border: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-.tip-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
 }
 
 .tip-header {
@@ -286,7 +255,7 @@
 
 .tip-icon {
   font-size: 1.5rem;
-  background: linear-gradient(45deg, #f39c12, #e67e22);
+  background: #f39c12;
   border-radius: 50%;
   width: 45px;
   height: 45px;
@@ -321,7 +290,7 @@
 }
 
 .step-number {
-  background: linear-gradient(45deg, #3498db, #2980b9);
+  background: #3498db;
   color: white;
   width: 22px;
   height: 22px;
@@ -349,7 +318,7 @@
 
 .show-more-btn,
 .show-less-btn {
-  background: linear-gradient(45deg, #3498db, #2980b9);
+  background: #3498db;
   color: white;
   border: none;
   padding: 0.8rem 1.5rem;
@@ -357,23 +326,12 @@
   font-size: 0.9rem;
   font-weight: 500;
   cursor: pointer;
-  transition: all 0.3s ease;
   box-shadow: 0 2px 10px rgba(52, 152, 219, 0.3);
 }
 
-.show-more-btn:hover,
-.show-less-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 15px rgba(52, 152, 219, 0.4);
-}
-
 .show-less-btn {
-  background: linear-gradient(45deg, #95a5a6, #7f8c8d);
+  background: #95a5a6;
   box-shadow: 0 2px 10px rgba(149, 165, 166, 0.3);
-}
-
-.show-less-btn:hover {
-  box-shadow: 0 4px 15px rgba(149, 165, 166, 0.4);
 }
 
 /* Contact Us Section */
@@ -409,7 +367,7 @@
 
 .contact-icon {
   font-size: 2rem;
-  background: linear-gradient(45deg, #9b59b6, #8e44ad);
+  background: #9b59b6;
   border-radius: 50%;
   width: 60px;
   height: 60px;
@@ -436,21 +394,15 @@
 }
 
 .action-btn {
-  background: linear-gradient(45deg, #9b59b6, #8e44ad);
+  background: #9b59b6;
   color: white;
   border: none;
   padding: 0.5rem 1rem;
   border-radius: 20px;
   font-weight: 600;
   cursor: pointer;
-  transition: all 0.3s ease;
   box-shadow: 0 4px 15px rgba(155, 89, 182, 0.3);
   font-size: 0.8rem;
-}
-
-.action-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(155, 89, 182, 0.4);
 }
 
 .working-hours {
@@ -509,49 +461,31 @@
 }
 
 .quick-action-btn {
-  background: linear-gradient(45deg, #e74c3c, #c0392b);
+  background: #e74c3c;
   color: white;
   border: none;
   padding: 1.5rem 1rem;
   border-radius: 15px;
   font-weight: 600;
   cursor: pointer;
-  transition: all 0.3s ease;
   box-shadow: 0 4px 15px rgba(231, 76, 60, 0.3);
   font-size: 1rem;
   text-align: center;
 }
 
-.quick-action-btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 25px rgba(231, 76, 60, 0.4);
-}
-
 .quick-action-btn.poison {
-  background: linear-gradient(45deg, #8e44ad, #9b59b6);
+  background: #8e44ad;
   box-shadow: 0 4px 15px rgba(142, 68, 173, 0.3);
 }
 
-.quick-action-btn.poison:hover {
-  box-shadow: 0 8px 25px rgba(142, 68, 173, 0.4);
-}
-
 .quick-action-btn.nearest {
-  background: linear-gradient(45deg, #27ae60, #2ecc71);
+  background: #27ae60;
   box-shadow: 0 4px 15px rgba(39, 174, 96, 0.3);
 }
 
-.quick-action-btn.nearest:hover {
-  box-shadow: 0 8px 25px rgba(39, 174, 96, 0.4);
-}
-
 .quick-action-btn.rescue {
-  background: linear-gradient(45deg, #f39c12, #e67e22);
+  background: #f39c12;
   box-shadow: 0 4px 15px rgba(243, 156, 18, 0.3);
-}
-
-.quick-action-btn.rescue:hover {
-  box-shadow: 0 8px 25px rgba(243, 156, 18, 0.4);
 }
 
 /* Responsive Design */
