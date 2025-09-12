@@ -16,6 +16,7 @@ import Services from './pages/Services'
 import About from './pages/About'
 import Contact from './pages/Contact'
 import PetOwnerFeedback from './pages/PetOwnerFeedback'
+import EmergencyVetPage from './pages/EmergencyVetPage'
 import BackToTop from './components/BackToTop'
 import { CartProvider } from './contexts/CartContext'
 import './App.css'
@@ -116,6 +117,7 @@ function AppContent() {
             <Route path="/cart" element={<Cart userData={userData} userName={userName} />} />
             <Route path="/pet-care" element={<PetCarePage userData={userData} userName={userName} />} />
             <Route path="/pet-profile" element={<PetProfilePage userData={userData || {}} userName={userName || ''} />} />
+            <Route path="/emergency-vet" element={<EmergencyVetPage userData={userData} userName={userName} />} />
             <Route path="/contact" element={<Contact userType={userType} userData={userData} userName={userName} />}/>
             <Route path="/feedback" element={<PetOwnerFeedback userName={userName || ''} />} />
           </Routes>
@@ -125,6 +127,7 @@ function AppContent() {
             <Route path="/products" element={<Products />} />
             <Route path="/product/:id" element={<ProductDetail />} />
             <Route path="/cart" element={<Cart userData={userData} userName={userName} />} />
+            <Route path="/emergency-vet" element={<EmergencyVetPage userData={userData} userName={userName} />} />
           </Routes>
         ) : userType === 'shelter' ? (
           <Routes>
@@ -132,6 +135,7 @@ function AppContent() {
             <Route path="/products" element={<Products />} />
             <Route path="/product/:id" element={<ProductDetail />} />
             <Route path="/cart" element={<Cart userData={userData} userName={userName} />} />
+            <Route path="/emergency-vet" element={<EmergencyVetPage userData={userData} userName={userName} />} />
           </Routes>
         ) : (
           <Routes>
@@ -142,6 +146,7 @@ function AppContent() {
             <Route path="/services" element={<Services />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/emergency-vet" element={<EmergencyVetPage />} />
           </Routes>
         )}
         <BackToTop />

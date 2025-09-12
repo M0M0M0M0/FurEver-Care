@@ -134,13 +134,8 @@ export default function PetOwnerHeader({ userName, userData }) {
                   <li><RippleAnchor className="dropdown-item header-dropdown-item" href="#" onClick={(e) => { e.preventDefault(); handleCategoryClick('supplements', e); }}>Health Supplements</RippleAnchor></li>
                 </ul>
               </li>
-              <li className="nav-item dropdown">
-                <RippleLink className="nav-link dropdown-toggle header-nav-link" to="/emergency" id="emergencyDropdown">EMERGENCY & VET HELP</RippleLink>
-                <ul className="dropdown-menu header-dropdown-menu">
-                  <li><RippleAnchor className="dropdown-item header-dropdown-item" href="#" onClick={(e) => { e.preventDefault(); navigate('/emergency-contacts'); }}>Emergency Contacts</RippleAnchor></li>
-                  <li><RippleAnchor className="dropdown-item header-dropdown-item" href="#" onClick={(e) => { e.preventDefault(); navigate('/vet-finder'); }}>Find Veterinarian</RippleAnchor></li>
-                  <li><RippleAnchor className="dropdown-item header-dropdown-item" href="#" onClick={(e) => { e.preventDefault(); navigate('/emergency-guide'); }}>Emergency Guide</RippleAnchor></li>
-                </ul>
+              <li className="nav-item">
+                <RippleLink className="nav-link header-nav-link" to="/emergency-vet">EMERGENCY & VET HELP</RippleLink>
               </li>
               <li className="nav-item"><RippleLink className="nav-link header-nav-link" to="/feedback">FEEDBACK</RippleLink></li>
               <li className="nav-item"><RippleLink className="nav-link header-nav-link" to="/contact">CONTACT</RippleLink></li>

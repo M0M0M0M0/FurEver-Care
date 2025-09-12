@@ -532,14 +532,16 @@ const PetAdoptionPage = ({ userData, userName }) => {
         </div>
 
         <div className="map-container">
-          <div className="map-placeholder">
-            <MapPin size={48} />
-            <h3>Google Map</h3>
-            <p>123 Rescue Street, District 1, Ho Chi Minh City</p>
-            <button className="btn-primary">
-              View on Google Maps
-            </button>
-          </div>
+          <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d9942.069540424707!2d105.82538849696283!3d21.029955520695545!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1svi!2s!4v1757598209112!5m2!1svi!2s" 
+            width="100%" 
+            height="450" 
+            style={{border:0, borderRadius: '8px'}} 
+            allowFullScreen="" 
+            loading="lazy" 
+            referrerPolicy="no-referrer-when-downgrade"
+            title="Pet Rescue Location Map"
+          />
         </div>
       </div>
     </div>

@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useCallback } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { 
   Calendar, 
   Clock, 
@@ -13,11 +14,13 @@ import {
   Filter,
   Eye,
   Download,
-  Plus
+  Plus,
+  AlertTriangle
 } from 'lucide-react'
 import './VeterinarianDashboard.css'
 
 const VeterinarianDashboard = ({ userData, userName }) => {
+  const navigate = useNavigate()
   const [activeTab, setActiveTab] = useState('appointments')
   const [appointments, setAppointments] = useState([])
   const [medicalHistory, setMedicalHistory] = useState([])
@@ -426,6 +429,13 @@ const VeterinarianDashboard = ({ userData, userName }) => {
         >
           <Activity size={20} />
           Treatment Records
+        </button>
+        <button
+          className="nav-tab emergency-tab"
+          onClick={() => navigate('/emergency-vet')}
+        >
+          <AlertTriangle size={20} />
+          Emergency & Vet Help
         </button>
       </div>
 
