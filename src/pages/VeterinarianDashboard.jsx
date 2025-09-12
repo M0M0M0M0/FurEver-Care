@@ -25,6 +25,7 @@ const VeterinarianDashboard = ({ userData, userName }) => {
   const [appointments, setAppointments] = useState([])
   const [medicalHistory, setMedicalHistory] = useState([])
   const [treatmentRecords, setTreatmentRecords] = useState([])
+  const [scheduleSlots, setScheduleSlots] = useState([])
   const [searchTerm, setSearchTerm] = useState('')
   const [filterStatus, setFilterStatus] = useState('all')
   const [avatarUrl, setAvatarUrl] = useState(null)
@@ -141,6 +142,73 @@ const VeterinarianDashboard = ({ userData, userName }) => {
         followUp: '2024-01-20',
         status: 'Treatment completed',
         cost: '$18'
+      }
+    ])
+
+    // Mock schedule slots data
+    setScheduleSlots([
+      {
+        id: 1,
+        date: '2024-01-15',
+        timeSlots: [
+          { time: '08:00', status: 'available', appointmentId: null },
+          { time: '08:30', status: 'booked', appointmentId: 1, petName: 'Buddy', ownerName: 'John Smith' },
+          { time: '09:00', status: 'booked', appointmentId: 1, petName: 'Buddy', ownerName: 'John Smith' },
+          { time: '09:30', status: 'available', appointmentId: null },
+          { time: '10:00', status: 'available', appointmentId: null },
+          { time: '10:30', status: 'booked', appointmentId: 2, petName: 'Mimi', ownerName: 'Sarah Johnson' },
+          { time: '11:00', status: 'booked', appointmentId: 2, petName: 'Mimi', ownerName: 'Sarah Johnson' },
+          { time: '11:30', status: 'available', appointmentId: null },
+          { time: '14:00', status: 'booked', appointmentId: 3, petName: 'Max', ownerName: 'Mike Wilson' },
+          { time: '14:30', status: 'booked', appointmentId: 3, petName: 'Max', ownerName: 'Mike Wilson' },
+          { time: '15:00', status: 'available', appointmentId: null },
+          { time: '15:30', status: 'available', appointmentId: null },
+          { time: '16:00', status: 'available', appointmentId: null },
+          { time: '16:30', status: 'available', appointmentId: null },
+          { time: '17:00', status: 'available', appointmentId: null }
+        ]
+      },
+      {
+        id: 2,
+        date: '2024-01-16',
+        timeSlots: [
+          { time: '08:00', status: 'available', appointmentId: null },
+          { time: '08:30', status: 'available', appointmentId: null },
+          { time: '09:00', status: 'booked', appointmentId: 4, petName: 'Luna', ownerName: 'Emma Davis' },
+          { time: '09:30', status: 'booked', appointmentId: 4, petName: 'Luna', ownerName: 'Emma Davis' },
+          { time: '10:00', status: 'available', appointmentId: null },
+          { time: '10:30', status: 'available', appointmentId: null },
+          { time: '11:00', status: 'booked', appointmentId: 5, petName: 'Charlie', ownerName: 'David Brown' },
+          { time: '11:30', status: 'booked', appointmentId: 5, petName: 'Charlie', ownerName: 'David Brown' },
+          { time: '14:00', status: 'available', appointmentId: null },
+          { time: '14:30', status: 'available', appointmentId: null },
+          { time: '15:00', status: 'booked', appointmentId: 6, petName: 'Bella', ownerName: 'Lisa Wilson' },
+          { time: '15:30', status: 'booked', appointmentId: 6, petName: 'Bella', ownerName: 'Lisa Wilson' },
+          { time: '16:00', status: 'available', appointmentId: null },
+          { time: '16:30', status: 'available', appointmentId: null },
+          { time: '17:00', status: 'available', appointmentId: null }
+        ]
+      },
+      {
+        id: 3,
+        date: '2024-01-17',
+        timeSlots: [
+          { time: '08:00', status: 'booked', appointmentId: 7, petName: 'Rocky', ownerName: 'Tom Anderson' },
+          { time: '08:30', status: 'booked', appointmentId: 7, petName: 'Rocky', ownerName: 'Tom Anderson' },
+          { time: '09:00', status: 'available', appointmentId: null },
+          { time: '09:30', status: 'available', appointmentId: null },
+          { time: '10:00', status: 'booked', appointmentId: 8, petName: 'Sophie', ownerName: 'Anna Taylor' },
+          { time: '10:30', status: 'booked', appointmentId: 8, petName: 'Sophie', ownerName: 'Anna Taylor' },
+          { time: '11:00', status: 'available', appointmentId: null },
+          { time: '11:30', status: 'available', appointmentId: null },
+          { time: '14:00', status: 'available', appointmentId: null },
+          { time: '14:30', status: 'available', appointmentId: null },
+          { time: '15:00', status: 'available', appointmentId: null },
+          { time: '15:30', status: 'booked', appointmentId: 9, petName: 'Oscar', ownerName: 'Mark Johnson' },
+          { time: '16:00', status: 'booked', appointmentId: 9, petName: 'Oscar', ownerName: 'Mark Johnson' },
+          { time: '16:30', status: 'available', appointmentId: null },
+          { time: '17:00', status: 'available', appointmentId: null }
+        ]
       }
     ])
   }, [])
@@ -378,6 +446,71 @@ const VeterinarianDashboard = ({ userData, userName }) => {
     </div>
   )
 
+  const renderSchedule = () => (
+    <div className="schedule-container">
+      <div className="schedule-header">
+        <h2>Appointment Schedule</h2>
+        <p>View available time slots and booked appointments</p>
+      </div>
+
+      <div className="schedule-grid">
+        {scheduleSlots.map(day => (
+          <div key={day.id} className="schedule-day">
+            <div className="day-header">
+              <h3>{new Date(day.date).toLocaleDateString('en-US', { 
+                weekday: 'long', 
+                year: 'numeric', 
+                month: 'long', 
+                day: 'numeric' 
+              })}</h3>
+            </div>
+            
+            <div className="time-slots">
+              {day.timeSlots.map((slot, index) => (
+                <div 
+                  key={index} 
+                  className={`time-slot ${slot.status}`}
+                >
+                  <div className="slot-time">
+                    <Clock size={14} />
+                    <span>{slot.time}</span>
+                  </div>
+                  
+                  {slot.status === 'booked' ? (
+                    <div className="slot-booking">
+                      <div className="booking-info">
+                        <User size={14} />
+                        <span>{slot.petName}</span>
+                      </div>
+                      <div className="booking-owner">
+                        <span>{slot.ownerName}</span>
+                      </div>
+                    </div>
+                  ) : (
+                    <div className="slot-available">
+                      <span>Available</span>
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div className="schedule-legend">
+        <div className="legend-item">
+          <div className="legend-color available"></div>
+          <span>Available</span>
+        </div>
+        <div className="legend-item">
+          <div className="legend-color booked"></div>
+          <span>Booked</span>
+        </div>
+      </div>
+    </div>
+  )
+
   return (
     <div className="veterinarian-dashboard">
       {/* Header */}
@@ -431,6 +564,13 @@ const VeterinarianDashboard = ({ userData, userName }) => {
           Treatment Records
         </button>
         <button
+          className={`nav-tab ${activeTab === 'schedule' ? 'active' : ''}`}
+          onClick={() => setActiveTab('schedule')}
+        >
+          <Clock size={20} />
+          Schedule
+        </button>
+        <button
           className="nav-tab emergency-tab"
           onClick={() => navigate('/emergency-vet')}
         >
@@ -444,6 +584,7 @@ const VeterinarianDashboard = ({ userData, userName }) => {
         {activeTab === 'appointments' && renderAppointments()}
         {activeTab === 'medical-history' && renderMedicalHistory()}
         {activeTab === 'treatment-records' && renderTreatmentRecords()}
+        {activeTab === 'schedule' && renderSchedule()}
       </div>
     </div>
   )

@@ -546,3 +546,168 @@
     padding: 16px;
   }
 }
+
+/* Schedule Styles */
+.schedule-container {
+  padding: 20px;
+}
+
+.schedule-header {
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.schedule-header h2 {
+  color: #2c3e50;
+  margin-bottom: 8px;
+  font-size: 28px;
+}
+
+.schedule-header p {
+  color: #7f8c8d;
+  font-size: 16px;
+}
+
+.schedule-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 25px;
+  margin-bottom: 30px;
+}
+
+.schedule-day {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  border: 1px solid #e1e8ed;
+}
+
+.day-header {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 15px 20px;
+  text-align: center;
+}
+
+.day-header h3 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.time-slots {
+  padding: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 12px;
+}
+
+.time-slot {
+  border: 2px solid #e1e8ed;
+  border-radius: 8px;
+  padding: 12px;
+  transition: all 0.3s ease;
+  background: white;
+}
+
+.time-slot.available {
+  border-color: #27ae60;
+  background: #f8fff9;
+}
+
+.time-slot.booked {
+  border-color: #e74c3c;
+  background: #fff5f5;
+}
+
+.slot-time {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+.slot-time svg {
+  color: #7f8c8d;
+}
+
+.slot-booking {
+  text-align: center;
+}
+
+.booking-info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  margin-bottom: 4px;
+  font-weight: 600;
+  color: #e74c3c;
+}
+
+.booking-owner {
+  font-size: 12px;
+  color: #7f8c8d;
+}
+
+.slot-available {
+  text-align: center;
+  color: #27ae60;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.schedule-legend {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 20px;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.legend-color {
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+  border: 2px solid;
+}
+
+.legend-color.available {
+  background: #f8fff9;
+  border-color: #27ae60;
+}
+
+.legend-color.booked {
+  background: #fff5f5;
+  border-color: #e74c3c;
+}
+
+/* Responsive Schedule */
+@media (max-width: 768px) {
+  .schedule-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .time-slots {
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 8px;
+    padding: 15px;
+  }
+
+  .time-slot {
+    padding: 10px;
+  }
+
+  .schedule-legend {
+    flex-direction: column;
+    gap: 15px;
+  }
+}
