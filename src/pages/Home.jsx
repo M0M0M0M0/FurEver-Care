@@ -10,6 +10,8 @@ const Home = ({ userData, userName }) => {
   const [location, setLocation] = useState('Ho Chi Minh City, Vietnam');
   const [showPetProfile, setShowPetProfile] = useState(false);
   const [activeTab, setActiveTab] = useState('featured');
+  const [products, setProducts] = useState([]);
+  const [filteredProducts, setFilteredProducts] = useState([]);
   const { addToCart } = useCart();
 
   // Debug logging
@@ -24,92 +26,34 @@ const Home = ({ userData, userName }) => {
     return () => clearInterval(timer);
   }, []);
 
-  // Sample pet products data
-  const petProducts = {
-    featured: [
-      {
-        id: 1,
-        name: 'Royal Canin Dog Food',
-        brand: 'Royal Canin',
-        image: 'https://images.unsplash.com/photo-1583337130417-3346a1be7dee?w=300&h=300&fit=crop',
-        price: 520000,
-        originalPrice: 620000,
-        rating: 5.0,
-        isSale: true,
-        description: 'Premium nutrition for adult dogs, rich in protein and vitamins'
-      },
-      {
-        id: 2,
-        name: 'Tidy Cats Cat Litter',
-        brand: 'Tidy Cats',
-        image: 'https://images.unsplash.com/photo-1574158622682-e40e69881006?w=300&h=300&fit=crop',
-        price: 102000,
-        originalPrice: 112000,
-        rating: 4.0,
-        isSale: true,
-        description: 'Effective odor control litter, easy to clean and environmentally friendly'
-      },
-      {
-        id: 3,
-        name: 'Kong Dog Toy Set',
-        brand: 'Kong',
-        image: 'https://images.unsplash.com/photo-1601758228041-f3b2795255f1?w=300&h=300&fit=crop',
-        price: 220000,
-        originalPrice: 257000,
-        rating: 5.0,
-        isSale: true,
-        description: 'Interactive toys that stimulate intelligence and reduce stress for dogs'
-      },
-      {
-        id: 4,
-        name: 'Catit Cat Scratching Post',
-        brand: 'Catit',
-        image: 'https://images.unsplash.com/photo-1596854407944-bf87f6fdd49e?w=300&h=300&fit=crop',
-        price: 130000,
-        originalPrice: 150000,
-        rating: 4.5,
-        isSale: true,
-        description: 'Durable scratching post for cats, helps nail trimming and stress relief'
+  // Load products from JSON
+  useEffect(() => {
+    const base = import.meta.env.BASE_URL || '/';
+    fetch(`${base}json/pet-products.json`)
+      .then(response => response.json())
+      .then(data => setProducts(data.products))
+      .catch(error => console.error('Error loading products:', error));
+  }, []);
+
+  // Filter products based on active tab
+  useEffect(() => {
+    if (products.length > 0) {
+      let filtered = [];
+      switch (activeTab) {
+        case 'featured':
+          // Use first 6 products for featured
+          filtered = products.slice(0, 6);
+          break;
+        case 'bestSellers':
+          filtered = products.filter(product => product.bestSeller).slice(0, 6);
+          break;
+        default:
+          filtered = products.slice(0, 6);
       }
-    ],
-    newArrivals: [
-      {
-        id: 5,
-        name: 'Pet Carrier Bag',
-        brand: 'PetSafe',
-        image: 'https://images.unsplash.com/photo-1551717743-49959800b1f6?w=300&h=300&fit=crop',
-        price: 650000,
-        originalPrice: null,
-        rating: 4.5,
-        isSale: false,
-        description: 'Safe and comfortable carrier bag for pets during travel'
-      },
-      {
-        id: 6,
-        name: 'Dog Training Treats',
-        brand: 'Pedigree',
-        image: 'https://images.unsplash.com/photo-1605568427561-40dd23c2acea?w=300&h=300&fit=crop',
-        price: 97000,
-        originalPrice: null,
-        rating: 4.0,
-        isSale: false,
-        description: 'Nutritious treats for dog training, rich in protein'
-      }
-    ],
-    bestSellers: [
-      {
-        id: 7,
-        name: 'Professional Grooming Kit',
-        brand: 'Furminator',
-        image: 'https://images.unsplash.com/photo-1601758228041-f3b2795255f1?w=300&h=300&fit=crop',
-        price: 399000,
-        originalPrice: null,
-        rating: 4.8,
-        isSale: false,
-        description: 'Professional grooming tools for dogs and cats'
-      }
-    ]
-  };
+      setFilteredProducts(filtered);
+    }
+  }, [products, activeTab]);
+
 
   const specialProducts = [
     {
@@ -189,7 +133,6 @@ const Home = ({ userData, userName }) => {
 
   const handleBuyNow = (product) => {
     addToCart(product, 1);
-    alert(`Added ${product.name} to cart!`);
   };
 
   const handleCareAction = (action) => {
@@ -307,56 +250,50 @@ const Home = ({ userData, userName }) => {
         <div className="home-container">
           <div className="home-section-header">
             <h2>Featured Products</h2>
-            <div className="product-tabs">
-              <button 
-                className={`tab-btn ${activeTab === 'featured' ? 'active' : ''}`}
-                onClick={() => setActiveTab('featured')}
-              >
-                Featured
-              </button>
-              <button 
-                className={`tab-btn ${activeTab === 'newArrivals' ? 'active' : ''}`}
-                onClick={() => setActiveTab('newArrivals')}
-              >
-                New Arrivals
-              </button>
-              <button 
-                className={`tab-btn ${activeTab === 'bestSellers' ? 'active' : ''}`}
-                onClick={() => setActiveTab('bestSellers')}
-              >
-                Best Sellers
-              </button>
-            </div>
+             <div className="product-tabs">
+               <button 
+                 className={`tab-btn ${activeTab === 'featured' ? 'active' : ''}`}
+                 onClick={() => setActiveTab('featured')}
+               >
+                 Featured
+               </button>
+               <button 
+                 className={`tab-btn ${activeTab === 'bestSellers' ? 'active' : ''}`}
+                 onClick={() => setActiveTab('bestSellers')}
+               >
+                 Best Sellers
+               </button>
+             </div>
           </div>
           
-          <div className="home-products-grid">
-            {petProducts[activeTab].map((product) => (
-              <div key={product.id} className="home-product-card">
-                <div className="home-product-image">
-                  <img src={product.image} alt={product.name} />
-                  {product.isSale && <span className="sale-badge">Sale</span>}
-                </div>
-                <div className="home-product-info">
-                  <div className="product-rating">
-                    <span className="rating-text">Rated <strong>{product.rating}</strong>/5 stars</span>
-                  </div>
-                  <h3 className="product-brand">{product.brand}</h3>
-                  <div className="home-product-price">
-                    <span className="home-current-price">{product.price.toLocaleString('vi-VN')}₫</span>
-                    {product.originalPrice && (
-                      <span className="original-price">{product.originalPrice.toLocaleString('vi-VN')}₫</span>
-                    )}
-                  </div>
-                  <button 
-                    className="home-add-to-cart-btn"
-                    onClick={() => handleBuyNow(product)}
-                  >
-                    Add to Cart
-                  </button>
-                </div>
-              </div>
-            ))}
-          </div>
+           <div className="home-products-grid">
+             {filteredProducts.map((product) => (
+               <div key={product.id} className="home-product-card">
+                 <div className="home-product-image">
+                   <img src={product.images[0]} alt={product.name} />
+                   {product.isSale && <span className="sale-badge">Sale</span>}
+                 </div>
+                 <div className="home-product-info">
+                   <div className="product-rating">
+                     <span className="rating-text">Rated <strong>{product.rating}</strong>/5 stars</span>
+                   </div>
+                   <h3 className="product-brand">{product.brand}</h3>
+                   <div className="home-product-price">
+                     <span className="home-current-price">{product.price}</span>
+                     {product.originalPrice && product.originalPrice !== product.price && (
+                       <span className="original-price">{product.originalPrice}</span>
+                     )}
+                   </div>
+                   <button 
+                     className="home-add-to-cart-btn"
+                     onClick={() => handleBuyNow(product)}
+                   >
+                     Add to Cart
+                   </button>
+                 </div>
+               </div>
+             ))}
+           </div>
         </div>
       </section>
 
