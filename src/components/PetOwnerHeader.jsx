@@ -181,7 +181,7 @@ export default function PetOwnerHeader({ userName, userData }) {
                     >
                       <div className="search-result-image">
                         <img 
-                          src={`./images/pet-products/${product.name.toLowerCase().replace(/\s+/g,'-')}.jpg`} 
+                          src={product.images[0]} 
                           alt={product.name}
                           onError={(e) => {
                             e.target.style.display = 'none';

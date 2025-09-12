@@ -45,7 +45,6 @@ export default function ProductDetail() {
 
   const handleAddToCart = () => {
     addToCart(product, quantity)
-    alert(`Added ${quantity} ${product.name} to cart!`)
   }
 
   const handleBuyNow = () => {

@@ -4,67 +4,97 @@
       "id": 1,
       "name": "Premium Chicken & Rice Dog Food",
       "category": "dog-food",
-      "price": 45.99,
+      "price": "$45.99",
       "description": "High-quality dry dog food made with real chicken and brown rice. Perfect for adult dogs of all sizes.",
       "brand": "Royal Canin",
       "images": [
         "./img-pet-product/Premium-Chicken-&-Rice-Dog-Food.jpg"
       ],
-      "flavor": "Chicken & Rice"
+      "flavor": "Chicken & Rice",
+      "featured": true,
+      "newArrivals": false,
+      "bestSeller": true,
+      "rating": 4.8,
+      "originalPrice": "$55.99",
+      "isSale": true
     },
     {
       "id": 2,
       "name": "Salmon & Sweet Potato Formula",
       "category": "dog-food",
-      "price": 52.5,
+      "price": "$52.50",
       "description": "Grain-free dog food with fresh salmon and sweet potato. Rich in omega-3 fatty acids for healthy skin and coat.",
       "brand": "Blue Buffalo",
       "images": [
         "./img-pet-product/Salmon-&-Sweet-Potato-Formula.jpg"
       ],
-      "flavor": "Salmon & Sweet Potato"
+      "flavor": "Salmon & Sweet Potato",
+      "featured": true,
+      "newArrivals": true,
+      "bestSeller": false,
+      "rating": 4.6,
+      "originalPrice": "$62.50",
+      "isSale": true
     },
     {
       "id": 3,
       "name": "Lamb & Brown Rice Adult Formula",
       "category": "dog-food",
-      "price": 38.75,
+      "price": "$38.75",
       "description": "Natural dog food with lamb as the first ingredient. Formulated for adult dogs with sensitive stomachs.",
       "brand": "Hill's Science Diet",
       "images": [
         "./img-pet-product/Lamb-&-Brown-Rice-Adult-Formula.jpg"
       ],
-      "flavor": "Lamb & Brown Rice"
+      "flavor": "Lamb & Brown Rice",
+      "featured": false,
+      "newArrivals": false,
+      "bestSeller": true,
+      "rating": 4.7,
+      "originalPrice": "$38.75",
+      "isSale": false
     },
     {
       "id": 4,
       "name": "Beef & Vegetable Stew",
       "category": "dog-food",
-      "price": 41.25,
+      "price": "$41.25",
       "description": "Wet dog food with tender beef chunks and fresh vegetables. Great for picky eaters.",
       "brand": "Purina Pro Plan",
       "images": [
         "./img-pet-product/Beef-&-Vegetable-Stew.jpg"
       ],
-      "flavor": "Beef & Vegetable"
+      "flavor": "Beef & Vegetable",
+      "featured": true,
+      "newArrivals": true,
+      "bestSeller": false,
+      "rating": 4.5,
+      "originalPrice": "$41.25",
+      "isSale": false
     },
     {
       "id": 5,
       "name": "Turkey & Oatmeal Puppy Food",
       "category": "dog-food",
-      "price": 35.99,
+      "price": "$35.99",
       "description": "Specially formulated puppy food with turkey and oatmeal. Supports healthy growth and development.",
       "brand": "Wellness",
       "images": [
         "./img-pet-product/Turkey-&-Oatmeal-Puppy-Food.jpg"
       ],
-      "flavor": "Turkey & Oatmeal"
+      "flavor": "Turkey & Oatmeal",
+      "featured": false,
+      "newArrivals": true,
+      "bestSeller": false,
+      "rating": 4.9,
+      "originalPrice": "$35.99",
+      "isSale": false
     },
     {
       "id": 6,
       "name": "Duck & Pea Formula",
       "category": "dog-food",
-      "price": 48.5,
+      "price": "$48.50",
       "description": "Limited ingredient dog food with duck and peas. Perfect for dogs with food allergies.",
       "brand": "Natural Balance",
       "images": [
@@ -76,7 +106,7 @@
       "id": 7,
       "name": "Venison & Green Bean",
       "category": "dog-food",
-      "price": 55.75,
+      "price": "$55.75",
       "description": "Premium dog food with venison and green beans. High protein, low carbohydrate formula.",
       "brand": "Taste of the Wild",
       "images": [
@@ -88,7 +118,7 @@
       "id": 8,
       "name": "Fish & Potato Senior Formula",
       "category": "dog-food",
-      "price": 42.99,
+      "price": "$42.99",
       "description": "Senior dog food with fish and potato. Easy to digest and supports joint health.",
       "brand": "Iams",
       "images": [
@@ -100,7 +130,7 @@
       "id": 9,
       "name": "Kangaroo & Apple",
       "category": "dog-food",
-      "price": 59.25,
+      "price": "$59.25",
       "description": "Exotic protein dog food with kangaroo and apple. Novel protein source for sensitive dogs.",
       "brand": "Ziwi Peak",
       "images": [
@@ -124,7 +154,7 @@
       "id": 11,
       "name": "Ocean Fish & Rice Cat Food",
       "category": "cat-food",
-      "price": 28.99,
+      "price": "$28.99",
       "description": "Premium dry cat food with ocean fish and rice. Rich in protein and essential nutrients.",
       "brand": "Royal Canin",
       "images": [
@@ -172,7 +202,7 @@
       "id": 15,
       "name": "Duck & Pea Kitten Food",
       "category": "cat-food",
-      "price": 35.99,
+      "price": "$35.99",
       "description": "Kitten food with duck and peas. Formulated for growing kittens with high energy needs.",
       "brand": "Hill's Science Diet",
       "images": [
@@ -244,13 +274,19 @@
       "id": 21,
       "name": "Interactive Puzzle Ball",
       "category": "toys",
-      "price": 15.99,
+      "price": "$15.99",
       "description": "Interactive puzzle ball that dispenses treats as your pet plays. Great for mental stimulation.",
       "brand": "Kong",
       "images": [
         "./img-pet-product/Interactive-Puzzle-Ball.jpg"
       ],
-      "flavor": "N/A"
+      "flavor": "N/A",
+      "featured": true,
+      "newArrivals": true,
+      "bestSeller": false,
+      "rating": 4.7,
+      "originalPrice": "$19.99",
+      "isSale": true
     },
     {
       "id": 22,
@@ -364,7 +400,7 @@
       "id": 31,
       "name": "Shampoo & Conditioner Set",
       "category": "grooming",
-      "price": 22.99,
+      "price": "$22.99",
       "description": "Gentle shampoo and conditioner set for dogs and cats. Hypoallergenic and tear-free formula.",
       "brand": "Earthbath",
       "images": [
@@ -484,7 +520,7 @@
       "id": 41,
       "name": "Orthopedic Dog Bed",
       "category": "bedding",
-      "price": 79.99,
+      "price": "$79.99",
       "description": "Memory foam orthopedic dog bed for joint support and comfort. Machine washable cover.",
       "brand": "PetSafe",
       "images": [
@@ -532,7 +568,7 @@
       "id": 45,
       "name": "Heated Pet Pad",
       "category": "bedding",
-      "price": 35.99,
+      "price": "$35.99",
       "description": "Self-warming pet pad that reflects body heat. Perfect for senior pets.",
       "brand": "K&H Pet Products",
       "images": [
@@ -592,7 +628,7 @@
       "id": 50,
       "name": "Cat Scratching Post",
       "category": "bedding",
-      "price": 55.75,
+      "price": "$55.75",
       "description": "Multi-level cat scratching post with platforms and hiding spots. Saves furniture from claws.",
       "brand": "Trixie",
       "images": [
@@ -604,7 +640,7 @@
       "id": 51,
       "name": "Glucosamine Joint Supplements",
       "category": "supplements",
-      "price": 34.99,
+      "price": "$34.99",
       "description": "Glucosamine and chondroitin supplements for joint health. Helps with mobility and flexibility.",
       "brand": "Cosequin",
       "images": [

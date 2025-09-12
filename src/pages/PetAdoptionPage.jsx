@@ -686,25 +686,25 @@ const PetAdoptionPage = ({ userData, userName }) => {
               <p className="event-description">{event.description}</p>
               
               <div className="event-details-with-actions">
-                <div className="event-details">
-                  <div className="event-detail">
-                    <Calendar size={16} />
-                    <span>{event.date}</span>
-                  </div>
-                  <div className="event-detail">
-                    <Clock size={16} />
-                    <span>{event.time}</span>
-                  </div>
-                  <div className="event-detail">
-                    <MapPin size={16} />
-                    <span>{event.location}</span>
-                  </div>
+              <div className="event-details">
+                <div className="event-detail">
+                  <Calendar size={16} />
+                  <span>{event.date}</span>
                 </div>
+                <div className="event-detail">
+                  <Clock size={16} />
+                  <span>{event.time}</span>
+                </div>
+                <div className="event-detail">
+                  <MapPin size={16} />
+                  <span>{event.location}</span>
+                </div>
+              </div>
 
-                <div className="event-actions">
-                  <button className="btn-primary">
-                    Join
-                  </button>
+              <div className="event-actions">
+                <button className="btn-primary">
+                  Join
+                </button>
                 </div>
               </div>
             </div>

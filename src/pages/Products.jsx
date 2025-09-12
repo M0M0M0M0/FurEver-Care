@@ -62,7 +62,6 @@ export default function Products() {
 
   const handleAddToCart = (product) => {
     addToCart(product, 1)
-    alert(`Added ${product.name} to cart!`)
   }
 
   // Loading state
