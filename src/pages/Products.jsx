@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { useSearchParams } from 'react-router-dom'
 import { Link } from 'react-router-dom'
 import PetOwnerHeader from '../components/PetOwnerHeader'
+import Footer from '../components/Footer'
 import ScrollingInfoBar from '../components/ScrollingInfoBar'
 import { useCart } from '../contexts/CartContext'
 import './Products.css'
@@ -188,6 +189,7 @@ export default function Products() {
         </div>
       </section>
       </main>
+      <Footer />
     </>
   )
 }

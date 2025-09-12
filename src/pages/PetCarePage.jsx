@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useLocation, useSearchParams } from 'react-router-dom';
 import PetOwnerHeader from '../components/PetOwnerHeader';
+import Footer from '../components/Footer';
 import ScrollingInfoBar from '../components/ScrollingInfoBar';
 import './PetCarePage.css';
 
@@ -477,6 +478,7 @@ const PetCarePage = ({ userData: propUserData, userName: propUserName }) => {
           </div>
         </section>
       </div>
+      <Footer />
     </div>
   );
 };
