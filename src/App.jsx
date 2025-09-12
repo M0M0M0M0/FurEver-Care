@@ -138,10 +138,13 @@ function AppContent() {
             <Route path="/emergency-vet" element={<EmergencyVetPage userData={userData} userName={userName} />} />
             <Route path="/contact" element={<Contact userType={userType} userData={userData} userName={userName} />}/>
             <Route path="/feedback" element={<PetOwnerFeedback userName={userName || ''} />} />
+            <Route path="/pet-adoption" element={<PetAdoptionPage userData={userData || {}} userName={userName || ''} />} />
+            <Route path="/veterinarian" element={<VeterinarianDashboard userData={userData || {}} userName={userName || ''} />} />
           </Routes>
         ) : userType === 'veterinarian' ? (
           <Routes>
             <Route path="/" element={<VeterinarianDashboard userData={userData || {}} userName={userName || ''} />} />
+            <Route path="/veterinarian" element={<VeterinarianDashboard userData={userData || {}} userName={userName || ''} />} />
             <Route path="/products" element={<Products />} />
             <Route path="/product/:id" element={<ProductDetail />} />
             <Route path="/cart" element={<Cart userData={userData} userName={userName} />} />
@@ -150,6 +153,7 @@ function AppContent() {
         ) : userType === 'shelter' ? (
           <Routes>
             <Route path="/" element={<PetAdoptionPage userData={userData || {}} userName={userName || ''} />} />
+            <Route path="/pet-adoption" element={<PetAdoptionPage userData={userData || {}} userName={userName || ''} />} />
             <Route path="/products" element={<Products />} />
             <Route path="/product/:id" element={<ProductDetail />} />
             <Route path="/cart" element={<Cart userData={userData} userName={userName} />} />
@@ -165,6 +169,8 @@ function AppContent() {
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/emergency-vet" element={<EmergencyVetPage />} />
+            <Route path="/pet-adoption" element={<PetAdoptionPage />} />
+            <Route path="/veterinarian" element={<VeterinarianDashboard />} />
           </Routes>
         )}
         <BackToTop />

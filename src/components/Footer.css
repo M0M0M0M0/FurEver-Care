@@ -96,6 +96,22 @@
   color: #667eea;
 }
 
+.footer-link-btn {
+  background: none;
+  border: none;
+  color: #bdc3c7;
+  text-decoration: none;
+  font-size: 0.95rem;
+  cursor: pointer;
+  padding: 0;
+  font-family: inherit;
+  transition: color 0.3s ease;
+}
+
+.footer-link-btn:hover {
+  color: #667eea;
+}
+
 .contact-info {
   display: flex;
   flex-direction: column;
@@ -150,6 +166,15 @@
 }
 
 .footer-bottom-links a:hover {
+  color: #667eea;
+}
+
+.footer-bottom-links .footer-link-btn {
+  color: #bdc3c7;
+  font-size: 0.9rem;
+}
+
+.footer-bottom-links .footer-link-btn:hover {
   color: #667eea;
 }
 
