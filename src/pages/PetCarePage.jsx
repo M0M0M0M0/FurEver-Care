@@ -14,6 +14,8 @@ const PetCarePage = ({ userData: propUserData, userName: propUserName }) => {
   const [petData, setPetData] = useState(null);
   const [selectedVideo, setSelectedVideo] = useState(null);
   const [playingAudio, setPlayingAudio] = useState(null);
+  const [showAllHealthTips, setShowAllHealthTips] = useState(false);
+  const [showAllTrainingTips, setShowAllTrainingTips] = useState(false);
   const [userData, setUserData] = useState(null);
   const [userName, setUserName] = useState('');
 
@@ -151,23 +153,44 @@ const PetCarePage = ({ userData: propUserData, userName: propUserName }) => {
     {
       id: 1,
       title: 'Dental Care',
-      description: "Brush your pet's teeth 2-3 times a week to prevent gum disease",
+      description: "Brush your pet's teeth 2-3 times a week to prevent gum disease.",
       audioUrl: 'https://www.soundjay.com/misc/sounds/bell-ringing-05.wav',
       icon: '🦷'
     },
     {
       id: 2,
       title: 'Weight Management',
-      description: 'Monitor weight regularly and adjust diet accordingly',
+      description: 'Monitor weight regularly and adjust diet accordingly.',
       audioUrl: 'https://www.soundjay.com/misc/sounds/bell-ringing-05.wav',
       icon: '⚖️'
     },
     {
       id: 3,
       title: 'Common Conditions',
-      description: 'Recognize common signs of illness in pets',
+      description: 'Recognize common signs of illness in pets.',
       audioUrl: 'https://www.soundjay.com/misc/sounds/bell-ringing-05.wav',
       icon: '🏥'
+    },
+    {
+      id: 4,
+      title: 'Exercise Routine',
+      description: 'Provide daily exercise to keep your pet healthy and active.',
+      audioUrl: 'https://www.soundjay.com/misc/sounds/bell-ringing-05.wav',
+      icon: '🏃‍♂️'
+    },
+    {
+      id: 5,
+      title: 'Vaccination Schedule',
+      description: 'Keep vaccinations up to date to protect against diseases.',
+      audioUrl: 'https://www.soundjay.com/misc/sounds/bell-ringing-05.wav',
+      icon: '💉'
+    },
+    {
+      id: 6,
+      title: 'Parasite Prevention',
+      description: 'Use flea and tick prevention regularly to protect your pet.',
+      audioUrl: 'https://www.soundjay.com/misc/sounds/bell-ringing-05.wav',
+      icon: '🦟'
     }
   ];
 
@@ -193,6 +216,27 @@ const PetCarePage = ({ userData: propUserData, userName: propUserName }) => {
       description: 'Special skills and intelligent games',
       audioText: 'Teach your pet brain games like finding objects, obstacle courses. This helps develop your pet\'s brain and reduce stress.',
       icon: '🧠'
+    },
+    {
+      id: 4,
+      title: 'House Training',
+      description: 'Teach your pet proper bathroom habits',
+      audioText: 'Take your pet outside every 2-3 hours, especially after meals. Reward immediately when they go in the right place. Be patient and consistent.',
+      icon: '🏠'
+    },
+    {
+      id: 5,
+      title: 'Socialization',
+      description: 'Help your pet get comfortable with people and other animals',
+      audioText: 'Introduce your pet to new people and animals gradually. Start with short, positive interactions. Always supervise and reward good behavior.',
+      icon: '👥'
+    },
+    {
+      id: 6,
+      title: 'Leash Training',
+      description: 'Teach your pet to walk properly on a leash',
+      audioText: 'Start indoors with a loose leash. Use treats to encourage walking beside you. Practice "heel" command and stop when they pull.',
+      icon: '🦮'
     }
   ];
 
@@ -405,7 +449,7 @@ const PetCarePage = ({ userData: propUserData, userName: propUserName }) => {
             </div>
             <div className="section-content">
               <div className="health-tips-grid">
-                {healthTips.map((tip) => (
+                {(showAllHealthTips ? healthTips : healthTips.slice(0, 3)).map((tip) => (
                   <div key={tip.id} className="health-tip-card">
                     <div className="tip-header">
                       <div className="tip-icon">{tip.icon}</div>
@@ -415,7 +459,7 @@ const PetCarePage = ({ userData: propUserData, userName: propUserName }) => {
                       <p>{tip.description}</p>
                       <button 
                         className={`audio-btn ${playingAudio === tip.id ? 'playing' : ''}`}
-                        onClick={() => handleAudioPlay(tip.id)}
+                        onClick={() => handleTextToSpeech(tip.description)}
                       >
                         {playingAudio === tip.id ? '🔊 Playing...' : '🔊 Listen to tip'}
                       </button>
@@ -424,7 +468,12 @@ const PetCarePage = ({ userData: propUserData, userName: propUserName }) => {
                 ))}
               </div>
               <div className="section-actions">
-                <button className="action-btn">View All Health Tips</button>
+                <button 
+                  className="action-btn"
+                  onClick={() => setShowAllHealthTips(!showAllHealthTips)}
+                >
+                  {showAllHealthTips ? 'Show Less Health Tips' : 'View All Health Tips'}
+                </button>
               </div>
             </div>
           </div>
@@ -439,7 +488,7 @@ const PetCarePage = ({ userData: propUserData, userName: propUserName }) => {
             </div>
             <div className="section-content">
               <div className="training-tips-grid">
-                {trainingTips.map((tip) => (
+                {(showAllTrainingTips ? trainingTips : trainingTips.slice(0, 3)).map((tip) => (
                   <div key={tip.id} className="training-tip-card">
                     <div className="training-header">
                       <div className="training-icon">{tip.icon}</div>
@@ -472,7 +521,12 @@ const PetCarePage = ({ userData: propUserData, userName: propUserName }) => {
                 ))}
               </div>
               <div className="section-actions">
-                <button className="action-btn">View All Training Tips</button>
+                <button 
+                  className="action-btn"
+                  onClick={() => setShowAllTrainingTips(!showAllTrainingTips)}
+                >
+                  {showAllTrainingTips ? 'Show Less Training Tips' : 'View All Training Tips'}
+                </button>
               </div>
             </div>
           </div>
