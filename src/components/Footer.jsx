@@ -99,7 +99,7 @@ const Footer = () => {
             <h3 className="footer-title">Pages</h3>
             <ul className="footer-links">
               <li><button onClick={handleVeterinaryClick} className="footer-link-btn">Veterinary</button></li>
-              <li><button onClick={() => handleNavigation('/')} className="footer-link-btn">Pet Owner</button></li>
+              <li><button onClick={() => window.location.reload()} className="footer-link-btn">Pet Owner</button></li>
               <li><button onClick={() => handleNavigation('/pet-care#training-tips')} className="footer-link-btn">Pet Training</button></li>
               <li><button onClick={() => handleNavigation('/pet-care#health-tips')} className="footer-link-btn">Care Consultant</button></li>
               <li><button onClick={() => window.location.reload()} className="footer-link-btn">Animal Rescue</button></li>
